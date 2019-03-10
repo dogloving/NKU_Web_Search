@@ -1,0 +1,208 @@
+<base href="http://xzxx.nankai.edu.cn/"><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<script type="text/javascript" src="js/ymprompt/ymPrompt.js"></script>
+<link rel="stylesheet" id='skin' type="text/css" href="js/ymprompt/skin/vista/ymPrompt.css" />
+<title>南开大学校长信箱</title>
+<style type="text/css">
+<!--
+body {
+	margin: 0px;
+	background-image:url(images/bg.jpg);
+}
+#banner {
+	width:523px;
+	height:87px;
+	margin-top:20px;
+	background:url(images/banner.gif) top left no-repeat;
+}
+#container {
+	width:895px;
+	height:800px;
+	margin:0px auto;
+	/*border:1px solid #ff0000;*/
+}
+#touxiang {
+	width:889px;
+	height:237px;
+	margin:0px auto;
+	background:url(images/touxiang.jpg) no-repeat;
+}
+#cont {
+	width:889px;
+	height:342px;
+	margin:0px auto;
+	background-image:url(images/cont1.gif);
+}
+#maillist {
+	position:relative;
+	top:255px;
+	left:16px;
+	width:550px;
+	height:80px;
+	/*border:1px #FF0000 solid;*/
+}
+#maillist ul {
+	padding:0px;
+	margin:0px;
+}
+#maillist li {
+	margin:0px;
+	padding:0px;
+	line-height:22px;
+	list-style-type:none;
+}
+#maillist .mail {
+	color:#ad5c98; 
+	font-weight:bold;
+	text-decoration:underline;
+	cursor:pointer;
+}
+#maillist .mailtxt {
+	font-family:楷体; 
+	font-weight:bold; 
+	color:#5c284d;
+}
+#maillist .mailcp {
+	font-family:楷体; 
+	/*font-weight:bold; */
+	color:#ad5c98;
+	/*text-decoration:none;*/
+}
+
+#copyright {
+	width:889px;
+	height:16px;
+	margin-top:10px;
+	background:url(images/copyright.gif) no-repeat top left;
+}
+-->
+</style>
+<script>
+<!--
+var msg01="<font color=ad5c98>1.来信人请写清姓名、身份、联系方式以便沟通联系。<br>2.一般情况只回复署名信件，未署名的将作为参考，不一定回复。<br>3.如您反映的问题不想公开，请注明，我们将为您保密。<br>4.为提高来信办理的效率，按照公文处理的一般原则，请同学们一封信只提一个问题或同一类问题；不同类别问题请分别提交邮件。<br></font><font color=red>5.若您的电脑没有安装OutLook、Foxmail等客户端软件，可在阅读完本提示信息后点击“复制邮件地址”按钮把邮件地址复制下来（或点击“关闭本窗口”按钮后直接在页面中复制相应邮件地址），然后登录到您的邮箱把该地址粘贴到收件人位置上，撰写好邮件即可发送；若您安装有客户端软件，可点击“打开客户端”按钮直接打开客户端，撰写好邮件即可发送。</font>";
+var msg02="<font color=ad5c98>1.来信人请写清姓名、身份、联系方式以便沟通联系。<br>2.一般情况只回复署名信件，未署名的将作为参考，不一定回复。<br>3.如您反映的问题不想公开，请注明，我们将为您保密。<br></font><font color=red>4.若您的电脑没有安装OutLook、Foxmail等客户端软件，可在阅读完本提示信息后点击“复制邮件地址”按钮把邮件地址复制下来（或点击“关闭本窗口”按钮后直接在页面中复制相应邮件地址），然后登录到您的邮箱把该地址粘贴到收件人位置上，撰写好邮件即可发送；若您安装有客户端软件，可点击“打开客户端”按钮直接打开客户端，撰写好邮件即可发送。</font>";
+var msg03="<font color=ad5c98>1.来信人请写清姓名、身份、联系方式以便沟通联系。<br>2.一般情况只回复署名信件，未署名的将作为参考，不一定回复。<br>3.如您反映的问题不想公开，请注明，我们将为您保密。<br></font><font color=red>4.若您的电脑没有安装OutLook、Foxmail等客户端软件，可在阅读完本提示信息后点击“复制邮件地址”按钮把邮件地址复制下来（或点击“关闭本窗口”按钮后直接在页面中复制相应邮件地址），然后登录到您的邮箱把该地址粘贴到收件人位置上，撰写好邮件即可发送；若您安装有客户端软件，可点击“打开客户端”按钮直接打开客户端，撰写好邮件即可发送。</font>";
+//以下函数用于层水平与垂直居中使用
+//设置div页面居中，参数为div的id   
+function autoMargin(id) {   
+    var marginWid;//保存margin结果   
+    var marginHei;   
+    var divWid;//居中的DIV的大小   
+    var divHei;   
+    var mainEle = document.getElementById(id);//要计算的div的对象   
+  
+    //Trident内核   
+    if (new RegExp("trident", "i").test(navigator.userAgent)) {   
+  
+        //获取可见域大小   
+        marginWid = document.documentElement.clientWidth;   
+        marginHei = document.documentElement.clientHeight;   
+        //document.write("trident" + width + "*" + height);   
+  
+        //获取指定元素的宽和高   
+        divWid = mainEle.currentStyle.width.replace(/px/, "");   
+        divHei = mainEle.currentStyle.height.replace(/px/, "");   
+        //alert(divWid + "\n" + divHei);   
+  
+    //Webkit和Gecko内核   
+    } else if (new RegExp("webkit", "i").test(navigator.userAgent)   
+            || new RegExp("gecko", "i").test(navigator.userAgent)) {   
+  
+        //获取可见域大小   
+        marginWid = window.innerWidth;   
+        marginHei = window.innerHeight;   
+        //document.write("webkit" + width + "*" + height);   
+  
+        //获取指定元素的宽和高   
+        var style = window.getComputedStyle(mainEle, null);   
+        divWid = style.getPropertyValue("width").replace(/px/, "");   
+        divHei = style.getPropertyValue("height").replace(/px/, "");   
+        //alert(divWid + "\n" + divHei);   
+    }   
+  
+    //计算margin大小   
+    marginWid = marginWid / 2 - divWid / 2;   
+    marginHei = marginHei /2 - divHei / 2;   
+  
+    mainEle.style.marginTop = marginHei + "px";   
+    mainEle.style.marginLeft = marginWid + "px";   
+}  
+
+
+function copyToClipboard(txt)
+{
+	if (document.all){                                              //判断IE
+		//var e=document.all("alltext2").value;
+		if(window.clipboardData.setData('text', txt)){ymPrompt.succeedInfo(txt+" 复制成功！",null,null,"<font color=#5c284d>温馨提示</font>");}else {ymPrompt.errorInfo("复制失败，操作被阻止！",null,null,"<font color=#5c284d>温馨提示</font>");}
+	}
+	else{
+	ymPrompt.errorInfo("您的浏览器不支持剪贴板操作，请自行复制。",null,null,"<font color=#5c284d>温馨提示</font>");
+	};
+}
+
+function handler01(tp){
+	if(tp=='openclient'){
+		//alert("ok");
+		window.location.href="mailto:President03@nankai.edu.cn";
+	}
+	if(tp=='copyemail'){
+		//alert("cancel");
+		//return false;
+		copyToClipboard("President01@nankai.edu.cn");
+	}
+	if(tp=='close'){
+		//alert("close");
+	}
+}
+function handler02(tp){
+	if(tp=='openclient'){
+		//alert("ok");
+		window.location.href="mailto:President03@nankai.edu.cn";
+	}
+	if(tp=='copyemail'){
+		//alert("cancel");
+		//return false;
+		copyToClipboard("President02@nankai.edu.cn");
+	}
+	if(tp=='close'){
+		//alert("close");
+	}
+}
+function handler03(tp){
+	if(tp=='openclient'){
+		//alert("ok");
+		window.location.href="mailto:President03@nankai.edu.cn";
+	}
+	if(tp=='copyemail'){
+		//alert("cancel");
+		//return false;
+		copyToClipboard("President03@nankai.edu.cn");
+	}
+	if(tp=='close'){
+		//alert("close");
+	}
+}
+
+-->
+</script>
+</head>
+
+<body>
+<div id="container">
+	<div id="banner"></div>
+	<div id="touxiang"></div>
+  <div id="cont">
+	  <div id="maillist">
+	  <ul>
+		  <li><a class="mail" href="javascript:;" onclick="javascript:ymPrompt.win({message:msg01,title:'<font color=#5c284d>温馨提示</font>',width:500,height:340,icoCls:'ymPrompt_confirm',fixPosition:true,handler:handler01,btn:[['打开客户端','openclient'],['复制邮件地址','copyemail'],['关闭本窗口','close']]});">President01@nankai.edu.cn</a>  <span class="mailtxt">（学生专用）</span><!--<a class="mailcp" href="javascript:;" onclick="copyToClipboard('President01@nankai.edu.cn');">复制邮件地址</a>--></li>
+		  <li><a class="mail" href="javascript:;" onclick="javascript:ymPrompt.win({message:msg02,title:'<font color=#5c284d>温馨提示</font>',width:500,height:300,icoCls:'ymPrompt_confirm',fixPosition:true,handler:handler02,btn:[['打开客户端','openclient'],['复制邮件地址','copyemail'],['关闭本窗口','close']]});"">President02@nankai.edu.cn</a>  <span class="mailtxt">（教职工专用）</span><!--<a class="mailcp" href="javascript:;" onclick="copyToClipboard('President02@nankai.edu.cn');">复制邮件地址</a>--></li>
+		  <li><a class="mail" href="javascript:;" onclick="javascript:ymPrompt.win({message:msg03,title:'<font color=#5c284d>温馨提示</font>',width:500,height:300,icoCls:'ymPrompt_confirm',fixPosition:true,handler:handler03,btn:[['打开客户端','openclient'],['复制邮件地址','copyemail'],['关闭本窗口','close']]});">President03@nankai.edu.cn</a>  <span class="mailtxt">（校友及社会各界人士专用）</span><!--<a class="mailcp" href="javascript:;" onclick="copyToClipboard('President03@nankai.edu.cn');">复制邮件地址</a>--></li>
+	  </ul>
+	  </div>
+  </div>
+	<div id="copyright"></div>
+</div>
+</body>
+</html>

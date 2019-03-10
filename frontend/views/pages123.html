@@ -1,0 +1,174 @@
+<base href="http://202.113.18.106/"><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<meta id="viewport" name="viewport" content="target-densitydpi=device-dpi,width=640px,user-scalable=yes">
+<meta name="renderer" content="webkit" />
+<meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE">
+<title>注销页</title>
+<!--Dr.COMWebLoginID_1.htm-->
+
+<!--bootstrap.min.css-->
+<link rel="stylesheet" type="text/css" href="b82.css" />
+
+<!--  jQuery v1.11.3 -->
+<script type="text/javascript" src="a42.js"></script>
+
+<!--  哆点下载 -->
+<script type="text/javascript" src="a51.js"></script>
+<link rel="stylesheet" href="a52.css" type="text/css" media="screen" />
+
+<!--  本地存储 -->
+<script type="text/javascript" src="a76.js"></script>
+
+<!--  jQuery UI v1.10.3(Boxy弹窗) -->
+<link rel="stylesheet" href="a57.css">
+<script type="text/javascript" src="a58.js"></script>
+
+<script>
+<!--  浏览器探测 -->
+document.write('<script src="a77.js?version='+(new Date()).valueOf()+'"><\/script>');
+
+<!--  基本功能处理 -->
+document.write('<script src="a41.js?version='+(new Date()).valueOf()+'"><\/script>');
+
+<!--  页面配置处理 -->
+document.write('<script src="'+window.location.protocol + '//' + window.location.hostname + ':801/eportal/extern/nkdx/config.js?version='+(new Date()).valueOf()+'"><\/script>');
+</script>
+
+<script type="text/javascript">
+time='5070      ';flow='12311026  ';fsele=1;fee='16500     ';xsele=0;xip='000.000.000.000.';
+cvid=0,pvid=0;      
+pwm=1;v6af=0;v6df=0;uid='1511426';pwd='';v46m=0;v4ip='10.136.220.104';v6ip='::';// 890123456';v46m=001;v4ip='192.168.100.100';v6ip='0000:0000:0000:0000:0000:0000:0000:0000';////
+zxopt=1;//1为普通，2\4\5为专线不可用，6\9为专线可用 --1011.628(64)以上内核才支持
+oltime=4294967295;olflow=844800;lip='10.136.170.224';stime='2019-03-10 11:17:12';etime='2019-03-10 11:24:39';     
+NID='黄静平';                                              ///
+olmm=1;olm5=0;//20170821新加
+olmac='6807159a9ade';////
+
+flow0=flow%1000;flow1=flow-flow0;flow0=flow0*1000;flow0=flow0-flow0%1000;fee1=fee-fee%100;
+flow3='.';
+
+/** 哆点参数 start */
+//1.基本参数
+portalid='';//门户ID
+portalname='';//门户名称
+//2.可选参数
+portalver='';//门户版本
+serialno='';//序列号
+logourl='';//门户logo
+bannerurl='';//横幅广告
+welcome='';//欢迎词
+businessurl='';//业务接口
+//3.旁路参数
+authexenable='0';//是否启用旁路扩展模式
+authtype=1;//登录协议
+authloginIP='';//登录IP
+authloginport=801;//登录端口
+authloginpath='/eportal/?c=ACSetting&a=Login';//登录路径
+authloginparam=''; //登录参数
+authuserfield='DDDDD';//账号节点
+authpassfield='upass';//密码节点
+terminalidentity=1;//终端识别标识 先配置成填写
+authlogouttype=1;//注销协议
+authlogoutIP='';//注销IP
+authlogoutport=80;//注销端口
+authlogoutpath='/eportal/?c=ACSetting&a=Logout&ver=1.0';//注销路径
+authlogoutparam='';//注销参数
+authlogoutpost='';//注销post参数
+querydelay=0;//登录后延时查询网络状态
+querytype=1;//状态查询协议
+queryIP='';//状态查询IP	
+queryport=80;//状态查询端口
+querypost='';//状态查询post参数
+querypath='/eportal/?c=ACSetting&a=Query';//状态查询路径
+queryparam='';//状态查询参数
+authsuccess='Dr.COMWebLoginID_3.htm';//登录成功标志
+authfail='Dr.COMWebLoginID_2.htm';//登录失败标志
+isquery=0;
+authhost='';
+authoffpost='';
+charset='gb2312';//页面编码
+exparam=0;//扩展标志位
+//4.运营商选择
+carrier='{"yys":{"title":"服务类型","mode":"radiobutton","data":[{"id":"1","name":"校园用户","suffix":"@xyw"},{"id":"2","name":"校园电信","suffix":"@dx"},{"id":"3","name":"校园联通","suffix":"@lt"},{"id":"4","name":"校园其他","suffix":""}],"defaultID":"1"}}';//运营商选择
+//5.限制非哆点客户端登陆
+//把原先Dr.COMWebLoginID_ 改成: Dr.COM1.0WebLoginID_
+/** 哆点参数 end */
+
+var programUrl = window.location.protocol + "//" + window.location.hostname + ":801/eportal/extern/nkdx/";
+newComm.setArgsCookies(programUrl,null,v4ip);
+
+//判断pc/手机
+if(normalFun.getTermType() == 2){
+	newComm.setNessArg('mobile_31');
+}else{
+	newComm.setNessArg('pc_1');
+}
+
+newComm.setNessJs();
+
+//广告统计设置
+hnaSetAdCount('1001', '000000000000', uid, v4ip, olmac);
+
+</script>
+</head>
+
+<body>
+</body>
+</html>
+
+<script type="text/javascript">
+$(function(){
+	newComm.setNessSett();
+	
+	//$('[name=PageTips]').html(DispTFM(0)+'<br>'+DispTFM(1)+'<br>'+DispTFM(2)+'<br>'+DispTFM(3));
+if(parseInt(newComm.loginMethod) == 0){
+		$('[name=PageTips]').html(DispTFM(0)+'<br>'+DispTFM(1)+'<br>'+DispTFM(2)+'<br>'+DispTFM(3));
+	}
+	else{
+		$('[name=PageTips]').html("您已经成功登录。<br> You have successfully logged into our system.");
+	}
+	
+	$('a[class="lightbox_a"]').lightBox();//哆点下载
+	
+	//判断哆点存在
+	$("[name=openApp]").on('click',function(){
+		window.location.href = "duodian://com.doctorcom.portaltab";//app协议
+		window.setTimeout(function(){
+			alert("如您未安装哆点，请先下载安装；如已安装，请忽略该提示。");//提示未安装
+		},1000);
+	});
+	
+	//定制功能
+	getTime();		
+
+	getSelf();
+	<!-- 获取账号 -->
+	
+	
+	var Url=window.location.protocol + "//" + window.location.hostname+":801/eportal/?c=GetUserMsg&a=loadAccount";
+	$.ajax({
+		type:"get",
+		url:Url,
+		data:{
+			'ip':$.trim(v4ip),
+		},
+		dataType:"jsonp",
+		jsonp: "callback",
+		success:function(json){
+			if(json.result=="E00"){
+				var Account=json.list[0].account;
+				admin.run($.trim(Account),$.trim(v4ip));
+			}else{
+				$("#protection").text("获取失败");
+			}
+		},
+		error:function(){
+			alert('服务器请求失败,请稍后再试！');
+		}
+	})
+	
+});
+</script>
+

@@ -1,0 +1,126 @@
+<base href="http://jgdw.nankai.edu.cn/">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>南开大学机关党委</title>
+<link href="style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/flash_combined.js"></script>	
+<script type="text/javascript" src="js/flash.js"></script>	
+<script type="text/javascript">
+<!--修复png24透明在ie6下的灰度显示-->
+function fixpng24() {
+   var arVersion = navigator.appVersion.split("MSIE");
+   var version = parseFloat(arVersion[1]);
+   if ((version >= 5.5) && (document.body.filters)) {
+	   for (var i = 0; i < document.images.length; i++) {
+		   var img = document.images[i];
+		   var imgName = img.src.toUpperCase();
+		   if (imgName.substring(imgName.length - 3, imgName.length) == "PNG") {
+			   var imgID = (img.id) ? "id='" + img.id + "' " : "";
+			   var imgClass = (img.className) ? "class='" + img.className + "' " : "";
+			   var imgTitle = (img.title) ? "title='" + img.title + "' " : "title='" + img.alt + "' ";
+			   var imgStyle = "display:inline-block;" + img.style.cssText;
+			   if (img.align == "left") imgStyle = "float:left;" + imgStyle;
+			   if (img.align == "right") imgStyle = "float:right;" + imgStyle;
+			   if (img.parentElement.href) imgStyle = "cursor:hand;" + imgStyle;
+			   var strNewHTML = "<span " + imgID + imgClass + imgTitle
+					   + " style=\"" + "width:" + img.width + "px; height:" + img.height + "px;" + imgStyle
+					   + "filter:progid:DXImageTransform.Microsoft.AlphaImageLoader"
+					   + "(src=\'" + img.src + "\', sizingMethod='scale');\"></span>"
+			   img.outerHTML = strNewHTML;
+			   i = i - 1;
+		   }
+	   }
+   }
+}
+window.onload=function(){
+   fixpng24();
+}
+</script>
+
+</head>
+
+<body>
+<div id="container">
+	<!--Banner开始-->
+	<div id="header">
+		<!--菜单开始-->
+		<div id="menu">
+			<ul>
+				<li><a href="index.php" target="_self"><img src="images/menu_01.png" border="0" /></a></li>
+				<li><a href="second.php?act=read&amp;module=1&amp;id=1" target="_self"><img src="images/menu_02.png" border="0" /></a></li>
+				<li><a href="second.php?act=list&amp;module=2,3,5" target="_self"><img src="images/menu_03.png" border="0" /></a></li>
+				<li><a href="second.php?act=list&amp;module=3" target="_self"><img src="images/menu_04.png" border="0" /></a></li>
+				<li><a href="second.php?act=read&amp;module=4&amp;id=31" target="_self"><img src="images/menu_05.png" border="0" /></a></li>
+				<li><a href="second.php?act=list&amp;module=5" target="_self"><img src="images/menu_06.png" border="0" /></a></li>
+				<li><a href="second.php?act=read&amp;module=6" target="_self"><img src="images/menu_07.png" border="0" /></a></li>
+				<li><a href="second.php?act=list&amp;module=7" target="_self"><img src="images/menu_08.png" border="0" /></a></li>
+				<li><a href="http://jgdw.nku.cn/Album/albums.aspx" target="_blank"><img src="images/menu_09.png" border="0" /></a></li>
+				<li><a href="#" target="_self"><img src="images/menu_10.png" border="0" /></a></li>
+			</ul>
+		</div>
+		<!--菜单结束-->
+	</div>
+	<!--Banner结束-->
+	<!--flash开始-->
+	<div id="flash"><!--<img src="images/flash.jpg" />--></div>
+	<script type="text/javascript"> 
+	// <![CDATA[
+	var hp_random = "?" + Math.floor(Math.random()*1001);
+	var so = new SWFObject("/flash/flash.swf", "harvard_law_school", "1000", "310", "9", "#FFF");
+	so.addParam("wmode", "transparent");
+	so.addParam("base","/flash/"); 
+	so.addVariable("xml_path","/flash/config.xml" + hp_random); 
+	so.write("flash");    
+   // ]]>
+   </script>
+	<!--flash结束-->
+	<!--新闻内容开始-->
+	<div id="content">
+		<!--机关工作动态开始-->
+		<div id="content_left">
+			<ul>
+				<li class="title"><div style="float:left;">机关工作动态</div><a href="second.php?act=list&module=2,3,5"><img src="images/title_more.jpg" border="0" /></a></li>
+				<li><a href='second.php?act=read&module=2&id=1142' target=_blank style=''>科技处党支部、社科处党支部、国际学术交流处党支部 召开党...(12-27)</a></li><li><a href='second.php?act=read&module=2&id=1141' target=_blank style=''>天津高校机关党建工作研讨会南开举行(12-26)</a></li><li><a href='second.php?act=read&module=2&id=1140' target=_blank style=''>研究生院支部、保卫处支部召开党建工作调研督导会(12-16)</a></li><li><a href='second.php?act=read&module=2&id=1139' target=_blank style=''>教务处支部、实验室设备处支部、离退休处支部 召开党建工作...(12-05)</a></li><li><a href='second.php?act=read&module=2&id=1138' target=_blank style=''>机关五个支部联合赴京参观“伟大的变革——庆祝改革开放40...(12-04)</a></li><li><a href='second.php?act=read&module=2&id=1137' target=_blank style=''>组织部党支部、宣传部党支部召开党建工作调研督导会(12-01)</a></li><li><a href='second.php?act=read&module=2&id=1133' target=_blank style=''>纪委办支部、审计处支部、校工会支部召开党建工作调研督导...(11-29)</a></li><li><a href='second.php?act=read&module=2&id=1135' target=_blank style=''>机关党委办公室支部、战略部支部、招投标办支部召开党建工...(11-28)</a></li>					
+				<!--<li><a href="#">机关工作动态内容</a></li>-->
+			</ul>
+		</div>
+		<!--机关工作动态结束-->
+		<!--服务窗口开始-->
+		<div id="content_mid">
+			<ul>
+				<li class="title"><div style="float:left;">服务窗口</div><img src="images/title_more.jpg" border="0" /></li>
+				<li><a href="#">机关相关信息查询</a></li>
+				<li><a href="second.php?act=read&module=62&id=62">工作文件下载</a></li>
+				<li><a href="second.php?act=list&module=63">历年奖励名单</a></li>
+				<li><a href="second.php?act=read&module=64&id=30">机关部门服务指南</a></li>
+				<li><a href="mailto:jgdw@nankai.edu.cn">服务结果反馈</a></li>
+			</ul>
+		</div>
+		<!--服务窗口结束-->
+		<!--友情链接开始--><div><!--去除ie6复制bug用--></div>
+		<div id="content_right">
+			<ul>
+				<li class="title"><div style="float:left;">友情链接</div><img src="images/title_more.jpg" border="0" /></li>
+				<li><a href="http://xb.nankai.edu.cn/" target="_blank">学校办公室</a></li>
+				<li><a href="http://zzb.nankai.edu.cn/" target="_blank">党委组织部</a></li>
+				<li><a href="http://xcb.nankai.edu.cn/" target="_blank">宣传部</a></li>
+				<li><a href="http://rsc.nankai.edu.cn/" target="_blank">人事处</a></li>
+				<li><a href="http://gh.nankai.edu.cn/" target="_blank">校工会</a></li>
+			</ul>
+		</div>
+		<!--友情链接结束-->
+	</div>
+	<!--新闻内容结束--><div><!--去除ie6复制bug用--></div>
+	<div id="copyright">主办单位：南开大学机关党委&nbsp;&nbsp;&nbsp;联系方式：sumh@nankai.edu.cn 23501663 luwh@nankai.edu.cn 23501439&nbsp;&nbsp;&nbsp;办公地址：南开大学办公楼505、522</div>
+</div>
+ 
+
+<div id=ipv6_enabled_www_test_logo align="center"></div>
+<script language="JavaScript" type="text/javascript">
+    	var Ipv6_Js_Server = (("https:" == document.location.protocol) ? "https://" : "http://");
+	document.write(unescape("%3Cscript src='" + Ipv6_Js_Server + "www.ipv6forum.com/ipv6_enabled/sa/SA1.php?id=3810' type='text/javascript'%3E%3C/script%3E"));
+</script>
+</body>
+</html>

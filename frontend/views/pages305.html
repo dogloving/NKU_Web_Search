@@ -1,0 +1,731 @@
+<base href="http://skleoc.nankai.edu.cn/"><!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="author" content="中国企业互联网思维传递者-东方网景 http://www.east.com.cn/">
+    <meta name="version" content="Touch Site V3.0.1 (2016.12.30)">
+    <meta name="copyright" content="copyright© 1996-2019 east.net(china)co.,ltd.all rights reserved.">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta charset="utf-8">
+    <title>元素有机化学国家重点实验室（南开大学）</title>
+    <meta name="keywords" content="元素有机化学国家重点实验室（南开大学）" />
+    <meta name="description" content="元素有机化学国家重点实验室（南开大学）" />
+    <link href="http://skleoc.nankai.edu.cn/Site/skleoc/theme/css/base.css" rel="stylesheet" />
+    <link href="http://skleoc.nankai.edu.cn/Site/skleoc/theme/css/common.css" rel="stylesheet" />
+    <link href="http://skleoc.nankai.edu.cn/Site/skleoc/theme/css/index.css" rel="stylesheet" />
+    <link href="http://skleoc.nankai.edu.cn/Site/skleoc/theme/images/ysyj.ico" rel="shortcut icon" />
+    <script src="http://skleoc.nankai.edu.cn/Site/skleoc/theme/js/jquery-1.12.3.min.js"></script>
+    <script src="http://skleoc.nankai.edu.cn/Site/skleoc/theme/js/common.js"></script>
+    <script src="http://skleoc.nankai.edu.cn/Site/skleoc/theme/js/index.js"></script>
+    <script src="http://skleoc.nankai.edu.cn/Site/skleoc/theme/js/jquery.SuperSlide.2.1.1.js"></script>
+    <script src="http://skleoc.nankai.edu.cn/Site/skleoc/theme/js/pub.js"></script>
+
+</head>
+
+<body>
+<!--<a href="http://webscan.360.cn/index/checkwebsite/url/skleoc.tj.east.net"><img border="0" src="http://img.webscan.360.cn/status/pai/hash/2b3fb4593c321cc9059977c3853256d6"/></a>-->
+<script type="text/javascript">
+    $(document).ready(function() {
+
+        //点击会员登录
+        $(".head .mem_login").click(function(){
+            $(".login").show()
+        })
+        $(".login .close").click(function(){
+            $(".login").hide()
+        })
+
+        $(function(){
+            //找到文本框，并注册得到焦点事件
+            $("input").focus(function(){
+                //让当前得到焦点的文本框改变其背景色
+                $(this).css("border-color","#46b3f0");
+            });
+
+        });
+
+        $.getJSON('http://skleoc.nankai.edu.cn/member/user/getuser', function (data) {
+            if (data == null || data == '' || data.Account == '') {
+            } else {
+                $(".mem").html('<a class="memimgs" href="http://skleoc.nankai.edu.cn/member/user/changehead"><img src="http://skleoc.nankai.edu.cn/Site/skleoc/theme/images/memtop.png"></a><a class="mems" href="http://skleoc.nankai.edu.cn/member/user">个人中心</a><a class="tuichu" href="http://skleoc.nankai.edu.cn/member/user/logout">退出</a>');
+            }
+        });
+
+
+
+
+        //栏目当前位置
+        var currLocation = $ClassLocation$;
+        var alink='<span>当前位置 : <a href="http://skleoc.nankai.edu.cn/">首页</a> > ';
+        for(var i=0; i<currLocation.length; i++){
+            if(currLocation.length==1 || i==currLocation.length-1){
+                alink += "<a href=http://skleoc.nankai.edu.cn/class/view?id=" + currLocation[i].id + " > " + currLocation[i].name + "" + "</a>"
+            }else{
+                alink += "<a href=http://skleoc.nankai.edu.cn/class/view?id=" + currLocation[i].id + " > " + currLocation[i].name + "" + "</a> >"
+            }
+        }
+        alink=alink+"</span>";
+        $(".sub_p").html(alink);
+        $(".sub_p span a:last-child").css("color","#198aca");
+
+
+
+        $(".nav>li").each(function(index){
+            if($(this).attr("id")=="cc_$topclass.id$"){
+                $(this).addClass("over");
+            }
+            // 二级菜单
+            if($(this).find("ol li").length != 0) {
+                $(this).on("mouseover",function(){
+                    $(this).find(".navs").show();
+                });
+                $(this).on("mouseout",function(){
+                    $(this).find(".navs").hide();
+                });
+            };
+
+        });
+
+
+    });
+</script>
+<div class="login">
+    <div class="logins">
+        <span class="close"></span>
+        <h2>会员登录</h2>
+        <form name="loginform" action="http://skleoc.nankai.edu.cn/member/user/login" method="post">
+            <p><span>账号：</span><input type="text" class="texts" name="Account"></p>
+            <p><span>密码：</span><input type="password" class="passwords" name="Password"></p>
+            <p><input type="submit" class="sub" value="登录"></p>
+        </form>
+    </div>
+</div>
+<div class="wrap">
+    <div class="head">
+        <h1 class="logo"><img src="http://skleoc.nankai.edu.cn/Site/skleoc/theme/images/logo.png" alt="元素有机化学国家重点实验室（南开大学）" title="元素有机化学国家重点实验室（南开大学）" /></h1>
+        <div class="top_right">
+            <div class="top_btn clearfix">
+                <div class="mem clearfix" ><a class="mem_login" href="javascript:;">登录</a></div>
+                <a class="top_lang" href="http://skleoc.nankai.edu.cn/en/">EN</a>
+            </div>
+        </div>
+
+
+    </div>
+    <!--导航开始-->
+    <ul class="nav clear">
+        <li><a href="http://skleoc.nankai.edu.cn/">首页</a></li>
+        
+        <li id="cc_1"><a href="http://skleoc.nankai.edu.cn/class/view?id=1">实验室介绍</a>
+            <ol class="navs">
+                
+                <li><a href="http://skleoc.nankai.edu.cn/class/view?id=10">实验室概况</a></li>
+                
+                <li><a href="http://skleoc.nankai.edu.cn/class/view?id=11">研究方向</a></li>
+                
+                <li><a href="http://skleoc.nankai.edu.cn/class/view?id=12">组织机构</a></li>
+                
+                <li><a href="http://skleoc.nankai.edu.cn/class/view?id=13">学术委员会</a></li>
+                
+            </ol>
+        </li>
+        
+        <li id="cc_2"><a href="http://skleoc.nankai.edu.cn/class/view?id=2">研究队伍</a>
+            <ol class="navs">
+                
+                <li><a href="http://skleoc.nankai.edu.cn/class/view?id=14">学术带头人</a></li>
+                
+                <li><a href="http://skleoc.nankai.edu.cn/class/view?id=15">骨干研究人员</a></li>
+                
+                <li><a href="http://skleoc.nankai.edu.cn/class/view?id=132">Tenure制研究员</a></li>
+                
+                <li><a href="http://skleoc.nankai.edu.cn/class/view?id=163">客座教授</a></li>
+                
+                <li><a href="http://skleoc.nankai.edu.cn/class/view?id=16">客座人员</a></li>
+                
+            </ol>
+        </li>
+        
+        <li id="cc_3"><a href="http://skleoc.nankai.edu.cn/class/view?id=3">研究成果</a>
+            <ol class="navs">
+                
+                <li><a href="http://skleoc.nankai.edu.cn/class/view?id=17">最新研究成果</a></li>
+                
+                <li><a href="http://skleoc.nankai.edu.cn/class/view?id=96">发表论文</a></li>
+                
+                <li><a href="http://skleoc.nankai.edu.cn/class/view?id=19">获奖成果</a></li>
+                
+                <li><a href="http://skleoc.nankai.edu.cn/class/view?id=20">发明专利</a></li>
+                
+                <li><a href="http://skleoc.nankai.edu.cn/class/view?id=21">在研项目</a></li>
+                
+            </ol>
+        </li>
+        
+        <li id="cc_4"><a href="http://skleoc.nankai.edu.cn/class/view?id=4">学术交流</a>
+            <ol class="navs">
+                
+                <li><a href="http://skleoc.nankai.edu.cn/class/view?id=164">南开有机化学讲座</a></li>
+                
+                <li><a href="http://skleoc.nankai.edu.cn/class/view?id=22">邀请学术报告</a></li>
+                
+                <li><a href="http://skleoc.nankai.edu.cn/class/view?id=24">举办学术会议</a></li>
+                
+                <li><a href="http://skleoc.nankai.edu.cn/class/view?id=23">参加学术会议</a></li>
+                
+            </ol>
+        </li>
+        
+        <li id="cc_5"><a href="http://skleoc.nankai.edu.cn/class/view?id=5">人才培养</a>
+            <ol class="navs">
+                
+                <li><a href="http://skleoc.nankai.edu.cn/class/view?id=120">研究生培养</a></li>
+                
+                <li><a href="http://skleoc.nankai.edu.cn/class/view?id=69">招聘信息</a></li>
+                
+                <li><a href="http://skleoc.nankai.edu.cn/class/view?id=137">管理委员会</a></li>
+                
+            </ol>
+        </li>
+        
+        <li id="cc_6"><a href="http://skleoc.nankai.edu.cn/class/view?id=6">开放基金</a>
+            <ol class="navs">
+                
+                <li><a href="http://skleoc.nankai.edu.cn/class/view?id=32">申请指南</a></li>
+                
+                <li><a href="http://skleoc.nankai.edu.cn/class/view?id=33">开放课题</a></li>
+                
+                <li><a href="http://skleoc.nankai.edu.cn/class/view?id=87">成果介绍</a></li>
+                
+            </ol>
+        </li>
+        
+        <li id="cc_7"><a href="http://skleoc.nankai.edu.cn/class/view?id=7">规章制度</a>
+            <ol class="navs">
+                
+            </ol>
+        </li>
+        
+        <li id="cc_8"><a href="http://skleoc.nankai.edu.cn/class/view?id=8">仪器平台</a>
+            <ol class="navs">
+                
+                <li><a href="http://skleoc.nankai.edu.cn/class/view?id=36">介绍</a></li>
+                
+                <li><a href="http://skleoc.nankai.edu.cn/class/view?id=37">管理规定</a></li>
+                
+            </ol>
+        </li>
+        
+        <li id="cc_9"><a href="http://skleoc.nankai.edu.cn/class/view?id=9">文件下载</a>
+            <ol class="navs">
+                
+                <li><a href="http://skleoc.nankai.edu.cn/class/view?id=93">开放基金</a></li>
+                
+                <li><a href="http://skleoc.nankai.edu.cn/class/view?id=94">奖学金</a></li>
+                
+                <li><a href="http://skleoc.nankai.edu.cn/class/view?id=95">夏令营</a></li>
+                
+                <li><a href="http://skleoc.nankai.edu.cn/class/view?id=159">会议室</a></li>
+                
+                <li><a href="http://skleoc.nankai.edu.cn/class/view?id=169">仪器平台</a></li>
+                
+            </ol>
+        </li>
+        
+    </ul>
+    <!--导航开始 end-->
+</div>
+<div class="wrap">
+    <!--头部end-->
+    <!--轮播图-->
+    <div class="banner">
+        <div class="slideBox">
+            <div class="hd">
+                <ul>
+                    
+                    <li></li>
+                    
+                </ul>
+            </div>
+            <div class="bd">
+                <ul>
+                    
+                    <li>
+                        <a href="http://www.futureprize.org/Home/nav/407.html" target="_blank">
+                            <img src="/Site/skleoc/Uploads/20180909/微信图片_20180909135658.jpg" alt="." title="."/>
+                           
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            <a class="prev btn_l" href="javascript:void(0)"><</a>
+            <a class="next btn_r" href="javascript:void(0)">></a>
+        </div>
+    </div>
+    <!--轮播图 end-->
+    <div class="main clear">
+        <!--学术-->
+        <div class="main_l">
+            <div class="main_com">
+                <h2 class="h2_tit">
+                    <em>学术通知</em>
+                    <a href="http://skleoc.nankai.edu.cn/class/view?id=76">COMMUNICATION</a>
+                </h2>
+
+                <!--轮播图-->
+                <div class="com_ban clear">
+                    <div class="slideBox1">
+                        <div class="hd">
+                            <ul>
+                                
+                                <li></li>
+                                
+                                <li></li>
+                                
+                                <li></li>
+                                
+                                <li></li>
+                                
+                                <li></li>
+                                
+                                <li></li>
+                                
+                            </ul>
+                        </div>
+                        <div class="bd">
+                            <ul>
+                                
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <img src="/Site/skleoc/Uploads/20180719/曹镛.jpg" alt="华南理工大学的曹镛院士" title="华南理工大学的曹镛院士"/>
+                                        <span>华南理工大学的曹镛院士</span>
+                                    </a>
+                                </li>
+                                
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <img src="/Site/skleoc/Uploads/20180719/Mullen.jpg" alt="德国马普所的Klaus Müllen教授" title="德国马普所的Klaus Müllen教授"/>
+                                        <span>德国马普所的Klaus Müllen教授</span>
+                                    </a>
+                                </li>
+                                
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <img src="/Site/skleoc/Uploads/20180719/田禾.jpg" alt="华东理工大学的田禾院士" title="华东理工大学的田禾院士"/>
+                                        <span>华东理工大学的田禾院士</span>
+                                    </a>
+                                </li>
+                                
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <img src="/Site/skleoc/Uploads/20180719/_DSC8363_副本.jpg" alt="德雷塞尔大学的Yury Gogotsi教授" title="德雷塞尔大学的Yury Gogotsi教授"/>
+                                        <span>德雷塞尔大学的Yury Gogotsi教授</span>
+                                    </a>
+                                </li>
+                                
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <img src="/Site/skleoc/Uploads/20180719/_DSC8235_副本.jpg" alt="中国科学院化学所的李永舫院士" title="中国科学院化学所的李永舫院士"/>
+                                        <span>中国科学院化学所的李永舫院士</span>
+                                    </a>
+                                </li>
+                                
+                                <li>
+                                    <a href="#" target="_blank">
+                                        <img src="/Site/skleoc/Uploads/20180719/_DSC8242_副本.jpg" alt="麻省理工学院Timothy Swager教授" title="麻省理工学院Timothy Swager教授"/>
+                                        <span>麻省理工学院Timothy Swager教授</span>
+                                    </a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+                        <a class="prev btn_l" href="javascript:void(0)"><</a>
+                        <a class="next btn_r" href="javascript:void(0)">></a>
+                    </div>
+                </div>
+                <!--轮播图 end-->
+                <ul class="com_ul">
+                    
+                    <li>
+                        <h2>
+                            <a href="http://skleoc.nankai.edu.cn/article/content/view?id=898">2019南开高价碘会议</a><span>02/26</span>
+                        </h2>
+                    </li>
+                    
+                    <li>
+                        <h2>
+                            <a href="http://skleoc.nankai.edu.cn/article/content/view?id=897">第十三届华北五省市化学学术研讨会（HBHX2019） 第一轮通知</a><span>02/25</span>
+                        </h2>
+                    </li>
+                    
+                    <li>
+                        <h2>
+                            <a href="http://skleoc.nankai.edu.cn/article/content/view?id=899">&quot;百年南开大讲坛&quot;系列高端学术讲座</a><span>02/27</span>
+                        </h2>
+                    </li>
+                    
+                    <li>
+                        <h2>
+                            <a href="http://skleoc.nankai.edu.cn/article/content/view?id=896">重点实验室系列学术报告—苗志伟教授、王佰全教授</a><span>02/25</span>
+                        </h2>
+                    </li>
+                    
+                    <li>
+                        <h2>
+                            <a href="http://skleoc.nankai.edu.cn/article/content/view?id=876">纪念陈茹玉院士诞辰100周年系列学术活动—巴基斯坦卡拉奇大学Prof. M. Iqbal Choudhary</a><span>01/03</span>
+                        </h2>
+                    </li>
+                    
+                    <li>
+                        <h2>
+                            <a href="http://skleoc.nankai.edu.cn/article/content/view?id=868">南开有机化学讲座—北京大学杨震教授</a><span>12/14</span>
+                        </h2>
+                    </li>
+                    
+                    <li>
+                        <h2>
+                            <a href="http://skleoc.nankai.edu.cn/article/content/view?id=866">纪念陈茹玉院士诞辰100周年系列学术活动—中国科学技术大学王细胜教授</a><span>12/07</span>
+                        </h2>
+                    </li>
+                    
+                </ul>
+            </div>
+            <!--学术end-->
+            <div class="main_saf">
+                <h2 class="h2_tit">
+                    <em>安全通告</em>
+                    <a href="http://skleoc.nankai.edu.cn/class/view?id=77">SAFETY NOTICE</a>
+                </h2>
+                <ul class="com_ul">
+                    
+                    <li>
+                        <h2>
+                            <a href="http://skleoc.nankai.edu.cn/article/content/view?id=778">高温天气实验室安全温馨提示</a><span>06/08</span>
+                        </h2>
+                    </li>
+                    
+                    <li>
+                        <h2>
+                            <a href="http://skleoc.nankai.edu.cn/article/content/view?id=403">南开大学实验室安全规章制度汇编</a><span>09/05</span>
+                        </h2>
+                    </li>
+                    
+                    <li>
+                        <h2>
+                            <a href="http://skleoc.nankai.edu.cn/article/content/view?id=65">天津市高等学校实验室安全管理办法 （试行）</a><span>09/05</span>
+                        </h2>
+                    </li>
+                    
+                    <li>
+                        <h2>
+                            <a href="http://skleoc.nankai.edu.cn/article/content/view?id=77">危险化学品目录 （2015版）</a><span>09/05</span>
+                        </h2>
+                    </li>
+                    
+                    <li>
+                        <h2>
+                            <a href="http://skleoc.nankai.edu.cn/article/content/view?id=71">《易制爆危险化学品名录》（2011年版）</a><span>09/05</span>
+                        </h2>
+                    </li>
+                    
+                    <li>
+                        <h2>
+                            <a href="http://skleoc.nankai.edu.cn/article/content/view?id=15">安全事故处罚条例</a><span>09/05</span>
+                        </h2>
+                    </li>
+                    
+                </ul>
+            </div>
+            <!--安全 end-->
+            <div class="main_link">
+                <h2 class="h2_tit">
+                    <em>相关链接</em>
+                    <a href="http://skleoc.nankai.edu.cn/class/view?id=61">LINK</a>
+                </h2>
+                <ul>
+                    
+                    <li>
+                        <a href="http://skleoc.nankai.edu.cn/class/view?id=64" target="_blank">EOC Symposium</a>
+                    </li>
+                    
+                    <li>
+                        <a href="http://skleoc.nankai.edu.cn/class/view?id=65" target="_blank">南开大学</a>
+                    </li>
+                    
+                    <li>
+                        <a href="http://skleoc.nankai.edu.cn/class/view?id=63" target="_blank">化学学院</a>
+                    </li>
+                    
+                    <li>
+                        <a href="http://skleoc.nankai.edu.cn/class/view?id=66" target="_blank">科技部</a>
+                    </li>
+                    
+                    <li>
+                        <a href="http://skleoc.nankai.edu.cn/class/view?id=155" target="_blank">教育部</a>
+                    </li>
+                    
+                    <li>
+                        <a href="http://skleoc.nankai.edu.cn/class/view?id=62" target="_blank">元素有机所</a>
+                    </li>
+                    
+                    <li>
+                        <a href="http://skleoc.nankai.edu.cn/class/view?id=156" target="_blank">办公电话</a>
+                    </li>
+                    
+                    <li>
+                        <a href="http://skleoc.nankai.edu.cn/class/view?id=67" target="_blank">iBonD数据库</a>
+                    </li>
+                    
+
+                </ul>
+                <script type="text/javascript">
+                    $(".main_link li:nth-child(2n)").css("margin-right", "0");
+                </script>
+            </div>
+            <!--链接 end-->
+        </div>
+        <div class="main_z">
+            <!--最新研究成果-->
+            <div class="res">
+                <h2 class="h2_tit">
+                    <em>最新研究成果</em>
+                    <a href="http://skleoc.nankai.edu.cn/class/view?id=17">RESEARCH RESULTS</a>
+                </h2>
+                <ul>
+                    
+                    <li>
+                        <a href="http://skleoc.nankai.edu.cn/article/content/view?id=900" class="res_a">谢建华课题组：(-)-Goniomitine的高效不对称全合成</a>
+                        <a href="http://skleoc.nankai.edu.cn/article/content/view?id=900" class="res_img" ><img src="/Site/skleoc/Uploads/20190306/1551773539_1_.png"></a>
+                    </li>
+                    
+                    <li>
+                        <a href="http://skleoc.nankai.edu.cn/article/content/view?id=893" class="res_a">王晓晨课题组：手性螺环双环双硼催化喹啉的不对称氢化...</a>
+                        <a href="http://skleoc.nankai.edu.cn/article/content/view?id=893" class="res_img" ><img src="/Site/skleoc/Uploads/20190218/1[5].png"></a>
+                    </li>
+                    
+                    <li>
+                        <a href="http://skleoc.nankai.edu.cn/article/content/view?id=892" class="res_a">汪清民课题组Chem. Sci.封面：光催化下非活化卤代烷烃...</a>
+                        <a href="http://skleoc.nankai.edu.cn/article/content/view?id=892" class="res_img" ><img src="/Site/skleoc/Uploads/20190218/upload_2F20190130_2F9971548815857114.jpg"></a>
+                    </li>
+                    
+                    <li>
+                        <a href="http://skleoc.nankai.edu.cn/article/content/view?id=882" class="res_a">陈弓、何刚、彭谦合作研究成果：双齿导向零价钯催化的...</a>
+                        <a href="http://skleoc.nankai.edu.cn/article/content/view?id=882" class="res_img" ><img src="/Site/skleoc/Uploads/20190109/7.bmp"></a>
+                    </li>
+                    
+                </ul>
+                <script type="text/javascript">
+                    $(".res li:last-child .res_a").css("padding-bottom", "0");
+                </script>
+            </div>
+            <!--最新研究成果 end-->
+            <div class="rec">
+                <h2 class="h2_tit">
+                    <em>研究生培养</em>
+                    <a href="http://skleoc.nankai.edu.cn/class/view?id=142">CULTIVATION OF GRADUATE STUDENT</a>
+                </h2>
+                <ul class="rec_ul">
+                    
+                    <li>
+                        <a href="http://skleoc.nankai.edu.cn/article/content/view?id=895">王晓晨课题组招收博士（考核制）和硕士研究生<span>02/18</span></a>
+                    </li>
+                    
+                    <li>
+                        <a href="http://skleoc.nankai.edu.cn/article/content/view?id=873">南开大学陈茹玉/万香奖学金颁奖典礼暨2018年元素有机...<span>01/02</span></a>
+                    </li>
+                    
+                    <li>
+                        <a href="http://skleoc.nankai.edu.cn/article/content/view?id=870">2018 “百灵威杯”年元素有机化学羽毛球团体赛<span>12/17</span></a>
+                    </li>
+                    
+                    <li>
+                        <a href="http://skleoc.nankai.edu.cn/article/content/view?id=806">恭喜重点实验室学子荣获药明康德星未来校园挑战赛十万...<span>09/20</span></a>
+                    </li>
+                    
+                    <li>
+                        <a href="http://skleoc.nankai.edu.cn/article/content/view?id=752">南开大学化学学院诚聘助理研究员（博士后）<span>05/10</span></a>
+                    </li>
+                    
+                    <li>
+                        <a href="http://skleoc.nankai.edu.cn/article/content/view?id=730">陈弓课题组招聘师资博士后<span>04/10</span></a>
+                    </li>
+                    
+                    <li>
+                        <a href="http://skleoc.nankai.edu.cn/article/content/view?id=709">彭谦课题组招收研究生和博士后<span>02/27</span></a>
+                    </li>
+                    
+                    <li>
+                        <a href="http://skleoc.nankai.edu.cn/article/content/view?id=686">南开大学陈茹玉/万香奖学金颁奖典礼暨2017年元素有机...<span>01/02</span></a>
+                    </li>
+                    
+
+                </ul>
+            </div>
+            <!--招聘信息end-->
+        </div>
+        <div class="main_r">
+            <div class="dy">
+                <h2 class="h2_tit">
+                    <em>实验室动态</em>
+                    <a href="http://skleoc.nankai.edu.cn/class/view?id=78">DYNAMICS</a>
+                </h2>
+                <ul>
+                    
+                    <li>
+                        <div class="dy_l">
+                            <span>01/17</span>
+                            <em>2019</em>
+                        </div>
+                        <div class="dy_r">
+                            <h3><a href="http://skleoc.nankai.edu.cn/article/content/view?id=890" class="dy_a">习近平总书记视察南开大学</a></h3>
+                            <p>
+                                <a href="">17日上午，习近平来到天津考察调研。在南开大学，他参...</a>
+                            </p>
+                        </div>
+                    </li>
+                    
+                    <li>
+                        <div class="dy_l">
+                            <span>01/19</span>
+                            <em>2019</em>
+                        </div>
+                        <div class="dy_r">
+                            <h3><a href="http://skleoc.nankai.edu.cn/article/content/view?id=891" class="dy_a">在南开，习近平总书记提出这...</a></h3>
+                            <p>
+                                <a href="">在元素有机化学国家重点实验室，习近平总书记强调，要...</a>
+                            </p>
+                        </div>
+                    </li>
+                    
+                    <li>
+                        <div class="dy_l">
+                            <span>01/18</span>
+                            <em>2019</em>
+                        </div>
+                        <div class="dy_r">
+                            <h3><a href="http://skleoc.nankai.edu.cn/article/content/view?id=889" class="dy_a">习近平到访南开，哪些地方吸...</a></h3>
+                            <p>
+                                <a href="">习近平随后来到化学学院和元素有机化学国家重点实验室...</a>
+                            </p>
+                        </div>
+                    </li>
+                    
+                    <li>
+                        <div class="dy_l">
+                            <span>01/21</span>
+                            <em>2019</em>
+                        </div>
+                        <div class="dy_r">
+                            <h3><a href="http://skleoc.nankai.edu.cn/article/content/view?id=888" class="dy_a">祝贺重点实验室4位教授入选...</a></h3>
+                            <p>
+                                <a href="">1月17日，学术出版业巨头爱思唯尔(Elsevier)正式发布...</a>
+                            </p>
+                        </div>
+                    </li>
+                    
+
+                </ul>
+            </div>
+            <!--实验室动态end-->
+            <div class="pub">
+                <h2 class="h2_tit">
+                    <em>学术出版物</em>
+                    <a href="http://skleoc.nankai.edu.cn/class/view?id=68">PUBLICATIONS</a>
+                </h2>
+                <!--无缝滚动-->
+                <div class="pubban">
+                    <div class="pubhid">
+                        <ul class="img">
+
+                            
+                            <a href="http://skleoc.nankai.edu.cn/article/content/view?id=22">
+                                <img src="/Site/skleoc/Uploads/20180507/F1.medium.gif" alt="Science" title="Science">
+                            </a>
+                            
+                            <a href="http://skleoc.nankai.edu.cn/article/content/view?id=8">
+                                <img src="/Site/skleoc/Uploads/20180507/7703.png" alt="Nature" title="Nature">
+                            </a>
+                            
+                            <a href="http://skleoc.nankai.edu.cn/article/content/view?id=39">
+                                <img src="/Site/skleoc/Uploads/20180507/5.png" alt="Nature Chemistry" title="Nature Chemistry">
+                            </a>
+                            
+                            <a href="http://skleoc.nankai.edu.cn/article/content/view?id=26">
+                                <img src="/Site/skleoc/Uploads/20180507/jacsat.2018.140.issue-17.largecover.jpg" alt="JACS" title="JACS">
+                            </a>
+                            
+                            <a href="http://skleoc.nankai.edu.cn/article/content/view?id=31">
+                                <img src="/Site/skleoc/Uploads/20180507/slide-1-1525664523743.jpg" alt="Angewandte Chemie International Edition" title="Angewandte Chemie International Edition">
+                            </a>
+                            
+                            <a href="http://skleoc.nankai.edu.cn/article/content/view?id=29">
+                                <img src="/Site/skleoc/Uploads/20180507/CoverIssue.gif" alt="Chemical Society Reviews" title="Chemical Society Reviews">
+                            </a>
+                            
+                            <a href="http://skleoc.nankai.edu.cn/article/content/view?id=41">
+                                <img src="/Site/skleoc/Uploads/20180507/CoverIssue _1_.gif" alt="Chemical Science" title="Chemical Science">
+                            </a>
+                            
+                            <a href="http://skleoc.nankai.edu.cn/article/content/view?id=32">
+                                <img src="/Site/skleoc/Uploads/20161125/chreay.2016.116.issue-22.cover.jpg" alt="Chemical Reviews" title="Chemical Reviews">
+                            </a>
+                            
+                            <a href="http://skleoc.nankai.edu.cn/article/content/view?id=33">
+                                <img src="/Site/skleoc/Uploads/20180507/orlef7.2018.20.issue-9.largecover.jpg" alt="Organic Letters" title="Organic Letters">
+                            </a>
+                            
+                            <a href="http://skleoc.nankai.edu.cn/article/content/view?id=37">
+                                <img src="/Site/skleoc/Uploads/20180507/CoverIssue[1].gif" alt="Chemical Communications" title="Chemical Communications">
+                            </a>
+                            
+                            <a href="http://skleoc.nankai.edu.cn/article/content/view?id=34">
+                                <img src="/Site/skleoc/Uploads/20180507/joceah.2018.83.issue-9.cover.jpg" alt="The Journal of Organic Chemistry" title="The Journal of Organic Chemistry">
+                            </a>
+                            
+                            <a href="http://skleoc.nankai.edu.cn/article/content/view?id=35">
+                                <img src="/Site/skleoc/Uploads/20180507/slide-1-1525664989057.webp.jpg" alt="Chemistry - A European Journal" title="Chemistry - A European Journal">
+                            </a>
+                            
+
+
+
+                        </ul>
+                    </div>
+                    <script type="text/javascript">
+                        $(".pubban a:nth-child(2n)").css("margin-right", "0");
+                    </script>
+                    <div class="btn btn_l"></div>
+                    <div class="btn btn_r"></div>
+                </div>
+                <!--无缝滚动 end-->
+            </div>
+            <!--学术end-->
+        </div>
+    </div>
+
+    <!--尾部开始-->
+    <footer>
+    <div class="foot">
+        <p class="contact7">地址：天津市南开区卫津路94号 &nbsp; &nbsp;电话：022-23503691&nbsp; &nbsp;传真：022-23503627 &nbsp; &nbsp;Email:ysyj@nankai.edu.cn</p>
+        <p>Copyright © 2020 元素有机化学国家重点实验室 版权所有 技术支持：东方网景
+            <a href=""></a>
+        </p>
+        <div class="code"><img src="/Site/skleoc/Uploads/image/20160902/code.jpg" alt="" />
+        </div>
+    </div>
+</footer>
+
+
+
+    <!--尾部结束-->
+</div>
+<script type="text/javascript">
+    jQuery(".slideBox").slide({mainCell:".bd ul",autoPlay:true,delayTime:1000,interTime:5000,effect:"left"});
+</script>
+<script type="text/javascript">
+    jQuery(".slideBox1").slide({mainCell:".bd ul",autoPlay:true,delayTime:1000,interTime:5000,effect:"leftLoop"});
+</script>
+</body>
+
+</html>

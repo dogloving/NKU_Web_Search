@@ -1,0 +1,1214 @@
+<base href="https://urp.nku.cn/"><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<link type="text/css" href="/_css/_system/system.css" rel="stylesheet"/>
+<link type="text/css" href="/_upload/site/1/style/6/6.css" rel="stylesheet"/>
+<link type="text/css" href="/_upload/site/00/27/39/style/15/15.css" rel="stylesheet"/>
+       <LINK href="/_css/tpl2/system.css" type="text/css" rel="stylesheet"> 
+       <LINK href="/_css/tpl2/default/default.css" type="text/css" rel="stylesheet"> 
+<link type="text/css" href="/_js/_portletPlugs/simpleNews/css/simplenews.css" rel="stylesheet" />
+<link type="text/css" href="/_js/_portletPlugs/sudyNavi/css/sudyNav.css" rel="stylesheet" />
+
+<script language="javascript" src="/_js/sudy-jquery-autoload.js" jquery-src="/_js/jquery-1.x.min.js" sudy-wp-context="" sudy-wp-siteId="39"></script>
+<script language="javascript" src="/_js/jquery-migrate.min.js"></script>
+<script language="javascript" src="/_js/jquery.sudy.wp.visitcount.js"></script>
+<script type="text/javascript" src="/_js/_portletPlugs/sudyNavi/jquery.sudyNav.js"></script>
+<link href="/_upload/tpl/00/c4/196/template196/style.css" type="text/css" rel="stylesheet">
+<link href="/_upload/tpl/00/c4/196/template196/extends/extends.css" type="text/css" rel="stylesheet">
+<script src="/_upload/tpl/00/c4/196/template196/extends/extends.js" type="text/javascript">
+</script>
+
+<script type="text/javascript">$(function(){
+	$(".sudy-tab").sudyTab({
+			handle:".tab-menu li",		// 控制器元素，默认为.tab-menu li
+			content:".tab-list >li",		// 内容体，可以有多个并以英文逗号隔开，如.tab-list li,.tab-more li,默认值为".tab-list li,.tab-more li"
+			trigger:"mouseenter",		// 触发事件，默认为"mouseenter"鼠标经过
+			start:1,					// 开始项，默认为第一个
+			autoPlay:{
+				active:false,			// 是否激活自动切换
+				interval:5000,		// 自动切换时间间隔
+				pauseHover:true		// 是否鼠标放上面时停止自动
+			}
+	});
+});</script>
+
+<script language="javascript" type="text/javascript">
+var code ; //在全局 定义验证码
+function createCode(){ 
+code = new Array();
+var codeLength = 4;//验证码的长度
+var checkCode = document.getElementById("checkCode");
+checkCode.value = "";
+
+var selectChar = new Array(2,3,4,5,6,7,8,9,'A','B','C','D','E','F','G','H','J','K','L','M','N','P','Q','R','S','T','U','V','W','X','Y','Z');
+
+for(var i=0;i<codeLength;i++) {
+   var charIndex = Math.floor(Math.random()*32);
+   code +=selectChar[charIndex];
+}
+if(code.length != codeLength){
+   createCode();
+}
+checkCode.value = code;
+}
+
+function validate () {
+	var inputCode = document.getElementById("input1").value.toUpperCase();
+	
+	if(inputCode.length <=0) {
+	   alert("请输入验证码！");
+	   return false;
+	}
+	else if(inputCode != code ){
+	   alert("验证码输入错误！");
+	   createCode();
+	   return false;
+	}
+	else {
+	   return true;
+	}
+}
+
+function checkForm () {
+	var urpid = document.getElementById("Login.Token1");
+	var urppwd = document.getElementById("Login.Token2");
+	var ck = document.getElementById("input1");
+	if((urpid.value=="")||(urpid.value=="门户账号"))
+	{
+		alert("请输入门户账号！");
+		urpid.focus();
+		return false;
+	}
+	if((urppwd.value=="")||(urppwd.value=="请输入密码"))
+	{
+		alert("请输入密码！");
+		urppwd.focus();
+		return false;
+	}
+	if(validate())
+	{
+		submit(reset);
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+
+function submit(callback){
+	document.getElementById("loginForm").submit();
+	callback();
+}
+function reset()
+{
+	document.getElementById("loginForm").reset();
+}
+
+</script>
+<script type="text/javascript">
+$(function(){
+	$(".scroll").sudyScroll({
+ 		width:100,		// 单元格宽度
+		height: 150,		// 单元格高度
+		display: 9,		// 显示几个单元
+		step: 1,			// 每次交替增加几个单元，值不能大于display
+		dir:"x",		// 交替方向，纵向为"y"，水平为"x"，默认为"y"纵向交替
+		auto:false,		// 是否自动交替,默认为自动
+		speed:500,		// 交替速度
+		hoverPause:5000,		// 交替暂留时间
+		navigation:true,		// 是否显示导航按钮
+		navTrigger:"click", 	// 导航按钮事件
+		pagination:true,		// 是否显示索引按钮
+		pagTrigger:"mouseenter"  //索引按钮事件
+	});
+});
+</script>
+<script language="javascript" type="text/javascript">
+
+ $(function(){
+    $(".focus").sudyfocus({
+      p:50,
+      zWidth:670,
+      zHeight:316,
+	  isNavHover: true,
+	  pagination: true,
+      title: {active: true, // 是否显示标题
+			isAutoWidth: false, // 标题背景自动宽度
+			href: false // 标题是否加文章链接
+
+},
+      speed:700
+    });
+  });
+
+</script>
+<title>综合信息门户</title>
+</head>
+
+<body onLoad="createCode()">
+<div class="head">
+	<div class="head_box">
+    	<div class="logo"></div>
+        <div class="nav" frag="面板1">
+        	<div frag="窗口1" class="nav_box">
+            	<div id="wp_nav_w1"> 
+
+ 
+<ul class="wp_nav" data-nav-config="{drop_v: 'down', drop_w: 'right', dir: 'y', opacity_main: '-1', opacity_sub: '-1', dWidth: '0'}">
+      
+     <li class="nav-item i1 "> 
+         <a href="http://urp.nku.cn/" title="首 页" target="_self"><span class="item-name">首 页</span></a><i class="mark"></i> 
+          
+     </li> 
+      
+     <li class="nav-item i2 "> 
+         <a href="http://www.nankai.edu.cn/_t13/212/list.htm" title="院部导航" target="_blank"><span class="item-name">院部导航</span></a><i class="mark"></i> 
+          
+     </li> 
+      
+     <li class="nav-item i3 "> 
+         <a href="/1619/list.htm" title="通知公告" target="_self"><span class="item-name">通知公告</span></a><i class="mark"></i> 
+          
+     </li> 
+      
+     <li class="nav-item i4 "> 
+         <a href="/1661/list.htm" title="近期活动" target="_self"><span class="item-name">近期活动</span></a><i class="mark"></i> 
+          
+     </li> 
+      
+     <li class="nav-item i5 "> 
+         <a href="/1667/list.htm" title="服务导航" target="_self"><span class="item-name">服务导航</span></a><i class="mark"></i> 
+          
+     </li> 
+      
+     <li class="nav-item i6 "> 
+         <a href="http://www.nankai.edu.cn" title="南开主页" target="_blank"><span class="item-name">南开主页</span></a><i class="mark"></i> 
+          
+     </li> 
+      
+</ul> 
+ 
+ 
+ </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+
+<div class="login">
+	<div class="login_box">
+    	<div class="login_dl">
+    	<form id="loginForm" name="loginForm" method="post" action="http://urp.nankai.edu.cn/userPasswordValidate1.portal" target="_blank">
+                      <table width="690" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                        	<td width="14"></td>
+                          <td width="98" nowrap class="tydl">统一门户登录</td>
+                          <td valign="top" class="bt1"><input style=" width:108px; height:29px; background:url(/_upload/tpl/00/c4/196/template196/images/login.png) 6px no-repeat; border:1px solid #c9c9c9;margin-top: 12px;padding-left: 24px;" value=""  name="Login.Token1" type="text" onFocus="if(value=='门户账号') {value=''}" onBlur="if (value=='') {value='门户账号'}" /></td>
+                          <td width="10"></td>
+                           <td width="140" valign="top" class="bt1"><input style=" width:108px; height:29px; background:url(/_upload/tpl/00/c4/196/template196/images/password.png) 6px no-repeat; border:1px solid #c9c9c9;margin-top: 12px;padding-left: 24px;" name="Login.Token2" type="password" value="请输入密码" onFocus="if(value=='请输入密码') {value=''}" onBlur="if (value=='') {value='请输入密码'}" /></td>
+                           <td width="10"></td>
+                            <td valign="top" class="bt2" width="83" ><input  id="input1"  style=" width:81px; height:29px; border:1px solid #c9c9c9;margin-top: 12px;" type="text" name="textfield3" /></td>
+                            
+                          <td><input type="button" id="checkCode" onClick="createCode()"   style="margin-left:10px;font-family:Arial; font-size:14px;font-style:italic;color:Red;border:0;padding:2px 3px;letter-spacing:3px;font-weight:bolder; width:60px; height:31px;" title="如果看不清楚，点击更换" /></td>
+                          <td width="60"><input name="Submit" type="submit" class="bt3" id="Button1"  style=" width:60px; height:31px; color:#fff; border:0px; background:#e9bd24; margin-left:12px;"  onclick="return validate();" value="登 录" /></td>
+                          <td width="6">&nbsp;</td>
+                          <td width="60"><input name="Submit2" type="reset" class="bt3" style=" width:60px; height:31px;color:#fff; border:0px; background:#bfd71c;" value="重 置" /></td>
+                        </tr>
+                    </table>
+ 				  </form>
+
+      </div>
+		<div class="login_zh">
+        	<a href="http://urp.nankai.edu.cn/getBackPassword.portal" target="_blank">找回密码</a>
+            <a href="http://urp.nankai.edu.cn/contactus.jsp" target="_blank">联系我们</a>
+            <a href="https://i.nankai.edu.cn" target="_blank" style="background-color:#8A005B;font-style:bold;color:#FFFFFF;">&nbsp;新版信息门户&nbsp;</a>
+           
+            
+        </div>
+
+    </div>
+</div>
+
+ <div class="banner">
+ <div class="box" frag="面板5">
+        	<div frag="窗口50" class="banner_box">
+            	                <!-- JSON列表 -->
+<script language="JavaScript" class="" >
+    var w50imgJsons = [
+    
+        
+            {
+            "src": "/_upload/article/images/2f/82/c2b386bd49bca6d49869c9866b84/62670017-d50c-4df2-8c4a-0dd6d153bf80.jpg",
+            "original": "/_upload/article/images/2f/82/c2b386bd49bca6d49869c9866b84/62670017-d50c-4df2-8c4a-0dd6d153bf80.jpg",
+            "title": "中国教育报：全国政协委员、南开大学校长曹雪涛：书写“双一流”...",
+            "url": "/2019/0309/c3709a120498/page.htm"
+            },
+        
+    
+        
+            {
+            "src": "/_upload/article/images/9a/b8/c03b66404850890d59bea91abf10/6c8962c4-8dd6-4eae-8366-5b09b12777e5.jpg",
+            "original": "/_upload/article/images/9a/b8/c03b66404850890d59bea91abf10/6c8962c4-8dd6-4eae-8366-5b09b12777e5.jpg",
+            "title": "南开大学教育基金会召开2019年第一次理事会",
+            "url": "/2019/0309/c3709a120497/page.htm"
+            },
+        
+    
+        
+            {
+            "src": "/_upload/article/images/b7/48/05e4a7cd4f4fb9f556f1b0b6d2fa/d7c7db23-9e6e-4445-abde-7b3e5575b0e0.jpg",
+            "original": "/_upload/article/images/b7/48/05e4a7cd4f4fb9f556f1b0b6d2fa/d7c7db23-9e6e-4445-abde-7b3e5575b0e0.jpg",
+            "title": "南开大学举行“三八”国际妇女节教职工健步走暨趣味运动会",
+            "url": "/2019/0309/c3709a120496/page.htm"
+            },
+        
+    
+        
+            {
+            "src": "/_upload/article/images/a1/57/a43ce0374e16b5b63da2f475fcd1/af0eae3d-a836-4860-8e81-efc3a78c3cc2.jpg",
+            "original": "/_upload/article/images/a1/57/a43ce0374e16b5b63da2f475fcd1/af0eae3d-a836-4860-8e81-efc3a78c3cc2.jpg",
+            "title": "天津市纪念“三八”国际妇女节大会在南开大学举行",
+            "url": "/2019/0308/c3709a120482/page.htm"
+            }
+        
+    
+    ];
+</script>
+
+            
+                <div class="focus"></div>
+            </div>
+            <div frag="窗口51" class="gzdt">
+            	 <div class="tt">
+          			<h3 class="tit"><span class="title" frag="标题">置顶公告</span></h3>
+                    <div class="more_btn" frag="按钮" type="更多"><a href="/1621/list.htm" class="w51_more"><span class="more_text" frag="按钮内容">更多&gt;&gt;</span></a></div>
+            	</div>
+                
+                <div id="wp_news_w51"> 
+ 
+<ul class="wp_article_list"> 
+      
+     <li class="list_item i1"> 
+         <div class="fields pr_fields"> 
+             <span class='Article_Index'>1</span> 
+             <span class='Article_Title'><a href='/_redirect?siteId=39&columnId=1621&articleId=120475' target='_blank' title='关于清明节放假的通知'>关于清明节放假的通知</a></span> 
+         </div> 
+         <div class="fields ex_fields"> 
+              
+             <span class='Article_PublishDate'>03-08</span> 
+              
+         </div> 
+     </li> 
+      
+     <li class="list_item i2"> 
+         <div class="fields pr_fields"> 
+             <span class='Article_Index'>2</span> 
+             <span class='Article_Title'><a href='/2019/0308/c1621a120421/page.htm' target='_blank' title='关于申报2019年天津市教育系统调研课题的通知'>关于申报2019年天津市教育系统调研课题...</a></span> 
+         </div> 
+         <div class="fields ex_fields"> 
+              
+             <span class='Article_PublishDate'>03-08</span> 
+              
+         </div> 
+     </li> 
+      
+     <li class="list_item i3"> 
+         <div class="fields pr_fields"> 
+             <span class='Article_Index'>3</span> 
+             <span class='Article_Title'><a href='/2019/0305/c1621a120203/page.htm' target='_blank' title='关于召开2019年国家建设高水平大学公派研究生项目相关政策解读专题讲座的通知'>关于召开2019年国家建设高水平大学公派...</a></span> 
+         </div> 
+         <div class="fields ex_fields"> 
+              
+             <span class='Article_PublishDate'>03-05</span> 
+              
+         </div> 
+     </li> 
+      
+     <li class="list_item i4"> 
+         <div class="fields pr_fields"> 
+             <span class='Article_Index'>4</span> 
+             <span class='Article_Title'><a href='/2019/0305/c1621a120198/page.htm' target='_blank' title='南开大学档案馆关于征集校史档案的通知'>南开大学档案馆关于征集校史档案的通知</a></span> 
+         </div> 
+         <div class="fields ex_fields"> 
+              
+             <span class='Article_PublishDate'>03-05</span> 
+              
+         </div> 
+     </li> 
+      
+     <li class="list_item i5"> 
+         <div class="fields pr_fields"> 
+             <span class='Article_Index'>5</span> 
+             <span class='Article_Title'><a href='/2019/0303/c1621a120072/page.htm' target='_blank' title='南开大学面向国内外公开招聘药物化学生物学国家重点实验室主任的公告'>南开大学面向国内外公开招聘药物化学生...</a></span> 
+         </div> 
+         <div class="fields ex_fields"> 
+              
+             <span class='Article_PublishDate'>03-03</span> 
+              
+         </div> 
+     </li> 
+      
+     <li class="list_item i6"> 
+         <div class="fields pr_fields"> 
+             <span class='Article_Index'>6</span> 
+             <span class='Article_Title'><a href='/2019/0301/c1621a120016/page.htm' target='_blank' title='“南开大学百年校史主题展”开放参观通知'>“南开大学百年校史主题展”开放参观通...</a></span> 
+         </div> 
+         <div class="fields ex_fields"> 
+              
+             <span class='Article_PublishDate'>03-01</span> 
+              
+         </div> 
+     </li> 
+      
+     <li class="list_item i7"> 
+         <div class="fields pr_fields"> 
+             <span class='Article_Index'>7</span> 
+             <span class='Article_Title'><a href='/2019/0227/c1621a119832/page.htm' target='_blank' title='接待服务中心关于津南校区专家公寓餐厅增设早餐的通知'>接待服务中心关于津南校区专家公寓餐厅...</a></span> 
+         </div> 
+         <div class="fields ex_fields"> 
+              
+             <span class='Article_PublishDate'>02-27</span> 
+              
+         </div> 
+     </li> 
+      
+     <li class="list_item i8"> 
+         <div class="fields pr_fields"> 
+             <span class='Article_Index'>8</span> 
+             <span class='Article_Title'><a href='/2019/0222/c1621a119710/page.htm' target='_blank' title='南开大学实验动物学术研讨会暨中心揭牌仪式会议通知'>南开大学实验动物学术研讨会暨中心揭牌...</a></span> 
+         </div> 
+         <div class="fields ex_fields"> 
+              
+             <span class='Article_PublishDate'>02-22</span> 
+              
+         </div> 
+     </li> 
+      
+</ul> 
+</div> 
+
+            </div>
+            <div class="clear"></div>
+   </div>
+            
+        </div>
+</body>
+
+<div class="content">
+	<div class="content_box">
+    	<div class="cont_l">
+        	<div class="sudy-tab cont_l_1">
+                <ul class="tab-menu">
+                    <li>                        
+                      院系公告                         
+                    </li>
+                    <li>
+                      部处公告  
+                    </li>
+                    <!--<li>
+                       置顶公告
+                    </li>-->
+                    
+                </ul>
+                <ul class="tab-list">
+                	<li>
+                    	<div frag="面板3">
+                        	<div frag="窗口3" class="more_re">
+                            	<div id="wp_news_w3"> 
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="wp_article_list_table"> 
+<tr> 
+<td> 
+
+                                	<!--[CycleInfoBegin]-->
+                                    <ul>
+                                    	<li class="tab_tit">[物理学院]<a href='/2019/0308/c1646a120476/page.htm' target='_blank' title='【三全育人】天津理工大学材料科学与工程学院来我院交流调研'>【三全育人】天津理工大学材料科学与工程学院来我院交流调研</a></li>
+                                        
+                                        <li class="tab_time">03-08</li>
+                                    </ul>
+                                    <!--[CycleInfoEnd]-->
+                                </td> 
+</tr> 
+<tr> 
+<td> 
+
+                                	<!--[CycleInfoBegin]-->
+                                    <ul>
+                                    	<li class="tab_tit">[物理学院]<a href='/_redirect?siteId=39&columnId=1646&articleId=120474' target='_blank' title='【我与南开的故事】南开与我的这二十年'>【我与南开的故事】南开与我的这二十年</a></li>
+                                        
+                                        <li class="tab_time">03-08</li>
+                                    </ul>
+                                    <!--[CycleInfoEnd]-->
+                                </td> 
+</tr> 
+<tr> 
+<td> 
+
+                                	<!--[CycleInfoBegin]-->
+                                    <ul>
+                                    	<li class="tab_tit">[物理学院]<a href='/_redirect?siteId=39&columnId=1646&articleId=120468' target='_blank' title='【三全育人】物理科学学院师生交流日聚焦常用礼仪'>【三全育人】物理科学学院师生交流日聚焦常用礼仪</a></li>
+                                        
+                                        <li class="tab_time">03-08</li>
+                                    </ul>
+                                    <!--[CycleInfoEnd]-->
+                                </td> 
+</tr> 
+<tr> 
+<td> 
+
+                                	<!--[CycleInfoBegin]-->
+                                    <ul>
+                                    	<li class="tab_tit">[物理学院]<a href='/_redirect?siteId=39&columnId=1646&articleId=120466' target='_blank' title='【三全育人】“树小我 成大我 公能心 报国情”主题党日活动举行'>【三全育人】“树小我 成大我 公能心 报国情”主题党日活动...</a></li>
+                                        
+                                        <li class="tab_time">03-08</li>
+                                    </ul>
+                                    <!--[CycleInfoEnd]-->
+                                </td> 
+</tr> 
+<tr> 
+<td> 
+
+                                	<!--[CycleInfoBegin]-->
+                                    <ul>
+                                    	<li class="tab_tit">[法学院]<a href='/_upload/article/files/2e/ee/c4ea0dbb42ada5b73cfbbcc1246b/39ccb1da-fb3b-4742-a5c0-7ff731f31f9c.pdf' target='_blank' title='法学院参加2019年全日制法律硕士研究生入学考试复试名单'>法学院参加2019年全日制法律硕士研究生入学考试复试名单</a></li>
+                                        
+                                        <li class="tab_time">03-08</li>
+                                    </ul>
+                                    <!--[CycleInfoEnd]-->
+                                </td> 
+</tr> 
+<tr> 
+<td> 
+
+                                	<!--[CycleInfoBegin]-->
+                                    <ul>
+                                    	<li class="tab_tit">[法学院]<a href='/_upload/article/files/cc/3f/936d458d4cf6be44dd2e9f2378cf/631d1ceb-5477-4db8-beab-9781d6ba2f20.pdf' target='_blank' title='法学院参加2019年非全日制法律硕士研究生入学考试复试名单'>法学院参加2019年非全日制法律硕士研究生入学考试复试名单</a></li>
+                                        
+                                        <li class="tab_time">03-08</li>
+                                    </ul>
+                                    <!--[CycleInfoEnd]-->
+                                </td> 
+</tr> 
+</table></div> 
+
+<div class="more"><a class="more-link" href="/1646/list.htm" title="显示更多"><span class="moretext"><font style='color: 313131;font-family: Arial;font-size: 12;'>More</font></span></a></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                    	<div frag="面板4">
+                        	<div frag="窗口4" class="more_re">
+                            	<div id="wp_news_w4"> 
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="wp_article_list_table"> 
+<tr> 
+<td> 
+
+                                <!--[CycleInfoBegin]-->
+                                    <ul>
+                                    	<li class="tab_tit">[信息化办]<a href='/2019/0308/c1651a120465/page.htm' target='_blank' title='IPV6临时暂停服务'>IPV6临时暂停服务</a></li>
+                                        
+                                        <li class="tab_time">03-08</li>
+                                    </ul>
+                                    <!--[CycleInfoEnd]-->
+                                </td> 
+</tr> 
+<tr> 
+<td> 
+
+                                <!--[CycleInfoBegin]-->
+                                    <ul>
+                                    	<li class="tab_tit">[科技处]<a href='/2019/0308/c1651a120412/page.htm' target='_blank' title='【奖励申报】关于组织申报第十六次李四光地质科学奖的通知'>【奖励申报】关于组织申报第十六次李四光地质科学奖的通知</a></li>
+                                        
+                                        <li class="tab_time">03-08</li>
+                                    </ul>
+                                    <!--[CycleInfoEnd]-->
+                                </td> 
+</tr> 
+<tr> 
+<td> 
+
+                                <!--[CycleInfoBegin]-->
+                                    <ul>
+                                    	<li class="tab_tit">[研究生院]<a href='/2019/0307/c1651a120367/page.htm' target='_blank' title='直属党委研究生助管招募通知'>直属党委研究生助管招募通知</a></li>
+                                        
+                                        <li class="tab_time">03-07</li>
+                                    </ul>
+                                    <!--[CycleInfoEnd]-->
+                                </td> 
+</tr> 
+<tr> 
+<td> 
+
+                                <!--[CycleInfoBegin]-->
+                                    <ul>
+                                    	<li class="tab_tit">[研究生院]<a href='/2019/0306/c1651a120268/page.htm' target='_blank' title='2019年研工部部长助理录用公告'>2019年研工部部长助理录用公告</a></li>
+                                        
+                                        <li class="tab_time">03-06</li>
+                                    </ul>
+                                    <!--[CycleInfoEnd]-->
+                                </td> 
+</tr> 
+<tr> 
+<td> 
+
+                                <!--[CycleInfoBegin]-->
+                                    <ul>
+                                    	<li class="tab_tit">[财务处]<a href='/2019/0306/c1651a120254/page.htm' target='_blank' title='关于编报2019年综合财务预算“二上”的通知（第一批）'>关于编报2019年综合财务预算“二上”的通知（第一批）</a></li>
+                                        
+                                        <li class="tab_time">03-06</li>
+                                    </ul>
+                                    <!--[CycleInfoEnd]-->
+                                </td> 
+</tr> 
+<tr> 
+<td> 
+
+                                <!--[CycleInfoBegin]-->
+                                    <ul>
+                                    	<li class="tab_tit">[科技处]<a href='/2019/0305/c1651a120216/page.htm' target='_blank' title='【国际合作】转发天津市科技局关于申报2019年度天津市引进国（境）外专家项目计划的通知'>【国际合作】转发天津市科技局关于申报2019年度天津市引进国...</a></li>
+                                        
+                                        <li class="tab_time">03-05</li>
+                                    </ul>
+                                    <!--[CycleInfoEnd]-->
+                                </td> 
+</tr> 
+</table></div> 
+
+                                <div class="more" frag="按钮" type="更多"><a href="/1651/list.htm" class="w4_more"><font style='color: 313131;font-family: Arial;font-size: 12;'>More</font></a></div>
+
+                            </div>
+                        </div>
+                    </li>
+                    <!--<li>
+                    	<div frag="面板6">
+                        	<div frag="窗口6" class="more_re">
+                            	<div frag="窗口内容">
+                                                                    <ul>
+                                    	<li class="tab_tit">[{创建部门}]{标题}</li>
+                                        
+                                        <li class="tab_time">{发布时间}</li>
+                                    </ul>
+                                                                    </div>
+                                <div class="more" frag="按钮" type="更多"><span class="moretext" frag="按钮内容"><font style='color: #313131;font-family: Arial;font-size: 12;'>More</font></span></div>
+                            </div>
+                        </div>
+                    </li>-->
+                    
+                </ul>
+               
+            </div>
+            <div class="sudy-tab cont_l_2">
+                <ul class="tab-menu">
+                    <li>                        
+                        近期活动                       
+                    </li>
+                    <!--<li>
+                        学术讲座
+                    </li>
+                    <li>
+                       校园活动
+                    </li>-->
+                </ul>
+                <ul class="tab-list">
+                	<li>
+                    	<div frag="面板7" class="more_re">
+                        	<div frag="窗口7">
+                            	<div id="wp_news_w7"> 
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="wp_article_list_table"> 
+<tr> 
+<td> 
+
+                                	<!--[CycleInfoBegin]-->
+                                    <ul>
+                                    	<li class="tab_time2">2018-12-28</li>    
+                                        <li class="tab_tit2"><a href='http://jz.nankai.edu.cn/newfindbyid.action?id=880' target='_blank' title='诗是一种行动 ——从海子的记游诗看当代诗歌观念的变化'>诗是一种行动 ——从海子的记游诗看当代诗歌观念的变化</a></li>
+                                    </ul>
+                                    <!--[CycleInfoEnd]-->
+                                </td> 
+</tr> 
+<tr> 
+<td> 
+
+                                	<!--[CycleInfoBegin]-->
+                                    <ul>
+                                    	<li class="tab_time2">2018-12-28</li>    
+                                        <li class="tab_tit2"><a href='http://jz.nankai.edu.cn/newfindbyid.action?id=878' target='_blank' title='“住房市场中的逃税行为”'>“住房市场中的逃税行为”</a></li>
+                                    </ul>
+                                    <!--[CycleInfoEnd]-->
+                                </td> 
+</tr> 
+<tr> 
+<td> 
+
+                                	<!--[CycleInfoBegin]-->
+                                    <ul>
+                                    	<li class="tab_time2">2018-12-28</li>    
+                                        <li class="tab_tit2"><a href='http://jz.nankai.edu.cn/newfindbyid.action?id=879' target='_blank' title='孝道、宗族、社群和市场 ——传统中国孝道社会实践的经济逻辑'>孝道、宗族、社群和市场 ——传统中国孝道社会实践的经济逻辑</a></li>
+                                    </ul>
+                                    <!--[CycleInfoEnd]-->
+                                </td> 
+</tr> 
+<tr> 
+<td> 
+
+                                	<!--[CycleInfoBegin]-->
+                                    <ul>
+                                    	<li class="tab_time2">2018-12-24</li>    
+                                        <li class="tab_tit2"><a href='http://jz.nankai.edu.cn/newfindbyid.action?id=877' target='_blank' title='“Can A Hybrid Method Improve Equity Valuation? ——An Empirical Evaluation of the Ohlson and Johannesson(2016) Model” 混合方法能改善股票估值吗？对Ohlson和Johannesson（2016）模型的实证评价'>“Can A Hybrid Method Improve Equity Valuation? ——An Emp...</a></li>
+                                    </ul>
+                                    <!--[CycleInfoEnd]-->
+                                </td> 
+</tr> 
+<tr> 
+<td> 
+
+                                	<!--[CycleInfoBegin]-->
+                                    <ul>
+                                    	<li class="tab_time2">2018-12-21</li>    
+                                        <li class="tab_tit2"><a href='http://jz.nankai.edu.cn/newfindbyid.action?id=876' target='_blank' title='第83期公司财务与金融市场学术论坛'>第83期公司财务与金融市场学术论坛</a></li>
+                                    </ul>
+                                    <!--[CycleInfoEnd]-->
+                                </td> 
+</tr> 
+</table></div> 
+
+<div class="more"><a class="more-link" href="/1661/list.htm" title="显示更多"><span class="moretext"><font style='color: 313131;font-family: Arial;font-size: 12;'>More</font></span></a></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                    	<div frag="面板8">
+                        	<div frag="窗口8" class="more_re">
+                            	<div id="wp_news_w8"> 
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="wp_article_list_table"> 
+<tr> 
+<td> 
+
+                                <!--[CycleInfoBegin]-->
+                                    <ul>
+                                    	<li class="tab_time2">2018-12-28</li>    
+                                        <li class="tab_tit2"><a href='http://jz.nankai.edu.cn/newfindbyid.action?id=880' target='_blank' title='诗是一种行动 ——从海子的记游诗看当代诗歌观念的变化'>诗是一种行动 ——从海子的记游诗看当代诗歌观念的变化</a></li>
+                                    </ul>
+                                    <!--[CycleInfoEnd]-->
+                                </td> 
+</tr> 
+<tr> 
+<td> 
+
+                                <!--[CycleInfoBegin]-->
+                                    <ul>
+                                    	<li class="tab_time2">2018-12-28</li>    
+                                        <li class="tab_tit2"><a href='http://jz.nankai.edu.cn/newfindbyid.action?id=878' target='_blank' title='“住房市场中的逃税行为”'>“住房市场中的逃税行为”</a></li>
+                                    </ul>
+                                    <!--[CycleInfoEnd]-->
+                                </td> 
+</tr> 
+<tr> 
+<td> 
+
+                                <!--[CycleInfoBegin]-->
+                                    <ul>
+                                    	<li class="tab_time2">2018-12-28</li>    
+                                        <li class="tab_tit2"><a href='http://jz.nankai.edu.cn/newfindbyid.action?id=879' target='_blank' title='孝道、宗族、社群和市场 ——传统中国孝道社会实践的经济逻辑'>孝道、宗族、社群和市场 ——传统中国孝道社会实践的经济逻辑</a></li>
+                                    </ul>
+                                    <!--[CycleInfoEnd]-->
+                                </td> 
+</tr> 
+<tr> 
+<td> 
+
+                                <!--[CycleInfoBegin]-->
+                                    <ul>
+                                    	<li class="tab_time2">2018-12-24</li>    
+                                        <li class="tab_tit2"><a href='http://jz.nankai.edu.cn/newfindbyid.action?id=877' target='_blank' title='“Can A Hybrid Method Improve Equity Valuation? ——An Empirical Evaluation of the Ohlson and Johannesson(2016) Model” 混合方法能改善股票估值吗？对Ohlson和Johannesson（2016）模型的实证评价'>“Can A Hybrid Method Improve Equity Valuation? ——An Emp...</a></li>
+                                    </ul>
+                                    <!--[CycleInfoEnd]-->
+                                </td> 
+</tr> 
+<tr> 
+<td> 
+
+                                <!--[CycleInfoBegin]-->
+                                    <ul>
+                                    	<li class="tab_time2">2018-12-21</li>    
+                                        <li class="tab_tit2"><a href='http://jz.nankai.edu.cn/newfindbyid.action?id=876' target='_blank' title='第83期公司财务与金融市场学术论坛'>第83期公司财务与金融市场学术论坛</a></li>
+                                    </ul>
+                                    <!--[CycleInfoEnd]-->
+                                </td> 
+</tr> 
+</table></div> 
+
+<div class="more"><a class="more-link" href="/1663/list.htm" title="显示更多"><span class="moretext"><font style='color: 313131;font-family: Arial;font-size: 12;'>More</font></span></a></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                    	<div frag="面板9">
+                        	<div frag="窗口9" class="more_re">
+                            	<div id="wp_news_w9"> 
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="wp_article_list_table"> 
+<tr> 
+<td> 
+
+                                <!--[CycleInfoBegin]-->
+                                    <ul>
+                                    	<li class="tab_time2">2015-07-22</li>    
+                                        <li class="tab_tit2"><a href='/2015/0722/c1666a26187/page.htm' target='_blank' title='【2015-06-15】　　　“我与南开金融的故事”主题征文启事'>【2015-06-15】　　　“我与南开金融的故事”主题征文启事</a></li>
+                                    </ul>
+                                    <!--[CycleInfoEnd]-->
+                                </td> 
+</tr> 
+<tr> 
+<td> 
+
+                                <!--[CycleInfoBegin]-->
+                                    <ul>
+                                    	<li class="tab_time2">2015-07-22</li>    
+                                        <li class="tab_tit2"><a href='/2015/0722/c1666a26186/page.htm' target='_blank' title='【2015-05-17】　　　南开大学第八届校园寻宝大赛'>【2015-05-17】　　　南开大学第八届校园寻宝大赛</a></li>
+                                    </ul>
+                                    <!--[CycleInfoEnd]-->
+                                </td> 
+</tr> 
+<tr> 
+<td> 
+
+                                <!--[CycleInfoBegin]-->
+                                    <ul>
+                                    	<li class="tab_time2">2015-07-22</li>    
+                                        <li class="tab_tit2"><a href='/2015/0722/c1666a26185/page.htm' target='_blank' title='【2015-05-17】　　　医学文化节之第十二届医学院开放日'>【2015-05-17】　　　医学文化节之第十二届医学院开放日</a></li>
+                                    </ul>
+                                    <!--[CycleInfoEnd]-->
+                                </td> 
+</tr> 
+<tr> 
+<td> 
+
+                                <!--[CycleInfoBegin]-->
+                                    <ul>
+                                    	<li class="tab_time2">2015-07-22</li>    
+                                        <li class="tab_tit2"><a href='/2015/0722/c1666a26184/page.htm' target='_blank' title='【2015-05-13】　　　”九嶷一脉——第二届南开大学瑚琏琴社古琴音乐会“门票发放及宣传'>【2015-05-13】　　　”九嶷一脉——第二届南开大学瑚琏琴社古...</a></li>
+                                    </ul>
+                                    <!--[CycleInfoEnd]-->
+                                </td> 
+</tr> 
+<tr> 
+<td> 
+
+                                <!--[CycleInfoBegin]-->
+                                    <ul>
+                                    	<li class="tab_time2">2015-07-22</li>    
+                                        <li class="tab_tit2"><a href='/2015/0722/c1666a26183/page.htm' target='_blank' title='【2015-05-12】　　　Fashion街舞社送毕业生文艺晚会宣传'>【2015-05-12】　　　Fashion街舞社送毕业生文艺晚会宣传</a></li>
+                                    </ul>
+                                    <!--[CycleInfoEnd]-->
+                                </td> 
+</tr> 
+</table></div> 
+
+<div class="more"><a class="more-link" href="/1666/list.htm" title="显示更多"><span class="moretext"><font style='color: 313131;font-family: Arial;font-size: 12;'>More</font></span></a></div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                </ul>
+               
+            </div>
+            <div class="cont_l_3" frag="面板10">
+            	<div class="zsxx" frag="窗口100">
+                	<div class="tt">
+          	<div class="tit"><span class="title" frag="标题">招生信息</span></div>
+          </div>
+                	<div id="wp_news_w100"> 
+ 
+<ul class="wp_article_list"> 
+      
+     <li class="list_item i1"> 
+         <div class="fields pr_fields"> 
+             <span class='Article_Index'>1</span> 
+             <span class='Article_Title'><a href='http://zsb.nankai.edu.cn/Index/content/id/991.htm' target='_blank' title='南开大学2018年本科招生录取进展（陆续更新中）|南开大学本科招生网'>南开大学2018年本科招生录取进展（...</a></span> 
+         </div> 
+         <div class="fields ex_fields"> 
+              
+             <span class='Article_PublishDate'>07-18</span> 
+              
+         </div> 
+     </li> 
+      
+     <li class="list_item i2"> 
+         <div class="fields pr_fields"> 
+             <span class='Article_Index'>2</span> 
+             <span class='Article_Title'><a href='http://zsb.nankai.edu.cn/Index/content/id/990.htm' target='_blank' title='南开大学2018年招生录取公告|南开大学本科招生网'>南开大学2018年招生录取公告|南开...</a></span> 
+         </div> 
+         <div class="fields ex_fields"> 
+              
+             <span class='Article_PublishDate'>07-09</span> 
+              
+         </div> 
+     </li> 
+      
+     <li class="list_item i3"> 
+         <div class="fields pr_fields"> 
+             <span class='Article_Index'>3</span> 
+             <span class='Article_Title'><a href='http://zsb.nankai.edu.cn/Index/content/id/946.htm' target='_blank' title='南开大学2018年高招咨询会暨校园开放日|南开大学本科招生网'>南开大学2018年高招咨询会暨校园开...</a></span> 
+         </div> 
+         <div class="fields ex_fields"> 
+              
+             <span class='Article_PublishDate'>06-25</span> 
+              
+         </div> 
+     </li> 
+      
+     <li class="list_item i4"> 
+         <div class="fields pr_fields"> 
+             <span class='Article_Index'>4</span> 
+             <span class='Article_Title'><a href='http://zsb.nankai.edu.cn/Index/content/id/984.htm' target='_blank' title='南开大学2018年本科招生公告（十七）——南开大学2018年“扬帆计划”高校专项合格名单公示|南开大学本科招生网'>南开大学2018年本科招生公告（十七...</a></span> 
+         </div> 
+         <div class="fields ex_fields"> 
+              
+             <span class='Article_PublishDate'>06-22</span> 
+              
+         </div> 
+     </li> 
+      
+     <li class="list_item i5"> 
+         <div class="fields pr_fields"> 
+             <span class='Article_Index'>5</span> 
+             <span class='Article_Title'><a href='http://zsb.nankai.edu.cn/Index/content/id/971.htm' target='_blank' title='南开大学2018年本科招生公告（十六）—南开大学2018年自主招生合格名单公示|南开大学本科招生网'>南开大学2018年本科招生公告（十六...</a></span> 
+         </div> 
+         <div class="fields ex_fields"> 
+              
+             <span class='Article_PublishDate'>06-21</span> 
+              
+         </div> 
+     </li> 
+      
+     <li class="list_item i6"> 
+         <div class="fields pr_fields"> 
+             <span class='Article_Index'>6</span> 
+             <span class='Article_Title'><a href='http://zsb.nankai.edu.cn/Index/content/id/940.htm' target='_blank' title='南开大学2018年本科招生公告（十五）— 南开大学2018年本科招生章程|南开大学本科招生网'>南开大学2018年本科招生公告（十五...</a></span> 
+         </div> 
+         <div class="fields ex_fields"> 
+              
+             <span class='Article_PublishDate'>06-09</span> 
+              
+         </div> 
+     </li> 
+      
+</ul> 
+
+<div class="more"><a class="more-link" href="http://zsb.nankai.edu.cn/" title="显示更多"><span class="moretext"><font style='color: 313131;font-family: Arial;font-size: 12;'>More</font></span></a></div></div> 
+
+                </div>
+                <div class="xsjy" frag="窗口101">
+                	<div class="tt">
+            <div class="tit"><span class="title" frag="标题">学生就业</span></div>
+          </div>
+                	<div id="wp_news_w101"> 
+ 
+<ul class="wp_article_list"> 
+      
+     <li class="list_item i1"> 
+         <div class="fields pr_fields"> 
+             <span class='Article_Index'>1</span> 
+             <span class='Article_Title'><a href='http://career.nankai.edu.cn/news/content/id/1010.html' target='_blank' title='南通市崇川区2019年公开招录青年后备人才简章'>南通市崇川区2019年公开招录青年后...</a></span> 
+         </div> 
+         <div class="fields ex_fields"> 
+              
+             <span class='Article_PublishDate'>03-07</span> 
+              
+         </div> 
+     </li> 
+      
+     <li class="list_item i2"> 
+         <div class="fields pr_fields"> 
+             <span class='Article_Index'>2</span> 
+             <span class='Article_Title'><a href='http://career.nankai.edu.cn/news/content/id/1015.html' target='_blank' title='2019年浙江省县乡机关面向全国“双一流”和省内12所重点建设本科院校择优选调应届毕业生公告'>2019年浙江省县乡机关面向全国“双...</a></span> 
+         </div> 
+         <div class="fields ex_fields"> 
+              
+             <span class='Article_PublishDate'>02-25</span> 
+              
+         </div> 
+     </li> 
+      
+     <li class="list_item i3"> 
+         <div class="fields pr_fields"> 
+             <span class='Article_Index'>3</span> 
+             <span class='Article_Title'><a href='http://career.nankai.edu.cn/news/content/id/1014.html' target='_blank' title='云南省2019年定向南开大学招录选调生公告'>云南省2019年定向南开大学招录选调...</a></span> 
+         </div> 
+         <div class="fields ex_fields"> 
+              
+             <span class='Article_PublishDate'>02-22</span> 
+              
+         </div> 
+     </li> 
+      
+     <li class="list_item i4"> 
+         <div class="fields pr_fields"> 
+             <span class='Article_Index'>4</span> 
+             <span class='Article_Title'><a href='http://career.nankai.edu.cn/news/content/id/1013.html' target='_blank' title='南开大学辅导员/党政管理岗位招聘公告'>南开大学辅导员/党政管理岗位招聘...</a></span> 
+         </div> 
+         <div class="fields ex_fields"> 
+              
+             <span class='Article_PublishDate'>02-22</span> 
+              
+         </div> 
+     </li> 
+      
+     <li class="list_item i5"> 
+         <div class="fields pr_fields"> 
+             <span class='Article_Index'>5</span> 
+             <span class='Article_Title'><a href='http://career.nankai.edu.cn/news/content/id/1012.html' target='_blank' title='山东省2019年选调生优选计划公告（南开大学）'>山东省2019年选调生优选计划公告（...</a></span> 
+         </div> 
+         <div class="fields ex_fields"> 
+              
+             <span class='Article_PublishDate'>02-22</span> 
+              
+         </div> 
+     </li> 
+      
+     <li class="list_item i6"> 
+         <div class="fields pr_fields"> 
+             <span class='Article_Index'>6</span> 
+             <span class='Article_Title'><a href='http://career.nankai.edu.cn/news/content/id/1011.html' target='_blank' title='甘肃省2019年定向选调应届优秀大学毕业生公告'>甘肃省2019年定向选调应届优秀大学...</a></span> 
+         </div> 
+         <div class="fields ex_fields"> 
+              
+             <span class='Article_PublishDate'>02-22</span> 
+              
+         </div> 
+     </li> 
+      
+</ul> 
+
+<div class="more"><a class="more-link" href="http://career.nankai.edu.cn/" title="显示更多"><span class="moretext"><font style='color: 313131;font-family: Arial;font-size: 12;'>More</font></span></a></div></div> 
+
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <div class="cont_r" frag="面板2">
+        	<div class="jwc" frag="窗口20">
+                	<div class="tt">
+          	<div class="tit"><span class="title" frag="标题">教务处</span></div>
+          </div>
+                	<div id="wp_news_w20"> 
+ 
+<ul class="wp_article_list"> 
+      
+     <li class="list_item i1"> 
+         <div class="fields pr_fields"> 
+             <span class='Article_Index'>1</span> 
+             <span class='Article_Title'><a href='/2019/0307/c1673a120360/page.htm' target='_blank' title='2018-2019学年度第一学期本科课程助教考核通知'>2018-2019学年度第一学期本科课程助教...</a></span> 
+         </div> 
+         <div class="fields ex_fields"> 
+              
+             <span class='Article_PublishDate'>03-07</span> 
+              
+         </div> 
+     </li> 
+      
+     <li class="list_item i2"> 
+         <div class="fields pr_fields"> 
+             <span class='Article_Index'>2</span> 
+             <span class='Article_Title'><a href='/2019/0306/c1673a120287/page.htm' target='_blank' title='关于认真做好二〇一九届本科生毕业资格审查工作的通知'>关于认真做好二〇一九届本科生毕业资格...</a></span> 
+         </div> 
+         <div class="fields ex_fields"> 
+              
+             <span class='Article_PublishDate'>03-06</span> 
+              
+         </div> 
+     </li> 
+      
+     <li class="list_item i3"> 
+         <div class="fields pr_fields"> 
+             <span class='Article_Index'>3</span> 
+             <span class='Article_Title'><a href='/2019/0305/c1673a120199/page.htm' target='_blank' title='2018-2019学年度第二学期本科课程助教选聘名单'><font style='font-weight:bold;'>2018-2019学年度第二学期本科课程助教...</font></a></span> 
+         </div> 
+         <div class="fields ex_fields"> 
+              
+             <span class='Article_PublishDate'>03-05</span> 
+              
+         </div> 
+     </li> 
+      
+     <li class="list_item i4"> 
+         <div class="fields pr_fields"> 
+             <span class='Article_Index'>4</span> 
+             <span class='Article_Title'><a href='/2019/0221/c1673a119633/page.htm' target='_blank' title='关于开展南开大学2019年应届本科毕业生申报国家公派研究生项目的通知'><font style='font-weight:bold;color:#141414;'>关于开展南开大学2019年应届本科毕业生...</font></a></span> 
+         </div> 
+         <div class="fields ex_fields"> 
+              
+             <span class='Article_PublishDate'>02-21</span> 
+              
+         </div> 
+     </li> 
+      
+     <li class="list_item i5"> 
+         <div class="fields pr_fields"> 
+             <span class='Article_Index'>5</span> 
+             <span class='Article_Title'><a href='/2019/0221/c1673a119618/page.htm' target='_blank' title='关于公布“教育思想大讨论”征文获奖名单的通知'><font style='font-weight:bold;'>关于公布“教育思想大讨论”征文获奖名...</font></a></span> 
+         </div> 
+         <div class="fields ex_fields"> 
+              
+             <span class='Article_PublishDate'>02-21</span> 
+              
+         </div> 
+     </li> 
+      
+     <li class="list_item i6"> 
+         <div class="fields pr_fields"> 
+             <span class='Article_Index'>6</span> 
+             <span class='Article_Title'><a href='/2019/0219/c1673a119543/page.htm' target='_blank' title='关于开展2018年“国家级大学生创新创业训练计划”创新训练立项项目中期检查的通知'>关于开展2018年“国家级大学生创新创业...</a></span> 
+         </div> 
+         <div class="fields ex_fields"> 
+              
+             <span class='Article_PublishDate'>02-19</span> 
+              
+         </div> 
+     </li> 
+      
+</ul> 
+
+<div class="more"><a class="more-link" href="http://jwc.nankai.edu.cn" title="显示更多"><span class="moretext"><font style='color: 313131;font-family: Arial;font-size: 12;'>More</font></span></a></div></div> 
+
+            </div>
+            <div class="yjsy" frag="窗口21">
+                	<div class="tt">
+          	<div class="tit"><span class="title" frag="标题">研究生院</span></div>
+          </div>
+                	<div id="wp_news_w21"> 
+ 
+<ul class="wp_article_list"> 
+      
+     <li class="list_item i1"> 
+         <div class="fields pr_fields"> 
+             <span class='Article_Index'>1</span> 
+             <span class='Article_Title'><a href='/2019/0220/c1675a119559/page.htm' target='_blank' title='2018-2019学年度第二学期毕业研究生论文评审及答辩工作的通知 '><font style='font-weight:bold;'>2018-2019学年度第二学期毕业研究生论...</font></a></span> 
+         </div> 
+         <div class="fields ex_fields"> 
+              
+             <span class='Article_PublishDate'>02-20</span> 
+              
+         </div> 
+     </li> 
+      
+     <li class="list_item i2"> 
+         <div class="fields pr_fields"> 
+             <span class='Article_Index'>2</span> 
+             <span class='Article_Title'><a href='/2019/0217/c1675a119409/page.htm' target='_blank' title='2018-2019第二学期选课通知'>2018-2019第二学期选课通知</a></span> 
+         </div> 
+         <div class="fields ex_fields"> 
+              
+             <span class='Article_PublishDate'>02-17</span> 
+              
+         </div> 
+     </li> 
+      
+     <li class="list_item i3"> 
+         <div class="fields pr_fields"> 
+             <span class='Article_Index'>3</span> 
+             <span class='Article_Title'><a href='/2019/0125/c1675a119116/page.htm' target='_blank' title='研究生院2019年寒假值班表'>研究生院2019年寒假值班表</a></span> 
+         </div> 
+         <div class="fields ex_fields"> 
+              
+             <span class='Article_PublishDate'>01-25</span> 
+              
+         </div> 
+     </li> 
+      
+     <li class="list_item i4"> 
+         <div class="fields pr_fields"> 
+             <span class='Article_Index'>4</span> 
+             <span class='Article_Title'><a href='/2018/1220/c1675a117125/page.htm' target='_blank' title='2018年南开大学优秀博士学位论文名单公示'>2018年南开大学优秀博士学位论文名单公...</a></span> 
+         </div> 
+         <div class="fields ex_fields"> 
+              
+             <span class='Article_PublishDate'>12-20</span> 
+              
+         </div> 
+     </li> 
+      
+     <li class="list_item i5"> 
+         <div class="fields pr_fields"> 
+             <span class='Article_Index'>5</span> 
+             <span class='Article_Title'><a href='/2018/1219/c1675a117045/page.htm' target='_blank' title='关于南开大学2018届冬季毕(结)业研究生办理离校手续的通知'>关于南开大学2018届冬季毕(结)业研究生...</a></span> 
+         </div> 
+         <div class="fields ex_fields"> 
+              
+             <span class='Article_PublishDate'>12-19</span> 
+              
+         </div> 
+     </li> 
+      
+     <li class="list_item i6"> 
+         <div class="fields pr_fields"> 
+             <span class='Article_Index'>6</span> 
+             <span class='Article_Title'><a href='/2018/1128/c1675a115262/page.htm' target='_blank' title='研究生火车优惠自助服务终端的使用操作说明'>研究生火车优惠自助服务终端的使用操作...</a></span> 
+         </div> 
+         <div class="fields ex_fields"> 
+              
+             <span class='Article_PublishDate'>11-28</span> 
+              
+         </div> 
+     </li> 
+      
+</ul> 
+
+<div class="more"><a class="more-link" href="htttp://graduate.nankai.edu.cn" title="显示更多"><span class="moretext"><font style='color: 313131;font-family: Arial;font-size: 12;'>More</font></span></a></div></div> 
+
+            </div>
+            <div class="rdph" frag="窗口22">
+                	<div class="tt">
+          	<div class="tit"><span class="title" frag="标题">热点排行</span></div>
+          </div>
+                	<iframe id='wp_iframe_hotArticle_w22' allowtransparency='true' frameborder='0' scrolling='no' src='/_web/relatedarticle/hotArticles.jsp?wid=w22&rows=6&maxLength=15&showFields=I_T_D_&hotType=2&months=3&articleType=1&showType=1&sourceType=2&columnNum=1&imgWidth=160&imgHeight=100&folderIds=1651,1646,1621,1666,1664,1663,1673,1675,1676,1678&folderRange=0&_p=YXM9MzkmdD0xOTYmZD02MTgmcD0xJm09U04m' style='width:100%; height:320px'></iframe>
+            </div>
+        </div>
+        <div class="clear"></div>
+        <div class="scroll_foot" frag="面板30">
+        <div frag="窗口30">
+                	<div class="tt">
+          	<div class="tit"><span class="title" frag="标题">快速导航</span></div>
+          </div>
+                	<div id="wp_news_w30"> 
+
+                    <ul class="scroll">
+
+    <li class="i1"><a href='https://xxb.nankai.edu.cn/2016/1111/c5530a49120/page.htm' target='_blank' title='微信企业号'><img src='/_upload/article/images/73/c0/b1e66a5749c19f6566802b02669a/5f46c648-3ca6-465a-adb3-c1edb15583e2_s.jpg' width='63' height='63' /></a>
+<a href='https://xxb.nankai.edu.cn/2016/1111/c5530a49120/page.htm' target='_blank' title='微信企业号'>微信企业号</a></li>
+  
+    <li class="i2"><a href='/_redirect?siteId=39&columnId=5710&articleId=52292' target='_blank' title='软件之家'><img src='/_upload/article/images/d2/3c/0a92968f46dca8d733cdf3c29631/f92b6b3b-f3c9-4e55-a5fc-230a90231302_s.jpg' width='63' height='63' /></a>
+<a href='/_redirect?siteId=39&columnId=5710&articleId=52292' target='_blank' title='软件之家'>软件之家</a></li>
+  
+    <li class="i3"><a href='/_redirect?siteId=39&columnId=5710&articleId=52294' target='_blank' title='BBS'><img src='/_upload/article/images/9c/04/4bea77fe4b8f9aab5c79d64b0173/5fe1de7c-c555-490d-8c44-a099bedff531_s.jpg' width='63' height='63' /></a>
+<a href='/_redirect?siteId=39&columnId=5710&articleId=52294' target='_blank' title='BBS'>BBS</a></li>
+  
+    <li class="i4"><a href='/_redirect?siteId=39&columnId=5710&articleId=52296' target='_blank' title='3D校园'><img src='/_upload/article/images/d0/d4/e554c4fd4698a6280f2fb55ccf42/ee83298b-ce8d-45ca-bae5-383304c6ace3_s.jpg' width='63' height='63' /></a>
+<a href='/_redirect?siteId=39&columnId=5710&articleId=52296' target='_blank' title='3D校园'>3D校园</a></li>
+  
+    <li class="i5"><a href='/_redirect?siteId=39&columnId=5710&articleId=52297' target='_blank' title='电话簿'><img src='/_upload/article/images/1c/60/904e03e746e8b31f8cade71ff776/2fdb037a-8eb4-43a8-a529-610182a1d1b0_s.jpg' width='63' height='63' /></a>
+<a href='/_redirect?siteId=39&columnId=5710&articleId=52297' target='_blank' title='电话簿'>电话簿</a></li>
+  
+    <li class="i6"><a href='/_redirect?siteId=39&columnId=5710&articleId=52298' target='_blank' title='校历'><img src='/_upload/article/images/3d/f9/85d597b543b8ad1a8b2806ef9d52/224dd198-9e1d-41ef-85b1-15c255f31337_s.jpg' width='63' height='63' /></a>
+<a href='/_redirect?siteId=39&columnId=5710&articleId=52298' target='_blank' title='校历'>校历</a></li>
+  
+    
+</ul>
+                    </div> 
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="foot">
+	<div class="foot_box">
+    	<p>Coryright&copy;2016 南开大学版权所有</p>
+    </div>
+</div>
+</html>
+
+ <image src="/_visitcount?siteId=39&type=1&columnId=1614" style="display:none" width="0" height="0"></image>

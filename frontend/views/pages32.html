@@ -1,0 +1,232 @@
+<base href="http://less.nankai.edu.cn/"><!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1" />
+    <title>大型仪器管理系统</title>
+    <base href="http://less.nankai.edu.cn/">
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/icomoon.css" rel="stylesheet">
+    <link href="assets/css/site.css" rel="stylesheet">
+    <link href="assets/css/home.css" rel="stylesheet">
+    <script data-main="assets/js/main.js" src="assets/js/require.js"></script>
+    <link rel="shortcut icon" href="assets/icon/favicon.png">
+  </head>
+  <body>
+    <div class="container-fluid header">
+  <div class="header-content mx-auto">
+    <img style="margin-top: 22px;" src="assets/image/header/logo.png" alt="南开大学" />
+    <div class="float-right text-right" style="margin-top: 10px;">
+      <a href="http://less.nankai.edu.cn/public" class="btn btn-link text-white p-0" style="border: none; font-size: 10px">
+        <small>访问旧版</small>
+      </a>
+      <form action="http://less.nankai.edu.cn/search" class="form-inline form-search">
+        <div class="input-group input-group-sm ml-auto">
+          <input name="keyword" type="search" class="form-control form-control-sm ml-auto" 
+          placeholder="请输入仪器名称进行搜索" autocomplete="off">
+          <button class="input-group-addon" type="submit">
+            <img src="assets/image/icon/search.png"/>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid navbar p-0">
+  <nav class="nav nav-fill mx-auto">
+    <a class="nav-item nav-link active1" 
+    href="http://less.nankai.edu.cn/">首页</a>
+    <a class="nav-item nav-link " 
+    href="http://less.nankai.edu.cn/equipment">仪器列表</a>
+    <a class="nav-item nav-link "
+    href="http://less.nankai.edu.cn/article/notice">通知公告</a>
+    <a class="nav-item nav-link "
+    href="http://less.nankai.edu.cn/article/rules">办事流程</a>
+    <a class="nav-item nav-link "
+    href="http://less.nankai.edu.cn/file">文件下载</a>
+    <a class="nav-item nav-link "
+    href="http://less.nankai.edu.cn/contact">联系我们</a>
+  </nav>
+</div>
+    <div class="container-fluid p-0">
+      <div id="swiper-carousel" class="swiper-container swiper-container-horizontal">
+  <div class="swiper-wrapper">
+        <div class="swiper-slide" style="width: 1200px;">
+      <div class="mask"></div>
+      <img class="d-block w-100" style="height: 400px;" src="http://less.nankai.edu.cn/carousel/preview/12">
+    </div>
+        <div class="swiper-slide" style="width: 1200px;">
+      <div class="mask"></div>
+      <img class="d-block w-100" style="height: 400px;" src="http://less.nankai.edu.cn/carousel/preview/13">
+    </div>
+      </div>
+  <div class="swiper-button-container">
+    <div class="swiper-button-next icon-next" style="right: 0;"></div>
+    <div class="swiper-button-prev icon-before" style="left: 0;"></div>
+  </div>
+</div>
+
+<script>
+require(['swiper', 'css!../css/swiper'], function (Swiper) {
+  var swiper = new Swiper('#swiper-carousel', {
+    speed: 600,
+    slidesPerView: 'auto',
+    spaceBetween: 0,
+    centeredSlides: true,
+    loop: true,
+    loopAdditionalSlides: 1,
+    loopedSlides: 2,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    autoplay: {
+      delay: 6000,
+      stopOnLastSlide: false,
+      disableOnInteraction: true,
+    }
+  })
+})
+</script>    </div>
+    <div class="body">
+      <div class="clearfix mx-auto" style="width: 1000px;">
+        <div class="clearfix" style="margin-bottom: 50px">
+  <div class="card float-left" style="width: 280px; margin-right: 60px;">
+    <h6 class="card-header card-header-border">
+      校级平台用户登录 / Login    </h6>
+    <div class="card-body" style="padding: 40px 20px 33px; background-color: rgba(246, 246, 246, .6)">
+      <form class="form-login" method="POST" action="http://less.nankai.edu.cn/lims/login">
+  <div class="input-group input-group-sm" style="margin-bottom: 20px;">
+    <select class="form-control custom-select" name="token_backend">
+      <option value="database">本地用户</option>
+      <option value="ids.nankai" selected>一卡通用户</option>
+      <option value="database%yiqi.tju">天津大学本地用户</option>
+    </select>
+  </div>
+  <div class="input-group" style="margin-bottom: 20px;">
+    <input name="token" class="form-control" placeholder="用户名">
+  </div>
+  <div class="input-group" style="margin-bottom: 34px;">
+    <input name="password" type="password" class="form-control" placeholder="密 码">
+  </div>
+  <input type="submit" class="btn btn-block"  style="margin-bottom: 24px;"
+  name="submit" value="登录">
+  <a href="http://less.nankai.edu.cn/lims/signup" class="text-muted text-center d-block">
+    <small>没有账户，点击注册></small>
+  </a>
+</form>
+    </div>
+  </div>
+  <div class="card float-left"  style="width: 660px;">
+    <h6 class="card-header card-header-border">
+      通知公告 / Notifications      <small class="float-right ml-auto">
+        <a href="http://less.nankai.edu.cn/article/notice" class="text-muted ">更多</a>
+      </small>
+    </h6>
+    <div class="card-body" data-async="ajax/index/article/notice"></div>
+  </div>
+</div>
+
+<div class="clearfix" style="margin-bottom: 50px">
+  <div class="card float-left" style="width: 280px; margin-right: 60px;">
+    <h6 class="card-header card-header-border">
+      快捷通道 / Express    </h6>
+    <div class="card-body p-0"
+    data-async="ajax/index/link/channel">
+    </div>
+  </div>
+  <div class="card float-left"  style="width: 660px;">
+    <h6 class="card-header card-header-border">
+      工作动态 / Works      <small class="float-right text-muted ml-auto">
+        <a href="http://less.nankai.edu.cn/article/works" class="text-muted ">更多</a>
+      </small>
+    </h6>
+    <div class="card-body" data-async="ajax/index/article/works">
+    </div>
+  </div>
+</div>
+
+<div class="clearfix" style="margin-bottom: 50px">
+  <div class="card">
+    <h6 class="card-header card-header-border">
+      仪器展示 / Instrument Show      <small class="float-right ml-auto">
+        <a href="http://less.nankai.edu.cn/equipment" class="text-muted ">更多</a>
+      </small>
+    </h6>
+    <div class="card-body" data-async="ajax/index/equipment/swiper">
+    </div>
+  </div>
+</div>
+
+<div class="clearfix" style="padding-bottom: 50px">
+  <div class="card">
+    <h6 class="card-header card-header-border">
+      院级平台 / School Platform    </h6>
+    <div class="card-body" data-async="ajax/index/site">
+    </div>
+  </div>
+</div>
+      </div>
+    </div>
+    <div class="link mx-auto">
+      <div class="clearfix mx-auto" style="padding-top: 50px; width: 1000px;">
+  <div class="card">
+    <h6 class="card-header card-header-border">
+      友情链接 / Interlink    </h6>
+    <div class="card-body link-content">
+      <nav class="nav nav-fill">
+                <a href="http://nrii.org.cn/" class="nav-item">
+          <img class="img-fluid" src="http://less.nankai.edu.cn/link/preview/3" />
+        </a>
+                <a href="http://less.nankai.edu.cn/public" class="nav-item">
+          <img class="img-fluid" src="http://less.nankai.edu.cn/link/preview/7" />
+        </a>
+                <a href="http://www.tjlab.com/" class="nav-item">
+          <img class="img-fluid" src="http://less.nankai.edu.cn/link/preview/8" />
+        </a>
+                <a href="http://www.nankai.edu.cn/" class="nav-item">
+          <img class="img-fluid" src="http://less.nankai.edu.cn/link/preview/9" />
+        </a>
+                <a href="http://zhgl.nankai.edu.cn/" class="nav-item">
+          <img class="img-fluid" src="http://less.nankai.edu.cn/link/preview/10" />
+        </a>
+              </nav>
+    </div>
+  </div>
+</div>
+    </div>
+    <div class="container-fluid footer px-0">
+  <div class="footer-content mx-auto clearfix">
+    <nav class="float-left" aria-label="breadcrumb" role="navigation">
+      <ol class="breadcrumb p-0">
+        <li class="breadcrumb-item"><a href="http://less.nankai.edu.cn/intro">平台简介</a></li>
+        <li class="breadcrumb-item"><a href="http://less.nankai.edu.cn/equipment">仪器列表</a></li>
+        <li class="breadcrumb-item"><a href="http://less.nankai.edu.cn/article/notice">通知公告</a></li>
+        <li class="breadcrumb-item"><a href="http://less.nankai.edu.cn/article/rules">办事流程</a></li>
+        <li class="breadcrumb-item"><a href="http://less.nankai.edu.cn/file">文件下载</a></li>
+        <li class="breadcrumb-item"><a href="http://less.nankai.edu.cn/contact">联系我们</a></li>
+      </ol>
+    </nav>
+    <span class="float-right" style="margin-left: 30px;">
+      <img style="margin-right: 12px;" src="assets/image/icon/email.png"/>
+      nkyqpt@nankai.edu.cn    </span>
+    <span class="float-right">
+      <img style="margin-right: 12px;" src="assets/image/icon/phone.png"/>
+      022-23508139    </span>
+  </div>
+  <div class="container-fluid support">
+    <div class="support-content text-center">
+      <nav class="nav nav-fill">
+        <span class="nav-item text-left">地址: 天津市卫津路94号</span>
+        <span class="nav-item">邮编: 300071</span>
+        <span class="nav-item">津教备0061号</span>
+        <span class="nav-item">津ICP备12003308号-1</span>
+        <span class="nav-item text-right">技术支持：天津市基理科技股份有限公司</span>
+      </nav>
+    </small>
+  </div>
+</div>
+  </body>
+</html>

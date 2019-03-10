@@ -1,0 +1,159 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Search Box</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="../static/css/base.css">
+	<link rel="shortcut icon" href="../static/img/favicon.ico">
+</head>
+<body>
+	<script>
+		let page_num = 0
+		let total_num = 0
+	</script>
+	<div id="wrapper">
+		<header class="head"></header>
+		<h3 class="warning">搜索内容不能为空</h3>
+		<input class="search-box" type="text" placeholder="o(￣▽￣)o">
+		<button class="search-btn btn btn-primary">搜索</button>
+	</div>
+	<nav aria-label="Page navigation example" style="margin-left:1vw;">
+		<ul class="pagination" id="nav"></ul>
+	</nav>
+	<div style="height: 2vh" id="used_time"></div>
+	<div id="ans">
+		<ul id="answer-list"></ul>
+	</div>
+	<script>
+		let btn = document.querySelector('.search-btn')
+		let warning = document.querySelector('.warning')
+		let searchBox = document.querySelector('.search-box')
+		let answerList = document.querySelector('#answer-list')
+		let nav = document.querySelector('#nav')
+		/* 点击搜索按钮 */
+		btn.onclick = () => {
+			search(0)
+		}
+		/* 输入框回车事件 */
+		searchBox.onkeydown = (event) => {
+			if (event.keyCode === 13) {
+				search(0)
+			}
+		}
+		/* 检查输入的表达式是否正确,主要根据括号来检查 */
+		let check = (expression) => {
+			let left = 0
+			for (let i = 0; i < expression.length; ++i) {
+				if (expression[i] === '(') ++left
+				else if (expression[i] === ')') --left
+				if (left < 0) return false
+			}
+			return true
+		}
+		/* 发送搜索信息 */
+		let search = (page_num=0) => {
+			if (searchBox.value.trim() === '') {
+				warning.style.visibility = 'visible'
+				setTimeout(() => {
+					warning.style.visibility = 'hidden'
+				}, 3000)
+				return
+			}
+			if (check(searchBox.value.trim()) === false) {
+				alert('no')
+				return
+			}
+			fetch('/search/', {
+				method: 'post',
+				credentials: 'same-origin',
+				headers: {
+					'Accept': 'application',
+					'Content-Type': 'application/json'
+				},
+				body: JSON.stringify({
+					'query': searchBox.value.trim(),
+					'page_num': page_num
+				})
+			})
+			.then((res) => res.json())
+			.then((res) => {
+				document.getElementById('used_time').innerHTML = '用时 ' + res['used_time'] + ' 秒'
+				total_num = res['total_num']
+				draw(res['msg'], res['total_num'], res['type'])
+			})
+		}
+
+		/* 绘制列表 */
+		let draw = (lst, total_num, type) => {
+			// 绘制分页
+			while (nav.firstChild) {
+				nav.removeChild(nav.firstChild)
+			}
+			if (type === 'normal') {
+				for (let i = 0; i < total_num; ++i) {
+					let li = document.createElement('li')
+					// <li class="page-item"><a class="page-link" href="#">1</a></li>
+					li.className = 'page-item'
+					let a = document.createElement('a')
+					a.className = 'page-link'
+					a.onclick = () => {page_num = i;search(i)}
+					a.innerText = i + 1
+					if (page_num === i) {
+						a.style.backgroundColor = 'green'
+					}
+					li.appendChild(a)
+					nav.appendChild(li)
+				}
+			}			
+			// 清除之前所有item
+			while (answerList.firstChild) {
+				answerList.removeChild(answerList.firstChild)
+			}
+			if (type === 'normal') {
+				for (let i = 0; i < lst.length; ++i) {
+					let it = lst[i]
+					let item = document.createElement('li')
+					let up = document.createElement('div')
+					let down = document.createElement('div')
+					let title = document.createElement('a')
+					let snap = document.createElement('a')
+					title.innerText = (it.title === '' ? '南开大学留学生网' : it.title) // 发现这个page没有title，震惊！！！
+					title.href = it.page_url
+					title.className = 'title'
+					snap.href = 'pages/' + it.page_id + '.html'
+					snap.innerText = '网页快照'
+					up.appendChild(title)
+					up.appendChild(snap)
+					down.innerText = it.raw_html.substring(0, 200) + '......'
+					item.appendChild(up)
+					item.appendChild(down)
+					let li = document.createElement('li')
+					li.appendChild(item)
+					answerList.appendChild(li)
+				}
+			} else if (type === 'filetype') {
+				let record = []
+				for (let i = 0; i < lst.length; ++i) {
+					let it = lst[i]
+					if (record.indexOf(it.title) !== -1) {
+						continue
+					}
+					record.push(it.title)
+					let item = document.createElement('li')
+					let a = document.createElement('a')
+					a.href = it.page_url
+					a.innerText = it.title
+					item.appendChild(a)
+					answerList.appendChild(item)
+				}
+				console.log(record)
+			}
+			
+		}
+	</script>
+</body>
+</html>

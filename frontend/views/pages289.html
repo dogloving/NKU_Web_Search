@@ -1,0 +1,606 @@
+<base href="http://sjc.nankai.edu.cn/nkdxsjc/">
+
+
+
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+  <head>
+    <title>南开大学审计处首页</title>
+    <link href="http://sjc.nankai.edu.cn:80/nkdxsjc/images/nankai_logo.ico" rel="shortcut icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" maximum-scale=2.0, user-scalable=yes">
+	<link type="text/css" href="http://sjc.nankai.edu.cn:80/nkdxsjc/basic-jquery-slider/bjqs.css" rel="stylesheet">
+	<link type="text/css" href="http://sjc.nankai.edu.cn:80/nkdxsjc/basic-jquery-slider/demo.css" rel="stylesheet">
+	<link type="text/css" href="http://sjc.nankai.edu.cn:80/nkdxsjc/bootstrap/css/bootstrap.css" rel="stylesheet">
+	<link type="text/css" href="http://sjc.nankai.edu.cn:80/nkdxsjc/css/base.css" rel="stylesheet">
+	<script type="text/javascript" src="http://sjc.nankai.edu.cn:80/nkdxsjc/javascript/jquery-1.9.1.js"></script>
+	<script type="text/javascript" src="http://sjc.nankai.edu.cn:80/nkdxsjc/bootstrap/js/bootstrap.js"></script>
+	<script type="text/javascript" src="http://sjc.nankai.edu.cn:80/nkdxsjc/basic-jquery-slider/js/bjqs-1.3.js"></script>
+	<style type="text/css">
+		.table tbody tr td{
+			border-top:none;
+		}
+		.tooltip.right .tooltip-arrow {
+			border-right-color: #337ab7;
+		}
+		.tooltip-inner{
+			background-color:#337ab7;
+		}
+		.height400{
+			min-height:400px;
+		}
+		.height350{
+			min-height:350px;
+		}
+		.text-center{
+			text-align:center;
+		}
+		.padding10{
+			padding-bottom:10px;
+		}
+		.clock{font:bold 12px Arial, Helvetica, sans-serif;margin:0;padding:0;color:#bbbbbb;}
+		
+		/* clock */
+		.clock{width:240px;margin:0 auto; padding-top:20px;padding-bottom:10px;color:#337ab7;}
+		.clock #Date{font-family:'BebasNeueRegular', Arial, Helvetica, sans-serif;font-size:16px;text-align:center;text-shadow:0 0 5px #fffff;}
+		.clock ul{width:240px;margin:0 auto;padding:0px;list-style:none;text-align:center;}
+		.clock ul li{display:inline;font-size:16px;text-align:center;font-family:'BebasNeueRegular', Arial, Helvetica, sans-serif;text-shadow:0 0 5px #ffffff;}
+		#point{position:relative;-moz-animation:mymove 1s ease infinite;-webkit-animation:mymove 1s ease infinite;padding-left:10px;padding-right:10px;}
+		@-webkit-keyframes mymove{
+			0%{opacity:1.0;text-shadow:0 0 20px #00c6ff;}
+			50%{opacity:0;text-shadow:none;}
+			100%{opacity:1.0;text-shadow:0 0 20px #00c6ff;}	
+		}
+		
+		
+		@-moz-keyframes mymove{
+			0%{opacity:1.0;text-shadow:0 0 20px #00c6ff;}
+			50%{opacity:0;text-shadow:none;}
+			100%{opacity:1.0;text-shadow:0 0 20px #00c6ff;}	
+		}
+	</style>
+	<script type="text/javascript">
+		$(function(){
+			/* $("#department ul li").mouseover(function(){
+				$(this).addClass("active").css("color","#ffffff");
+			});
+			$("#department ul li").mouseout(function(){
+				$(this).removeClass("active").css("color","#337ab7");
+			}); */
+			//幻灯
+			$("#banner-fade").bjqs({
+			    animtype      : "slide",
+			    height        : 220,
+			    width         : 293,
+			    responsive    : true,
+			    //randomstart   : true
+			});
+			//为了美观去掉左右导航
+			$(".bjqs-controls").hide();
+			//为长标题加省略号
+			$("#menu li").click(function(){
+				$(this).addClass("active");
+				$(this).siblings().removeClass("active");
+			});
+			$("#news tr td a").each(function(){
+				if($(this).text().length>20){
+					$(this).html($(this).html().substring(0,20)+"...");
+				}
+			});
+			$("#notice tr td a").each(function(){
+				if($(this).text().length>30){
+					$(this).html($(this).html().substring(0,30)+"...");
+				}
+			});
+			$("#cwfg li a").each(function(){
+				if($(this).text().length>10){
+					$(this).html($(this).html().substring(0,10)+"...");
+				}
+			});
+			$("#gcfg li a").each(function(){
+				if($(this).text().length>10){
+					$(this).html($(this).html().substring(0,10)+"...");
+				}
+			});
+			$("[data-toggle='tooltip']").tooltip({
+				animation:true,
+				placement:"right",
+				html:true,
+				container:"body"
+			});
+			
+			// 创建两个变量，一个数组中的月和日的名称
+			var monthNames = [ "1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月" ]; 
+			var dayNames= ["星期日","星期一","星期二","星期三","星期四","星期五","星期六"]
+		
+			// 创建一个对象newDate（）
+			var newDate = new Date();
+			// 提取当前的日期从日期对象
+			newDate.setDate(newDate.getDate());
+			//输出的日子，日期，月和年
+			$('#Date').html(newDate.getFullYear() + "年 " + monthNames[newDate.getMonth()] + ' ' + newDate.getDate() + "日 " + dayNames[newDate.getDay()]);
+		
+			setInterval( function() {
+				// 创建一个对象，并提取newDate（）在访问者的当前时间的秒
+				var seconds = new Date().getSeconds();
+				//添加前导零秒值
+				$("#sec").html(( seconds < 10 ? "0" : "" ) + seconds);
+			},1000);
+			
+			setInterval( function() {
+				// 创建一个对象，并提取newDate（）在访问者的当前时间的分钟
+				var minutes = new Date().getMinutes();
+				// 添加前导零的分钟值
+				$("#min").html(( minutes < 10 ? "0" : "" ) + minutes);
+		    },1000);
+	
+			setInterval( function() {
+				// 创建一个对象，并提取newDate（）在访问者的当前时间的小时
+				var hours = new Date().getHours();
+				// 添加前导零的小时值
+				$("#hours").html(( hours < 10 ? "0" : "" ) + hours);
+		    }, 1000);
+		});
+		function view_news(id){
+			window.open("http://sjc.nankai.edu.cn:80/nkdxsjc/showNews.action?id="+id);
+		}
+		function view_notice(id){
+			window.open("http://sjc.nankai.edu.cn:80/nkdxsjc/showNotice.action?id="+id);
+		}
+		function view_law(id){
+			window.open("http://sjc.nankai.edu.cn:80/nkdxsjc/showAuditLaw.action?id="+id);
+		}
+		function department(){
+			window.open("http://sjc.nankai.edu.cn:80/nkdxsjc/showDepartmentAbstract.action");
+		}
+		function institution(){
+			window.open("http://sjc.nankai.edu.cn:80/nkdxsjc/showInstitution.action");
+		}
+		function staff(){
+			window.open("http://sjc.nankai.edu.cn:80/nkdxsjc/showStaff.action");
+		}
+		function contact_way(){
+			window.open("http://sjc.nankai.edu.cn:80/nkdxsjc/showContactWay.action");
+		}
+		function project_audit(){
+			window.open("http://sjc.nankai.edu.cn:80/nkdxsjc/showAuditGuid.action?subIndex=1");
+		}
+		function budget(){
+			window.open("http://sjc.nankai.edu.cn:80/nkdxsjc/showAuditGuid.action?subIndex=2");
+		}
+		function balance(){
+			window.open("http://sjc.nankai.edu.cn:80/nkdxsjc/showAuditGuid.action?subIndex=3");
+		}
+		function responsibility(){
+			window.open("http://sjc.nankai.edu.cn:80/nkdxsjc/showAuditGuid.action?subIndex=4");
+		}
+		function special_funds(){
+			window.open("http://sjc.nankai.edu.cn:80/nkdxsjc/showAuditGuid.action?subIndex=5");
+		}
+		function survey(){
+			window.open("http://sjc.nankai.edu.cn:80/nkdxsjc/showAuditGuid.action?subIndex=6");
+		}
+		function research_funds(){
+			window.open("http://sjc.nankai.edu.cn:80/nkdxsjc/showAuditGuid.action?subIndex=7");
+			
+		}
+		function research_signed(){
+			window.open("http://sjc.nankai.edu.cn:80/nkdxsjc/showAuditGuid.action?subIndex=8");
+		}
+	</script>
+  </head>
+  <body>
+  	<div class="container main_box" style="margin-bottom:5px;">
+  		<img id="home_title" src="images/home_title.png">
+  		<ul id="menu" class="nav nav-pills nav-bg" style="margin-bottom:5px;">
+		  <li class="active"><a href="http://sjc.nankai.edu.cn:80/nkdxsjc/home.action" target="_blank"><span class="glyphicon glyphicon-home"></span>&nbsp;首页</a></li>
+		   <li><a href="http://sjc.nankai.edu.cn:80/nkdxsjc/showNewsListFront.action" target="_blank"><span class="glyphicon glyphicon-list"></span>&nbsp;最新动态</a></li>
+		  <li>
+		  	<a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-th-large"></span>&nbsp;部门机构<span class="caret"></span></a>
+		  	<ul class="dropdown-menu">
+		  		<li><a href="http://sjc.nankai.edu.cn:80/nkdxsjc/showDepartmentAbstract.action" target="_blank"><span class="glyphicon glyphicon-tags"></span>&nbsp;部门介绍</a></li>
+      			<li><a href="http://sjc.nankai.edu.cn:80/nkdxsjc/showInstitution.action" target="_blank"><span class="glyphicon glyphicon-align-justify"></span>&nbsp;内设机构</a></li>
+      			<li><a href="http://sjc.nankai.edu.cn:80/nkdxsjc/showStaff.action" target="_blank"><span class="glyphicon glyphicon-user"></span>&nbsp;工作人员</a></li>
+      			<li><a href="http://sjc.nankai.edu.cn:80/nkdxsjc/showContactWay.action" target="_blank"><span class="glyphicon glyphicon-phone-alt"></span>&nbsp;联系方式</a></li>
+		  	</ul>
+		  </li>
+		  <li><a href="http://sjc.nankai.edu.cn:80/nkdxsjc/showNoticeListFront.action" target="_blank"><span class="glyphicon glyphicon-bullhorn"></span>&nbsp;通知公告</a></li>
+		  <li>
+		  	<a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-folder-open"></span>&nbsp;审计法规<span class="caret"></span></a>
+		  	<ul class="dropdown-menu">
+      			<li><a href="http://sjc.nankai.edu.cn:80/nkdxsjc/showFinancialLawFront.action" target="_blank"><span class="glyphicon glyphicon-tag"></span>&nbsp;财务审计</a></li>
+      			<li><a href="http://sjc.nankai.edu.cn:80/nkdxsjc/showProjectLawFront.action" target="_blank"><span class="glyphicon glyphicon-tag"></span>&nbsp;工程审计</a></li>
+    		</ul>
+		  </li>
+		  <li>
+		  	<a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-hand-right"></span>&nbsp;服务指南<span class="caret"></span></a>
+		  	<ul class="dropdown-menu">
+		  		<li><a href="http://sjc.nankai.edu.cn:80/nkdxsjc/showAuditGuid.action?subIndex=1" target="_blank"><span class="glyphicon glyphicon-wrench"></span>&nbsp;工程审计</a></li>
+      			<li><a href="http://sjc.nankai.edu.cn:80/nkdxsjc/showAuditGuid.action?subIndex=2" target="_blank"><span class="glyphicon glyphicon-pushpin"></span>&nbsp;预算执行</a></li>
+      			<li><a href="http://sjc.nankai.edu.cn:80/nkdxsjc/showAuditGuid.action?subIndex=3" target="_blank"><span class="glyphicon glyphicon-yen"></span>&nbsp;财务收支</a></li>
+      			<li><a href="http://sjc.nankai.edu.cn:80/nkdxsjc/showAuditGuid.action?subIndex=4" target="_blank"><span class="glyphicon glyphicon-alert"></span>&nbsp;经济责任</a></li>
+      			<li><a href="http://sjc.nankai.edu.cn:80/nkdxsjc/showAuditGuid.action?subIndex=5" target="_blank"><span class="glyphicon glyphicon-credit-card"></span>&nbsp;专项资金</a></li>
+      			<li><a href="http://sjc.nankai.edu.cn:80/nkdxsjc/showAuditGuid.action?subIndex=6" target="_blank"><span class="glyphicon glyphicon-phone-alt"></span>&nbsp;审计调查</a></li>
+      			<li><a href="http://sjc.nankai.edu.cn:80/nkdxsjc/showAuditGuid.action?subIndex=7" target="_blank"><span class="glyphicon glyphicon-briefcase"></span>&nbsp;科研经费</a></li>
+      			<li><a href="http://sjc.nankai.edu.cn:80/nkdxsjc/showAuditGuid.action?subIndex=8" target="_blank"><span class="glyphicon glyphicon-pencil"></span>&nbsp;科研审签</a></li>
+		  	</ul>
+		  </li>
+		  <li><a href="http://sjc.nankai.edu.cn:80/nkdxsjc/showAttachListFront.action" target="_blank"><span class="glyphicon glyphicon-download-alt"></span>&nbsp;下载专区</a></li>
+		  <li><a href="http://sjc.nankai.edu.cn:80/nkdxsjc/showFriendlyLinkFront.action" target="_blank"><span class="glyphicon glyphicon-link"></span>&nbsp;友情链接</a></li>
+		  <li><a href="http://sjc.nankai.edu.cn:80/nkdxsjc/index.action" target="_blank"><span class="glyphicon glyphicon-edit"></span>&nbsp;报审系统</a></li>
+		  
+		  		<li class="pull-right"><a href="http://sjc.nankai.edu.cn:80/nkdxsjc/tologin.action"><span class="glyphicon glyphicon-lock"></span>&nbsp;登录</a></li>
+		  
+		  
+		</ul>
+    	<div class="row">
+    		<div class="col-md-9">
+    			<div class="panel panel-primary">
+    				<div class="panel-heading">
+    					<span class="glyphicon glyphicon-th-list"></span>&nbsp;<strong>最新动态</strong><span class="pull-right">&nbsp;<span class="label label-info">More</span><a href ="http://sjc.nankai.edu.cn:80/nkdxsjc/showNewsListFront.action" target="_blank" style="color:#FFFFFF">&nbsp;&gt;&gt;</a></span>
+    				</div>
+    				<div class="panel-body" style="padding:8px 0px;">
+    					<div class="col-md-5">
+    						<!-- 幻灯片 -->
+    						<div id="banner-fade">
+						        <ul class="bjqs">
+						          <li><img src="images/slider/1.jpg"></li>
+						          <li><img src="images/slider/2.jpg"></li>
+						          <li><img src="images/slider/3.jpg"></li>
+						          <li><img src="images/slider/4.jpg"></li>
+						          <li><img src="images/slider/5.jpg"></li>
+						        </ul>
+						    </div>
+    					</div>
+    					<div class="col-md-7">
+    						<p style="border-bottom: 2px solid #337ab7;"><img src="http://sjc.nankai.edu.cn:80/nkdxsjc/images/news.png"/></p>
+    						<table id="news" class="table table-striped">
+    							
+    								<tr>
+    									<td>
+    										<a href="javascript:;" data-toggle="tooltip" title="九九之约 国家审计“公开课”走进巍巍南开" onclick="view_news('A1C7A8409CD54520B57A35F6998C6017')">九九之约 国家审计“公开课”走进巍巍南开</a>
+    									</td>
+    									<td style="text-align:right;color:#337ab7">
+	    									2018-10-23
+	    								</td>
+		    							<td style="text-align:right;">
+		    								
+		    									<span class="badge badge-success">New</span>
+		    								
+	    								</td>
+    								</tr>
+    							
+    								<tr>
+    									<td>
+    										<a href="javascript:;" data-toggle="tooltip" title="审计处赴南通参观中国审计博物馆" onclick="view_news('FA3C833098A54BEBABCB1AFBD0CAB5E8')">审计处赴南通参观中国审计博物馆</a>
+    									</td>
+    									<td style="text-align:right;color:#337ab7">
+	    									2018-07-11
+	    								</td>
+		    							<td style="text-align:right;">
+		    								
+		    									<span class="badge badge-success">New</span>
+		    								
+	    								</td>
+    								</tr>
+    							
+    								<tr>
+    									<td>
+    										<a href="javascript:;" data-toggle="tooltip" title="审计处赴南京大学调研交流" onclick="view_news('0A84973264E64EC09A0BE552585942C5')">审计处赴南京大学调研交流</a>
+    									</td>
+    									<td style="text-align:right;color:#337ab7">
+	    									2018-07-11
+	    								</td>
+		    							<td style="text-align:right;">
+		    								
+		    									<span class="badge badge-success">New</span>
+		    								
+	    								</td>
+    								</tr>
+    							
+    								<tr>
+    									<td>
+    										<a href="javascript:;" data-toggle="tooltip" title="重温历史、不忘初心 ——审计校产机关统战纪委招标办联合党支部开展“学思践悟”活动" onclick="view_news('769BDF8220874FD59A30FBFA4A801352')">重温历史、不忘初心 ——审计校产机关统战纪委招标办联合党支部开展“学思践悟”活动</a>
+    									</td>
+    									<td style="text-align:right;color:#337ab7">
+	    									2018-07-06
+	    								</td>
+		    							<td style="text-align:right;">
+		    								
+	    								</td>
+    								</tr>
+    							
+    								<tr>
+    									<td>
+    										<a href="javascript:;" data-toggle="tooltip" title="审计处赴兰州大学调研交流" onclick="view_news('DF77DECDA04D46CCAD0596684990A156')">审计处赴兰州大学调研交流</a>
+    									</td>
+    									<td style="text-align:right;color:#337ab7">
+	    									2018-07-06
+	    								</td>
+		    							<td style="text-align:right;">
+		    								
+	    								</td>
+    								</tr>
+    							
+    						</table>
+    					</div>
+    				</div>
+    			</div>
+    		</div>
+    		<div class="col-md-3">
+    			<div class="clock text-center">
+					<div id="Date"></div>
+					<ul>
+						<li id="hours"> </li>
+						<li id="point">:</li>
+						<li id="min"> </li>
+						<li id="point">:</li>
+						<li id="sec"> </li>
+					</ul>
+				</div>
+				<a href="http://sjc.nankai.edu.cn:80/nkdxsjc/index.action" target="_blank"><img alt="报审入口" src="images/entrance.png" class="padding10 img-responsive center-block"/></a>
+				<a href="http://sjc.nankai.edu.cn:80/nkdxsjc/showAuditGuid.action?subIndex=1" target="_blank"><img alt="工作流程" src="images/fluid.png" class="padding10 img-responsive center-block"/></a>
+				<a href="http://sjc.nankai.edu.cn:80/nkdxsjc/showMailtoChief.action" target="_blank"><img alt="处长信箱" src="images/chief_email.png" class="padding10 img-responsive center-block"/></a>
+	    	</div>
+    		
+    	</div>
+    	<div class="row">
+    		
+    		<div class="col-md-6">
+    			<div class="panel panel-primary height350">
+    				<div class="panel-heading">
+    					<span class="glyphicon glyphicon-bullhorn"></span>&nbsp;<strong>通知公告</strong><span class="pull-right">&nbsp;<span class="label label-info">More</span><a href ="http://sjc.nankai.edu.cn:80/nkdxsjc/showNoticeListFront.action" target="_blank" style="color:#FFFFFF">&nbsp;&gt;&gt;</a></span>
+    				</div>
+    				<div class="panel-body">
+    					<p style="border-bottom: 2px solid #337ab7;"><img src="http://sjc.nankai.edu.cn:80/nkdxsjc/images/tongzhi.png"/></p>
+    					<table id="notice" class="table  table-striped">
+    						
+    							<tr>
+    								<td>
+    									<a href ="javascript:;" data-toggle="tooltip" title="审计处2018年度工程结算项目完成情况" class="tooltip-info" onclick="view_notice('0E57FBEBE344458996969B47B7868EC8')">审计处2018年度工程结算项目完成情况</a>
+    								</td>
+    								<td style="text-align:right;color:#337ab7">
+    									2019-02-28
+    								</td>
+    								<td style="text-align:right;">
+    									
+    										<span class="badge badge-success">New</span>
+    									
+    								</td>
+    							</tr>
+    						
+    							<tr>
+    								<td>
+    									<a href ="javascript:;" data-toggle="tooltip" title="审计处2017年度工程结算项目完成情况" class="tooltip-info" onclick="view_notice('1D6239580124496EAF9320692193A72F')">审计处2017年度工程结算项目完成情况</a>
+    								</td>
+    								<td style="text-align:right;color:#337ab7">
+    									2018-05-29
+    								</td>
+    								<td style="text-align:right;">
+    									
+    										<span class="badge badge-success">New</span>
+    									
+    								</td>
+    							</tr>
+    						
+    							<tr>
+    								<td>
+    									<a href ="javascript:;" data-toggle="tooltip" title="审计处2016年度工程结算项目完成情况" class="tooltip-info" onclick="view_notice('239D002C89B84BB9AB5A2F6EB8AE5C4A')">审计处2016年度工程结算项目完成情况</a>
+    								</td>
+    								<td style="text-align:right;color:#337ab7">
+    									2018-05-29
+    								</td>
+    								<td style="text-align:right;">
+    									
+    										<span class="badge badge-success">New</span>
+    									
+    								</td>
+    							</tr>
+    						
+    							<tr>
+    								<td>
+    									<a href ="javascript:;" data-toggle="tooltip" title="南开大学关于开展内部控制基础性评价工作的通知" class="tooltip-info" onclick="view_notice('F9444D7D92C6411E9ACFB800679C98BC')">南开大学关于开展内部控制基础性评价工作的通知</a>
+    								</td>
+    								<td style="text-align:right;color:#337ab7">
+    									2016-11-23
+    								</td>
+    								<td style="text-align:right;">
+    									
+    								</td>
+    							</tr>
+    						
+    							<tr>
+    								<td>
+    									<a href ="javascript:;" data-toggle="tooltip" title="办公地点变更通知" class="tooltip-info" onclick="view_notice('0E3F36779BF24A7D87D7BBEC3C37CCD9')">办公地点变更通知</a>
+    								</td>
+    								<td style="text-align:right;color:#337ab7">
+    									2016-04-06
+    								</td>
+    								<td style="text-align:right;">
+    									
+    								</td>
+    							</tr>
+    						
+    					</table>
+    					<br/>
+    				</div>
+    			</div>
+    		</div>
+    		<div class="col-md-6">
+    			<div class="panel panel-primary height350">
+    				<div class="panel-heading">
+    					<span class="glyphicon glyphicon-folder-open"></span>&nbsp;<strong>审计法规</strong><!-- <span class="pull-right">&nbsp;<span class="label label-info">More</span><a href ="#">&nbsp;&gt;&gt;</a></span> -->
+    				</div>
+    				<div class="panel-body">
+    					<div class="col-md-6" style="border:1px dotted #ddd;">
+    						<p style="border-bottom: 2px solid #337ab7;"><img src="http://sjc.nankai.edu.cn:80/nkdxsjc/images/caiwu.png"/><span style="margin-top:10px;" class="pull-right">&nbsp;<span class="label label-info">More</span><a href ="http://sjc.nankai.edu.cn:80/nkdxsjc/showFinancialLawFront.action" target="_blank">&nbsp;&gt;&gt;</a></span></p>
+    						<ul id="cwfg" class="list-group">
+    							
+    								<li class="list-group-item">
+    									<a href="javascript:;" data-toggle="tooltip" title="教育部办公厅关于印发《教育部直属高校经济活动内部控制指南（试行）》的通知" onclick="view_law('84C462AED131430F9693226E9F3F4971')">教育部办公厅关于印发《教育部直属高校经济活动内部控制指南（试行）》的通知</a>
+    									
+    										<span class="badge badge-success">New</span>
+    									
+    								</li>
+    							
+    								<li class="list-group-item">
+    									<a href="javascript:;" data-toggle="tooltip" title="南开大学中层领导干部和学校全资企业领导人员经济责任审计办法" onclick="view_law('F9D0B7A8605043DFB65EA9EFE54E9A8C')">南开大学中层领导干部和学校全资企业领导人员经济责任审计办法</a>
+    									
+    										<span class="badge badge-success">New</span>
+    									
+    								</li>
+    							
+    								<li class="list-group-item">
+    									<a href="javascript:;" data-toggle="tooltip" title="国务院关于加强审计工作的意见" onclick="view_law('CDAF859AB41543E68EAEB04BF772C805')">国务院关于加强审计工作的意见</a>
+    									
+    										<span class="badge badge-success">New</span>
+    									
+    								</li>
+    							
+    								<li class="list-group-item">
+    									<a href="javascript:;" data-toggle="tooltip" title="关于印发《党政主要领导干部和国有企业领导人员经济责任审计规定》的通知" onclick="view_law('238BCD3102C747F0A356F424DFD19A20')">关于印发《党政主要领导干部和国有企业领导人员经济责任审计规定》的通知</a>
+    									
+    								</li>
+    							
+    								<li class="list-group-item">
+    									<a href="javascript:;" data-toggle="tooltip" title="党政机关国内公务接待管理规定" onclick="view_law('492041B2BB2E4367A2AFA35D6102F6F9')">党政机关国内公务接待管理规定</a>
+    									
+    								</li>
+    							
+	    					</ul>
+    					</div>
+    					<div class="col-md-6" style="border:1px dotted #ddd;">
+    						<p style="border-bottom: 2px solid #337ab7;"><img src="http://sjc.nankai.edu.cn:80/nkdxsjc/images/gongcheng.png"/><span style="margin-top:10px;" class="pull-right">&nbsp;<span class="label label-info">More</span><a href ="http://sjc.nankai.edu.cn:80/nkdxsjc/showProjectLawFront.action" target="_blank">&nbsp;&gt;&gt;</a></span></p>
+    						<ul id="gcfg" class="list-group">
+    							
+    								<li class="list-group-item">
+    									<a href="javascript:;" data-toggle="tooltip" title="南开大学建设工程、修缮工程项目审计实施办法 " onclick="view_law('1CC6735641C34ED6A5946B3BBA74C370')">南开大学建设工程、修缮工程项目审计实施办法 </a>
+    									
+    										<span class="badge badge-success">New</span>
+    									
+    								</li>
+    							
+    								<li class="list-group-item">
+    									<a href="javascript:;" data-toggle="tooltip" title="教育部关于印发《教育部关于严禁领导干部违反规定插手干预基本建设工程项目管理行为的若干规定》的通知" onclick="view_law('F7E33823644C4264A63FDB82C49617D0')">教育部关于印发《教育部关于严禁领导干部违反规定插手干预基本建设工程项目管理行为的若干规定》的通知</a>
+    									
+    										<span class="badge badge-success">New</span>
+    									
+    								</li>
+    							
+    								<li class="list-group-item">
+    									<a href="javascript:;" data-toggle="tooltip" title="教育部直属高校及事业单位基本建设项目竣工财务决算管理办法" onclick="view_law('D7A46890E859403A80EED56AA55273B2')">教育部直属高校及事业单位基本建设项目竣工财务决算管理办法</a>
+    									
+    										<span class="badge badge-success">New</span>
+    									
+    								</li>
+    							
+    								<li class="list-group-item">
+    									<a href="javascript:;" data-toggle="tooltip" title="教育部关于印发《教育部直属高校基本建设管理办法》的通知" onclick="view_law('817FCA8D89464503AD6EA1C48BE27DBB')">教育部关于印发《教育部直属高校基本建设管理办法》的通知</a>
+    									
+    								</li>
+    							
+    								<li class="list-group-item">
+    									<a href="javascript:;" data-toggle="tooltip" title="工程建设项目勘察设计招标投标办法" onclick="view_law('4F4601B8A15D496BAE348433CB31C110')">工程建设项目勘察设计招标投标办法</a>
+    									
+    								</li>
+    							
+	    					</ul>
+    					</div>
+    				</div>
+    			</div>
+    		</div>
+    	</div>
+    	<div class="row">
+    		<div class="col-md-3">
+    			<div class="panel panel-primary height400">
+    				<div class="panel-heading">
+    					<span class="glyphicon glyphicon-hand-right"></span>&nbsp;<strong>服务指南</strong><span class="pull-right">&nbsp;<span class="label label-info">More</span><a href ="http://sjc.nankai.edu.cn:80/nkdxsjc/showAuditGuid.action?subIndex=1" target="_blank" style="color:#FFFFFF">&nbsp;&gt;&gt;</a></span>
+    				</div>
+    				<div id="help" class="panel-body">
+    					<ul class="list-group">
+    						<li class="list-group-item" onclick="project_audit()"><span class="glyphicon glyphicon-wrench"></span>&nbsp;工程审计</li>
+			      			<li class="list-group-item" onclick="budget()"><span class="glyphicon glyphicon-pushpin"></span>&nbsp;预算执行</li>
+			      			<li class="list-group-item" onclick="balance()"><span class="glyphicon glyphicon-yen"></span>&nbsp;财务收支</li>
+			      			<li class="list-group-item" onclick="responsibility()"><span class="glyphicon glyphicon-alert"></span>&nbsp;经济责任</li>
+			      			<li class="list-group-item" onclick="special_funds()"><span class="glyphicon glyphicon-credit-card"></span>&nbsp;专项资金</li>
+			      			<li class="list-group-item" onclick="survey()"><span class="glyphicon glyphicon-phone-alt"></span>&nbsp;审计调查</li>
+			      			<li class="list-group-item" onclick="research_funds()"><span class="glyphicon glyphicon-briefcase"></span>&nbsp;科研经费</li>
+			      			<li class="list-group-item" onclick="research_signed()"><span class="glyphicon glyphicon-pencil"></span>&nbsp;科研审签</li>
+    					</ul>
+    				</div>
+    			</div>
+    		</div>
+    		<div class="col-md-6">
+    			<div class="panel panel-primary height400">
+    				<div class="panel-heading">
+    					<span class="glyphicon glyphicon-download-alt"></span>&nbsp;<strong>下载专区</strong><span class="pull-right">&nbsp;<span class="label label-info">More</span><a href ="http://sjc.nankai.edu.cn:80/nkdxsjc/showAttachListFront.action" target="_blank" style="color:#FFFFFF">&nbsp;&gt;&gt;</a></span>
+    				</div>
+    				<div class="panel-body">
+    					<ul class="list-group">
+    						
+    							<li class="list-group-item"><a href ="http://sjc.nankai.edu.cn:80/nkdxsjc/upload/attachment/施工内容及工程量确认表（样表）.xls"><span class="glyphicon glyphicon-paperclip"></span>&nbsp;施工内容及工程量确认表（样表）</a>
+	    							
+	    								<span class="badge badge-success">New</span>
+	    							
+    							</li>
+    						
+    							<li class="list-group-item"><a href ="http://sjc.nankai.edu.cn:80/nkdxsjc/upload/attachment/《内部控制报告表格》填写说明（详细版）.docx"><span class="glyphicon glyphicon-paperclip"></span>&nbsp;《内部控制报告表格》填写说明（详细版）</a>
+	    							
+	    								<span class="badge badge-success">New</span>
+	    							
+    							</li>
+    						
+    							<li class="list-group-item"><a href ="http://sjc.nankai.edu.cn:80/nkdxsjc/upload/attachment/内部控制报告表格.xls"><span class="glyphicon glyphicon-paperclip"></span>&nbsp;内部控制报告表格</a>
+	    							
+	    								<span class="badge badge-success">New</span>
+	    							
+    							</li>
+    						
+    							<li class="list-group-item"><a href ="http://sjc.nankai.edu.cn:80/nkdxsjc/upload/attachment/《内部控制报告表格》填表说明.docx"><span class="glyphicon glyphicon-paperclip"></span>&nbsp;《内部控制报告表格》填表说明</a>
+	    							
+    							</li>
+    						
+    							<li class="list-group-item"><a href ="http://sjc.nankai.edu.cn:80/nkdxsjc/upload/attachment/教育部办公厅关于向审计署提供电子数据的通知_31720190110115732.zip"><span class="glyphicon glyphicon-paperclip"></span>&nbsp;教育部办公厅关于向审计署提供电子数据的通知</a>
+	    							
+    							</li>
+    						
+    					</ul>
+    				</div>
+    			</div>
+    		</div>
+    		<div class="col-md-3">
+    			<div class="panel panel-primary height400">
+    				<div class="panel-heading">
+    					<span class="glyphicon glyphicon-link"></span>&nbsp;<strong>友情链接</strong><span class="pull-right">&nbsp;<span class="label label-info">More</span><a href ="http://sjc.nankai.edu.cn:80/nkdxsjc/showFriendlyLinkFront.action" target="_blank" style="color:#FFFFFF">&nbsp;&gt;&gt;</a></span>
+    				</div>
+    				<div class="panel-body">
+    					<ul class="list-group">
+    						
+    							<li class="list-group-item"><a href ="http://www.jysj.cee.edu.cn/" target="_blank">中国教育审计网</a></li>
+    						
+    							<li class="list-group-item"><a href ="http://www.ciia.com.cn/" target="_blank">中国内部审计协会</a></li>
+    						
+    							<li class="list-group-item"><a href ="http://www.moe.edu.cn/" target="_blank">中华人民共和国教育部</a></li>
+    						
+    							<li class="list-group-item"><a href ="http://www.audit.gov.cn/" target="_blank">中华人民共和国审计署</a></li>
+    						
+    							<li class="list-group-item"><a href ="http://www.tju.edu.cn/shenji/" target="_blank">天津大学审计处</a></li>
+    						
+    						<!-- <li class="list-group-item"><a href ="http://www.moe.edu.cn/" target="_blank">中国人民共和国教育部</a></li>
+    						<li class="list-group-item"><a href ="http://www.audit.gov.cn/" target="_blank">中华人民共和国审计署</a></li>
+    						<li class="list-group-item"><a href ="http://www.ciia.com.cn/" target="_blank">中国内部审计协会</a></li> -->
+    					</ul>
+    				</div>
+    			</div>
+    		</div>
+    	</div>
+    </div>
+    <div class="bottom">
+		<p id="copyright">
+			南开大学审计处版权所有 Copyright@2010-2015. All Rights Reserved
+		</p>
+		<p id="address">
+			地址：天津市卫津路94号 [300071]
+		</p>
+	</div>
+  </body>
+</html>

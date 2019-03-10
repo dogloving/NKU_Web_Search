@@ -1,0 +1,368 @@
+<base href="http://gs.nankai.edu.cn/epstar/web/swms/mainframe/home.jsp">﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="/epstar/login/js/AC_RunActiveContent.js"
+	type="text/javascript"></script>
+<script language='javascript'
+	src='/epstar/web/2_0_0_0/client/include/taglib_client.js'></script>
+<link href="/epstar/ext/resources/css/ext-all.css" rel="stylesheet"
+	type="text/css">
+<SCRIPT language="javascript"
+	src="/epstar/ext/adapter/yui/yui-utilities.js"></SCRIPT>
+<SCRIPT language="javascript"
+	src="/epstar/ext/adapter/yui/ext-yui-adapter.js"></SCRIPT>
+<SCRIPT language="javascript" src="/epstar/ext/ext-all.js"></SCRIPT>
+<!--[if IE 6]>
+	<script type="text/javascript" src="/epstar/login/js/unitpngfix.js"></script>
+<![endif]-->
+<title>研究生管理信息系统混合认证</title>
+
+<script language="javascript">
+function getBrowserVersion() {   
+	var browser = {};   
+	var userAgent = navigator.userAgent.toLowerCase();   
+	var s;   
+	(s = userAgent.match(/msie ([\d.]+)/))   
+			? browser.ie = s[1]   
+			: (s = userAgent.match(/firefox\/([\d.]+)/))   
+					? browser.firefox = s[1]   
+					: (s = userAgent.match(/chrome\/([\d.]+)/))   
+							? browser.chrome = s[1]   
+							: (s = userAgent.match(/opera.([\d.]+)/))   
+									? browser.opera = s[1]   
+									: (s = userAgent   
+											.match(/version\/([\d.]+).*safari/))   
+											? browser.safari = s[1]   
+											: 0;   
+	var version = "";   
+	if (browser.ie) {   
+		version = 'msie ' + browser.ie;   
+	} else if (browser.firefox) {   
+		version = 'firefox ' + browser.firefox;   
+	} else if (browser.chrome) {   
+		version = 'chrome ' + browser.chrome; 
+	} else if (browser.opera) {   
+		version = 'opera ' + browser.opera;   
+	} else if (browser.safari) {   
+		version = 'safari ' + browser.safari;   
+	} else {   
+		version = '未知浏览器';   
+	}   
+	return version;   
+}  
+var ret = getBrowserVersion();
+
+Ext.onReady(function(){
+
+if(ret.indexOf('msie') == -1){
+	
+	Ext.MessageBox.show({
+        title: '友情提示',
+        msg: '<font color=red>本系统不支持该浏览器，请换IE浏览器使用！</font>',
+        closable:false,
+        fn: function(){
+        	window.close();
+			}
+    	});
+}
+});
+</script>
+
+<style type="text/css">
+<!--
+	body {
+		margin-left: 0px;
+		margin-top: 0px;
+		margin-right: 0px;
+		margin-bottom: 0px;
+	}
+-->
+</style>
+<link href="/epstar/login/images/.css" rel="stylesheet" type="text/css">
+</head>
+<body onload="load()">
+<TABLE width="100%" height="100%" border=0 cellPadding=0 cellSpacing=0>
+	<TR>
+		<TD height=46 vAlign=bottom class="top_bg">
+		<TABLE width="100%" height="100" border=0 cellPadding=0 cellSpacing=0>
+			<TBODY>
+				<TR>
+					<TD width="399"><img src="/epstar/login/images/top_left.jpg"
+						width="399" height="100"></TD>
+					<TD width="24%">&nbsp;</TD>
+					<TD width="31%" align="left" valign="bottom">&nbsp;</TD>
+				</TR>
+			</TBODY>
+		</TABLE>
+		</TD>
+	</TR>
+	<TR>
+		<TD height="296" vAlign=top class="banner_rightbg">
+		<TABLE cellSpacing=0 cellPadding=0 width=883 border=0>
+			<TBODY>
+				<TR>
+					<TD width=399 align="left" vAlign=top class="banner_left">&nbsp;</TD>
+					<TD align=left vAlign=top
+						background="/epstar/login/images/right.jpg" bgColor=#ffffff><script
+						type="text/javascript">
+AC_FL_RunContent( 'codebase','http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0','width','481','height','248','src','/epstar/login/images/arow','quality','high','pluginspage','http://www.macromedia.com/go/getflashplayer','allowscriptaccess','sameDomain','wmode','transparent','scale','noborder','movie','/epstar/login/images/arow' ); //end AC code
+          </script>
+
+					<noscript><object
+						classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+						codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0"
+						width="481" height="248">
+						<param name="movie" value="/epstar/login/images/arow.swf">
+						<param name="quality" value="high">
+						<param name="allowScriptAccess" value="sameDomain">
+						<param name="wmode" value="transparent">
+						<param name="SCALE" value="noborder">
+						<embed src="/epstar/login/images/arow.swf" width="481"
+							height="248" quality="high"
+							pluginspage="http://www.macromedia.com/go/getflashplayer"
+							type="application/x-shockwave-flash"
+							allowscriptaccess="sameDomain" wmode="transparent"
+							scale="noborder"></embed> </object></noscript>
+					</TD>
+				</TR>
+		</TABLE>
+		</TD>
+	</TR>
+	<TR>
+		<TD align="right" vAlign=middle>
+		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td>
+				<form id="formLogin" name="formLogin" action="" method="post"
+					target="loginFrame">
+				<table width="30%" border="0" align="center" cellpadding="0"
+					cellspacing="0" class="td_bold2">
+					<tr>
+						<td width="41%" height="100px">&nbsp;</td>
+						<td class="td_text_black12"><span id="span_prompt"
+							style="color: red">&nbsp;</span></td>
+					</tr>
+					<tr>
+						<td align="right" class="td_text_black12">用户名：</td>
+						<td width="59%" colspan="2" align="left" class="td_text_black12">
+						<input id="username" name="Login.Token1" type="text"
+							class="input7" value="" style="width: 220px"
+							onkeydown="focusToPassword()"></td>
+					</tr>
+					<tr>
+						<td align="right" class="td_text_black12">密 码：</td>
+						<td colspan="2" align="left" class="td_text_black12"><input
+							id="password" name="Login.Token2" type="password" class="input7"
+							value="" style="width: 220px" onkeydown="passwordEnter()"></td>
+
+					</tr>
+					<tr>
+						<td height="34" colspan="3" align="right" valign="bottom"><img
+							src="/epstar/login/images/login.jpg" width="75" height="24"
+							style="cursor:hand" onClick="submit_action()"><INPUT
+							TYPE="submit" style="display:none"> <!--　<img src="images/reset.jpg" width="75" height="24">--></td>
+					</tr>
+					<tr>
+						<td height="100px" colspan="2">&nbsp;</td>
+					</tr>
+				</table>
+				</form>
+				</td>
+			</tr>
+		</table>
+		</TD>
+	</TR>
+	<TR>
+		<TD align="center" vAlign=top><span class="td_text_black"><marquee
+			behavior="scroll" direction="left" scrollamount="2" scrolldelay="">
+		推荐：建议浏览器版本：IE6.0及以上,屏幕分辨率：1024x768. </marquee> </span></TD>
+	</TR>
+</TABLE>
+<iframe name="loginFrame" src="about:blank" style="display: none"></iframe>
+
+<SCRIPT LANGUAGE="JavaScript">
+function getQuery()
+{
+	var data = {};
+	var query = window.location.href.split('?')[1];
+	if (query)
+	{
+		var segment = query.split('&');
+		if (segment.length == undefined) segment = [segment];
+		for (var i = 0; i < segment.length; i ++)
+		{
+			var keyval = segment[i].split('=');
+			data[keyval[0]] = keyval[1];
+		}
+	}
+	return data;
+}
+
+function load()
+{
+	var loginForm = document.getElementById('formLogin');
+	var userNameElem = document.getElementById('username');
+	var passwordElem = document.getElementById('password');
+	var data = request; 
+	if (data.type == 'fail')
+	{
+		if (window == top){
+			document.getElementById('span_prompt').innerHTML = '用户名或密码错误';
+		}else{
+			var parentLoginForm = parent.document.getElementById('formLogin');
+			var parentUserNameElem = parent.document.getElementById('username');
+			var parentPasswordElem = parent.document.getElementById('password');
+			parentLoginForm.action = '?';
+			parentLoginForm.target = '_top';
+			parent.form_submit();
+			return;
+		}
+	}
+	 
+	if (data.username)
+	{
+		userNameElem.value = data.username;
+		passwordElem.value = '';
+	}
+	 
+	if (window != top){
+		top.document.getElementById('username').focus();
+	}else{
+		document.getElementById('username').focus();
+	}
+	
+	if (window != top){
+		top.location.href = "/epstar/login/index.jsp";
+	}
+}
+
+function focusToPassword()
+{
+	if (event.keyCode == 13)
+	{
+		document.getElementById('password').focus();
+	}
+}
+
+function passwordEnter()
+{
+	if (event.keyCode == 13)
+	{
+		//form_submit();
+		submit_action();
+	}
+}
+
+
+function form_submit()
+{
+	var userNameElem = document.getElementById('username');
+	var userName = userNameElem.value;
+	if (userName == '')
+	{
+		alert('请输入用户名');
+		userNameElem.focus();
+		return;
+	}
+	var passwordElem = document.getElementById('password');
+
+	var password = passwordElem.value;	
+	
+	var formLogin = document.getElementById('formLogin');
+
+	if (formLogin.action == '?'){
+		formLogin.action = '/epstar/login/index.jsp?' + 'type=fail&username=' + userName;
+	}else{
+		formLogin.action = formLogin.action + 'type=fail%26username=' + userName;
+	}
+	
+	Page_ShowProgressDialog('正在登录...');
+	formLogin.submit();
+}
+
+
+//在JS中获取URL参数
+function QueryString()
+{
+	//构造参数对象并初始化
+	var name,value='',i;
+	var str=location.href.toString(); //获得浏览器地址栏URL串
+	var num=str.indexOf("%3F");
+	if (num == -1){
+		num = str.indexOf("?");
+		str = str.substr(num+1);
+	}else{
+		str=str.substr(num+3); //截取“?”后面的参数串
+	} 
+	
+	var str= str.replace(/\%26/g,"&"); 
+   
+	var arrtmp=str.split("&"); //将各参数分离形成参数数组
+	for(i=0;i < arrtmp.length;i++)
+	{
+		num=arrtmp[i].indexOf("=");
+		if(num>0)
+		{
+			name=arrtmp[i].substring(0,num);//取得参数名称
+			value=arrtmp[i].substr(num+1); //取得参数值
+			this[name]=value; //定义对象属性并初始化
+		}
+	}
+} 
+
+var request = new QueryString();
+
+var loginUrlParamStr = '?goto=http://gs.nankai.edu.cn:80/epstar/login/index.jsp&gotoOnFail=http://gs.nankai.edu.cn:80/epstar/login/index.jsp%3F';
+
+function submit_action(){
+	Ext.Ajax.request({
+				url : '/epstar/web/outer/GetLoginUrl.jsp',
+				method : 'post',
+				timeout:20000,
+				success : function(response, action) {
+					var loginUrl = response.responseText.trim();
+					loginUrl += loginUrlParamStr;
+					
+					var userNameElem = document.getElementById('username');
+					var userName = userNameElem.value;
+					if (userName == '')
+					{
+						alert('请输入用户名');
+						userNameElem.focus();						
+						return;
+					}
+					
+					var passwordElem = document.getElementById('password');				
+					var password = passwordElem.value;	
+					if (password == '')
+					{
+						alert('请输入密码');
+						passwordElem.focus();						
+						return;
+					}
+					
+					var formLogin = document.getElementById('formLogin');
+					formLogin.action = loginUrl;
+				  
+					if (formLogin.action == '?'){
+						formLogin.action = '/epstar/login/index.jsp?' + 'type=fail&username=' + userName;
+					}else{
+						formLogin.action = formLogin.action + 'type=fail%26username=' + userName;
+					}
+					//alert(formLogin.action)
+					Page_ShowProgressDialog('正在登录...');
+					formLogin.submit();
+				},
+				failure : function() {
+					alert("获取IDS登录地址错误,不能登录，请联系管理员。");
+				}
+			});
+}
+</script>
+</body>
+</html>

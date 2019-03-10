@@ -1,0 +1,182 @@
+<base href="http://www.2nankai.cn/">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="HandheldFriendly" content="true">
+    <title>天津市第二南开学校</title>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <style>
+		html{height:100%; font-size: 10px}
+        @media (min-width: 1024px){
+            body{font-size: 14px}
+        } /*>=1024的设备*/
+
+        @media (min-width: 1100px) {
+            body{font-size: 16px}
+        } /*>=1100的设备*/
+        @media (min-width: 1280px) {
+            body{font-size: 18px;}
+        } /*>=1280的设备*/
+
+        @media (min-width: 1366px) {
+
+            body{font-size: 20px;}
+        }
+
+        @media (min-width: 1440px) {
+            body{font-size: 22px !important;}
+        }
+
+        @media (min-width: 1680px) {
+            body{font-size: 24px;}
+        }
+        @media (min-width: 1920px) {
+            body{font-size: 33px;}
+        }
+		@media (width: 750px) {
+            body{font-size: 32px !important;}
+        }
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        a{text-decoration: none;}
+      
+        body {
+            width: 100%;
+            height: 100%;
+            background-size:100% 100%;
+            background-image: url("img/1/beijingtu.png");
+            background-repeat: no-repeat;
+        }
+        .main{position:absolute;width:100%;top:33%;text-align:center;}
+        .logo img{width:32rem;padding-left:0.5rem;}
+        .enter{margin-top:1rem;}
+        .enter a{cursor: pointer;
+            text-decoration: none;
+            color: #fff;
+            display: inline-block;
+            background: #542B54;
+            width: 13rem;
+            height: 3rem;
+			font-size:14px;
+			line-height:3rem;	
+			}
+        .enter a:hover{background:#942B94;}
+			.QRcode{
+				position:absolute;top:-20rem;right:10rem;
+			}
+			.QRcode img{
+				width:10rem;
+				height:10rem;
+			}
+        .footer{width:100%;position:fixed;bottom:4.5rem;height:4rem;opacity:0.6;filter:alpha(opacity=60);background:#fff;}
+        .nav{height:60px;width:100%;text-align:center;}
+        .nav-ul{margin:0 auto;text-align:center;}
+        .nav li{display:inline-block;cursor:pointer;margin:0 10px;list-style: none;padding:10px 20px;color:#9F129F;}
+        .nav li a{color:#460746; font-size: 1.4rem;margin:0 20px;}
+        .nav li a:hover{text-shadow: 5px 5px 30px #542B54;}
+        .footer p{width:63%;margin:0 auto; text-align: center}
+        .footer p span{color:#333;font-size:12px;width:50%;text-align:center;}
+    </style>
+	<link rel="icon" href="http://www.2nankai.cn/mediacms/wp-content/uploads/2018/11/ico.png" sizes="32x32" />
+</head>
+<body style='position:relative'>
+<div class="main" >
+	<div class='QRcode'><img  src='img/1/QRcode.jpg'/></div>		
+    <div class="logo">
+        <br><br><img src="img/1/nankaiLogo.png">
+    </div>
+    <div class="enter">
+        <br><br><a href="http://tj2nankai.edu-dc.cn/" target="_blank">新闻浏览</a>
+		<!--<a href="#">新闻浏览（维护中）</a><a href="http://2nankai.hpjy.gov.cn/" target="_blank">新闻浏览</a>--> 
+    </div>
+</div>
+
+<div class="footer">
+    <div class="nav">
+        <ul class="nav-ul">
+            <li class="nav-li">
+				<a href="http://www.2nankai.cn/cer" target="_blank">>> 公共支撑平台[通知公告]</a>
+				<!--<a href="http://www.2nankai.cn/Announcement/" target="_blank">>> 通知公告</a>--> 
+				<a href="http://www.2nankai.cn/mediacms/" target="_blank">>> 媒体资源中心</a>
+				<a href="http://www.zhixue.com" target="_blank">>> 智学网(教师)</a>
+				<a href="https://campus.qq.com/d/tj2nankai.html" target="_blank">>> 和平智慧校园(初中)</a>
+				<a>>><select onchange="window.location=this.value;"> <option value="#">教育局链接</option>
+						<option value="https://jiaoyuju.tjhp.gov.cn">和平区教育局</option>
+						<option value="https://newoa.edu-dc.cn">协同办公</option>
+						<option value="http://ypt.edu-dc.cn">云平台</option>
+						<option value="https://newoa.edu-dc.cn">Emessage</option>
+						<option value="http://hpjy.wjx.cn">调查问卷</option>
+						<option value="http://yqtx.edu-dc.cn">要情通讯</option>
+					</select>
+				</a>
+			</li>
+			<!--<li class="nav-li"><a href="http://www.2nankai.cn/wangpan/" target="_blank">>> 网络硬盘(测试)</a></li>
+			<li class="nav-li"><a href="http://www.2nankai.cn/#" target="_blank">>> 资产报修(测试)</a></li>
+            <!--<li class="nav-li"><a href="http://www.2nankai.cn/Reservations" target="_blank">>> 预约点餐</a></li> -->
+            <ul>
+			 <p>
+				<span>&copy; 2012-2019 天津市第二南开学校</span>
+				<span>网站备案号:津ICP备14004227</span>
+			</p>
+    </div>
+   
+</div>
+
+</body>
+</html>
+
+<script>
+
+    // 调用function
+    wechatLogin();
+
+    function GetRequest() {
+        var url = location.search; //获取url中"?"符后的字串
+        var theRequest = new Object();
+        if (url.indexOf("?") != -1) {
+            var str = url.substr(1);
+            strs = str.split("&");
+            for(var i = 0; i < strs.length; i ++) {
+                theRequest[strs[i].split("=")[0]]=unescape(strs[i].split("=")[1]);
+            }
+        }
+        return theRequest;
+    };
+
+    function wechatLogin(){
+        var code = GetRequest();
+
+        if(code.code){
+            $.ajax({
+                url: 'http://www.2nankai.cn/api/WeixinLogin',
+                type:"get",
+                data:{
+                    'code': code.code,
+                },
+                success:function(res){
+                    console.log(res.data);
+                    // alert(res.code);
+                    if(res.code ===1){
+                        sessionStorage.setItem('2nk_token',res.data.token);
+                        sessionStorage.setItem('user',JSON.stringify(res.data));
+                        window.location.href='http://www.2nankai.cn/mobile/index.html'
+                    }else{
+                        alert(res.message);
+                    }
+                },
+                error:function(data){
+                    console.log('出错啦');
+                    console.log(data);
+                    alert('服务器异常，请稍后重新登陆！');
+                }
+            });
+        }
+    }
+
+</script>

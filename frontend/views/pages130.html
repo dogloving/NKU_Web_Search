@@ -1,0 +1,150 @@
+<base href="http://zixiuke.nankai.edu.cn/">
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>南开大学研究生学术规范学习测试系统</title>
+    <link href="/Areas/Learn/Content/default.css" rel="stylesheet" type="text/css" />
+    <link href="/Scripts/jparallax/css/jquery.parallax.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript">
+        var type = "";
+
+        if (type && type == "logout" && window.top != null) {
+            window.top.location.href = "/Home/Default"
+        }
+    </script>
+</head>
+<body>
+      <!--[if lte IE 6]>
+    <div class='ieerror'>您正在使用 Internet Explorer 6，在本页面的显示效果可能有差异。建议您升级到 <a href='http://windows.microsoft.com/zh-CN/internet-explorer/download-ie' target='_blank'>Internet Explorer 8</a> 或以下浏览器： <a href='http://www.mozillaonline.com/'>Firefox</a> / <a href='http://www.google.com/chrome/?hl=zh-CN'>Chrome</a> / <a href='http://www.apple.com.cn/safari/'>Safari</a> / <a href='http://www.operachina.com/'>Opera</a></div>
+     <![endif]-->
+    <!--[if lte IE 7]>
+    <div class='ieerror'>您正在使用 Internet Explorer 7，在本页面的显示效果可能有差异。建议您升级到 <a href='http://windows.microsoft.com/zh-CN/internet-explorer/download-ie' target='_blank'>Internet Explorer 8</a> 或以下浏览器： <a href='http://www.mozillaonline.com/'>Firefox</a> / <a href='http://www.google.com/chrome/?hl=zh-CN'>Chrome</a> / <a href='http://www.apple.com.cn/safari/'>Safari</a> / <a href='http://www.operachina.com/'>Opera</a></div>
+     <![endif]-->
+     <div id="layer2" class="parallax-layer loginBox">
+            
+        </div>
+    <div class="wrapper" id="parallax" title="点击进入系统">
+        <img id="wrapperbg" src="/images/loginbg.jpg" style="width:100%"/>
+         
+    </div>
+  
+    <script type="text/javascript" src="/Scripts/jquery-1.7.1.js"></script>
+    <script type="text/javascript" src="/Scripts/jparallax/js/jquery.event.frame.js"></script>
+    <script type="text/javascript" src="/Scripts/jparallax/js/jquery.parallax.min.js"></script>
+    <script type="text/javascript">
+
+        var mouse = [0, 0];
+        var layerPos=[0,0];
+        var layer = $("#layer2");
+        var view = $("#parallax");
+        var viewSize = [view.width(), view.height()];
+        var layerTop = 628;
+        var maxTop, minTop;
+        function initAnimate(rate) {
+            layerPos = [layer.offset().left, layer.offset().top];
+
+            minTop = layerPos[1];
+            var wrapperbgHeight = parseInt(960 * rate);
+            maxTop = $("#parallax").height() - 130;
+            if (maxTop > wrapperbgHeight) {
+                maxTop = wrapperbgHeight;
+            }
+
+            //if (view.height() < 960) {
+            //    $("#parallax").css("background-position", "center -" + (960 - view.height() - 100) + "px");
+
+            //}
+
+            $("#parallax").mouseenter(function (event) {
+                mouse = [event.pageX, event.pageY];
+            });
+            $("#parallax").mousemove(function (event) {
+
+                if (layerTop >= minTop && layerTop <= maxTop) {
+
+                    layerPos = [layer.offset().left, layer.offset().top];
+                    layerPos[1] = parseInt(layerPos[1] + (event.pageY - mouse[1]) * 0.4);
+
+                    if (layerPos[1]<minTop) {
+                        layerPos[1] = minTop;
+                    }
+                    else if (layerPos[1]>maxTop) {
+                        layerPos[1] = maxTop;
+                    }
+
+                    $("#layer2").css("top", layerPos[1]);
+                    mouse = [event.pageX, event.pageY];
+                    //layerTop = Math.round(viewSize[1] - layer.offset().top);
+                    //if (layerTop<110) {
+                    //    layerTop = 110;
+                    //}
+                    //else if (layerTop>628) {
+                    //    layerTop = 628;
+                    //}
+
+                    //layerButtom =  layerTop < 120 ? 110 :  parseInt( layerTop) > 384 ? 384 : 0;
+
+                }
+                else {
+
+                }
+
+
+            });
+        }
+
+        $(function () {
+            
+            
+            //layer.css("top", layerTop);
+            
+                fitTop();
+            
+            
+           
+            $("#parallax").on("click", function () {
+                window.location.href = "/Home/Index";
+            });
+            $(window).resize(function () {
+                fitTop($("#wrapperbg"));
+            });
+            //$('#parallax .parallax-layer')
+            //.parallax({
+            //    mouseport: $('#parallax'),
+            //    xparallax: false,
+            //    yparallax: '280px',
+            //    yorigin: 'bottom'
+            //});
+
+            
+        });
+
+        function fitTop()
+        {
+            //alert($(sender).height());
+            
+
+            var rate = $("#parallax").width() / 1920;
+            
+            layerTop = parseInt(570 * rate);
+            
+            
+
+            layer.css("top", layerTop);
+
+            
+
+            layer.show();
+            
+            layer.css("display", "block");
+            
+
+            initAnimate(rate);
+        }
+
+    </script>
+</body>
+</html>

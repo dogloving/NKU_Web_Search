@@ -1,0 +1,392 @@
+<base href="http://career.nankai.edu.cn/"><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>南开大学学生就业指导中心</title>
+<meta name="keywords" content="南开大学学生就业指导中心,招聘信息,招聘会信息,实习信息,公招信息,就业指导,创业指导,就业政策" />
+<meta name="description" content="南开大学学生就业指导中心成立于2000年，中心以服务毕业生和用人单位为宗旨，贯彻和执行国家有关单位就业方针政策，遵循公平、公开、公正的推荐原则，为毕业生与用人单位进行“供需见面双向选择”积极创造条件。" />
+<script type="text/javascript" src="/Public/js/jquery-1.11.1.js"></script>
+<script type="text/javascript" src="/Public/js/base.js"></script>
+<link rel="stylesheet" type="text/css" href="/Public/css/style.css" />
+<link rel="stylesheet" type="text/css" href="/Public/css/color1.css" />
+ 
+<link href="/Public/css/calender.css" type="text/css" rel="stylesheet" />
+
+<!-- banner js -->
+
+<script>
+    $(function(){
+	    $('.nav li').hover(function(){
+		    $(this).addClass("on");
+		},function(){
+		    $(this).removeClass("on");
+		});
+	});
+
+</script>
+
+</head>
+
+<body>
+<div class='head'>
+    <div class='headin'>
+	    <a href="http://career.nankai.edu.cn" class="head_logo" style="background:url('/Uploads/2018-09-12/5b98f3a6e8a4a.png') no-repeat 0px center; background-size: auto 65px;"></a>
+	    <form action="/search/index.html" method="post" onsubmit="return needkeywords();">
+        <input type='submit' class='sub' value='' >
+	    <input type='text' class='text' name="keywords" id="keywords" placeholder="搜索" autocomplete="off" >
+		</form>
+		<a href="http://careers.nankai.edu.cn" target="_blank" class="head_login">就业管理系统登录</a>
+    </div>
+</div>
+<script type="text/javascript">
+
+function needkeywords(){
+	if(jQuery('#keywords').val()==''){
+		alert('请填写关键字!');
+		return false;
+	}
+	return true;
+}
+
+</script>
+<div class='dh' >
+    <div class='dhin'>
+
+<ul class="nav">
+    <li class="thisclass" ><h3><a href = "http://career.nankai.edu.cn">首页</a></h3>
+    </li>
+     <li  ><h3><a href = "/news/index.html">新闻公告</a></h3>
+	<ul>
+        <li><h3><a href = "/news/index.html">重要通知</a></h3></li>
+        <li><h3><a href = "/news/work.html">工作动态</a></h3></li>
+    </ul>
+    </li>  
+    <li  ><h3><a href = "/reccalender/index.html">招聘查询</a></h3>
+    <ul>
+        <li><h3><a href = "/reccalender/index.html">招聘日历</a></h3></li>
+        <li><h3><a href = "/correcruit/index.html">企业招聘信息</a></h3></li>
+		<li><h3><a href = "/recruitment/index.html">招聘会信息</a></h3></li> 
+		<li><h3><a href = "/shuangxuanhuis/index.html">线上双选会</a></h3></li> 
+        <li><h3><a href = "/practice/index.html">实习信息</a></h3></li>
+        <li><h3><a href = "/basicrecruit/index.html">公招信息</a></h3></li>		<li><h3><a href = "/correcruit/index/type/1.html">国际组织</a></h3></li>		<li><h3><a href="http://tjbys.ncss.org.cn/" target="_blank">一站式信息</a></h3></li>
+    </ul>
+    </li>
+    <li  ><h3><a href = "/academeint/index.html">用人单位服务</a></h3>
+    <ul>
+        <li><h3><a href = "/academeint/index.html">院系介绍</a></h3>
+        </li>
+        <li><h3><a href = "/news/sourceinf.html">生源信息</a></h3>
+        </li>
+		<li><h3><a href = "/recruitguide/index.html">招聘指南</a></h3>
+        </li> 
+        <li><h3><a href = "/employgroup/index.html">就业小组</a></h3>
+        </li>
+    </ul>
+    </li>  
+    <li  ><h3><a href = "/applyguide/index.html">就业创业指导</a></h3>
+	<ul>
+        <li><h3><a href = "/applyguide/index.html">活动预告</a></h3></li>
+		<li><h3><a href = "/careerquiz/index.html">职业测评</a></h3></li> 
+        <li><h3><a href = "http://careers.nankai.edu.cn" target="_blank">生涯咨询</a></h3></li>
+		<li><h3><a href = "/news/entrepreneurship.html">创业指导</a></h3></li>
+		<li><h3><a href = "/news/employpolicy.html">就业政策</a></h3></li>
+    </ul>
+    </li> 
+    <li  ><h3><a href = "/download/index.html">文件下载</a></h3></li>
+	<li  ><h3><a href = "/contact/index.html">联系我们</a></h3></li>
+</ul>	
+    </div>
+</div>
+
+<style>
+body{background:white;}
+</style>
+<script>
+	$(function(){
+		window.onload = function()
+		{
+			var $li1 = $('#tab1 li');
+			var $ul1 = $('#content1 .box');
+		
+			$li1.click(function(){
+				var $this = $(this);
+				var $t = $this.index();
+				$li1.removeClass();
+				$this.addClass('current');
+				$ul1.css('display','none');
+				$ul1.eq($t).css('display','block');
+			});
+		}
+	});
+</script>
+
+
+
+
+<div class="banner">
+<div class="flexslider">
+	<ul class="slides">
+	    <li style="background:url(/Uploads/2019-03-08/5c82288da51da.jpg) no-repeat center;width: 100%; float:left; position:relative; opacity:0; background-color:#;
+		display:block; height: 400px;"><a href="/index/click/type/1/id/37.html" class='tit' target="_blank" ><span>南开大学2019届毕业生第五场大型双选会用人单位邀请函</span></a></li><li style="background:url(/Uploads/2018-12-31/5c29d7b35fa6b.jpg) no-repeat center;width: 100%; float:left; position:relative; opacity:0; background-color:#;
+		display:block; height: 400px;"><a href="/index/click/type/1/id/31.html" class='tit' target="_blank" ><span>南开大学2018届毕业生就业质量报告发布</span></a></li><li style="background:url(/Uploads/2019-03-01/5c78d5c68ce4b.jpg) no-repeat center;width: 100%; float:left; position:relative; opacity:0; background-color:#;
+		display:block; height: 400px;"><a href="/index/click/type/1/id/33.html" class='tit' target="_blank" ><span>南开大学“走进亚投行”国际化人才培养项目</span></a></li><li style="background:url(/Uploads/2019-03-01/5c78f9f95a5ac.jpg) no-repeat center;width: 100%; float:left; position:relative; opacity:0; background-color:#;
+		display:block; height: 400px;"><a href="/index/click/type/1/id/35.html" class='tit' target="_blank" ><span>南开大学大型户外生涯体验周</span></a></li><li style="background:url(/Uploads/2019-03-01/5c78fa12ca26a.jpg) no-repeat center;width: 100%; float:left; position:relative; opacity:0; background-color:#;
+		display:block; height: 400px;"><a href="javascript:void(0)" class='tit' target="_blank" ><span>职业素养提升周末课堂</span></a></li>	</ul>
+</div>
+</div>
+<script type="text/javascript" src="/Public/js/jquery.flexslider-min.js"></script>
+<script>
+$(function(){
+	$('.flexslider').flexslider({
+		directionNav: true,
+		pauseOnAction: false
+	});
+});
+</script>
+
+<div class='mid' >
+    <div class='left' >
+
+<!-- 日历开始 -->
+<div id="CalendarMain">
+  <div id="title">
+  <a href="/reccalender/index.html" target="_blank"><p>招聘日历</p></a>
+  <a class="selectBtn currentDay" href="javascript:" onClick="CalendarHandler.CreateCurrentCalendar(0,0,0);">今天</a>
+  <a class="selectBtn month" href="javascript:" onClick="CalendarHandler.CalculateLastMonthDays();"><</a>
+  <a class="selectBtn selectYear" href="javascript:" onClick="CalendarHandler.CreateSelectYear(CalendarHandler.showYearStart);">2014年</a>
+  <a class="selectBtn selectMonth" onClick="CalendarHandler.CreateSelectMonth()">6月</a> 
+  <a class="selectBtn nextMonth" href="javascript:" onClick="CalendarHandler.CalculateNextMonthDays();">></a>
+  </div>
+  <div id="context">
+    <div class="week">
+      <h3> 一 </h3>
+      <h3> 二 </h3>
+      <h3> 三 </h3>
+      <h3> 四 </h3>
+      <h3> 五 </h3>
+      <h3> 六 </h3>
+      <h3> 日 </h3>
+    </div>
+    <div id="center">
+      <div id="centerMain">
+        <div id="selectYearDiv"></div>
+        <div id="centerCalendarMain">
+          <div id="Container">
+		  </div>
+		  <div style='width:280px;margin-left:10px;color:#222;font-size:14px;height:50px;line-height:50px;clear:both;border-top:1px solid #ddd'>
+		      <a href="/recruitment/index.html" target="_blank"><span style='display:block;float:left;width:10px;height:10px;margin:21px 5px 0 0;background:#802358;border-radius:2px;'></span> <p style='float:left;height:15px;color:#222;'>双选会</p> </a>
+			  <a href="/recruitment/index2.html" target="_blank"><span style='display:block;float:left;width:10px;height:10px;margin:21px 5px 0 47px;background:#01ac84;border-radius:2px;'></span> <p style='float:left;height:15px;color:#222;'>宣讲会</p> </a>
+			 <a href="/applyguide/index.html" target="_blank"> <p style='float:right;color:#222;'>活动预告</p><span style='display:block;float:right;width:10px;height:10px;margin:21px 5px 0 0;background:#007ac5;border-radius:2px;'></span></a>
+	      </div>
+        </div>
+        <div id="selectMonthDiv"></div>
+      </div>
+    </div>
+  </div>
+</div>	
+<script type="text/javascript" src="/Public/js/index.js"></script>
+<script type="text/javascript">
+		$(document).ready(function(e) {
+			CalendarHandler.initialize();
+		});
+</script>
+<!-- 日历结束 -->
+
+   
+		  <!--- 弹出层-->
+		  <div id='tanchu' class='tanchu'>
+		     <div class="tc_topborder"></div>
+		     <a class="tc_close"></a>
+		     <ul id="tanchu_title">
+			     
+			 </ul>
+		  </div>
+		  <!---弹出层 -->		
+	</div>
+
+<script>
+function show_title(date,type){
+	$('#tanchu_title').html('');
+	$.ajax({
+		type:"POST",
+		url:"/Home/Index/doinfo",
+		async:false,
+		data:{"date":date,"type":type},
+		success:function(json){
+			var data=eval(json);
+			if(data){
+				if(data.length>0){
+					for(var i=0;i<data.length;i++){
+						if(data[i].type==3){
+						    jQuery('#tanchu_title').append("<li><a href=\"/Home/Applyguide/content/id/"+data[i].id+".html\" target=\"_blank\">"+data[i].title+"</a></li>");
+						}else{
+							jQuery('#tanchu_title').append("<li><a href=\"/Home/Recruitment/content/type/"+data[i].type+"/id/"+data[i].id+".html\" target=\"_blank\">"+data[i].title+"</a></li>");
+						}
+					}
+				}
+			}
+		}
+	});
+	
+	var span=document.getElementById(date);
+	var top = span.getBoundingClientRect().top;
+	var left = span.getBoundingClientRect().left;
+	var scrolltop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
+	//var scrolltop = document.body.scrollTop;
+	var height=span.offsetHeight;
+	var infotop=top + height + scrolltop;
+	$('#tanchu').css('display','block');
+	$('#tanchu').css('top',infotop);
+	$('#tanchu').css('left',left);
+	
+}
+$(".tc_close").bind("click",function(){
+	$("#tanchu").hide();
+})
+</script>
+	<div class='right' >
+	    <ul id='tab1' class='ful'>
+		    <li class='current' style='background-color:#f49d0e;' >重要通知</li><li style='background-color:#802358;' >招聘信息</li><li style='background-color:#01ac84;' >招聘会信息</li><li style='background-color:#8ebd46;' >实习信息</li><li style='background-color:#e6589b;' >公招信息</li><li style='background-color:#2053a8;' >国际组织</li>		</ul>
+		
+		<div class='list' id="content1">
+			<div class='box clearfix' style='display:block; position:relative;'>
+			   			   <img src='/Public/images/sanjiao.png' style='float:left;margin-left:69px;'>
+			   			   
+			   			   <ul style='clear:both; width:450px;'>
+			    <li><a href="/news/content/id/1013.html" target="_blank" class="newsa1"><font color="red">【置顶】</font>南开大学辅导员/党政管理岗位招聘公告</a><span style="float:right; margin-right:5px;">[2019-02-22]</span></li><li><a href="/news/content/id/1012.html" target="_blank" class="newsa1"><font color="red">【置顶】</font>山东省2019年选调生优选计划公告（南开大学）</a><span style="float:right; margin-right:5px;">[2019-02-22]</span></li><li><a href="/news/content/id/1014.html" target="_blank" class="newsa1"><font color="red">【置顶】</font>云南省2019年定向南开大学招录选调生公告</a><span style="float:right; margin-right:5px;">[2019-02-22]</span></li><li><a href="/news/content/id/1011.html" target="_blank" class="newsa1"><font color="red">【置顶】</font>甘肃省2019年定向选调应届优秀大学毕业生公告</a><span style="float:right; margin-right:5px;">[2019-02-22]</span></li><li><a href="/news/content/id/1015.html" target="_blank" class="newsa1"><font color="red">【置顶】</font>2019年浙江省县乡机关面向全国“双一流”和省内12所重点建设本科院校择优选调应届毕业生公告</a><span style="float:right; margin-right:5px;">[2019-02-25]</span></li> 
+			   </ul>
+			   <ul style='border-right:0px;margin-right:0px; width:450px;'>
+			   <li><a href="/news/content/id/1007.html" target="_blank" class="newsa1"><font color="red">【置顶】</font>毕业生：在南开的岁月是幸福的！</a><span style="float:right; margin-right:5px;">[2019-01-26]</span></li><li><a href="http://www.nankai.edu.cn/2019/0117/c157a118567/page.htm" target="_blank" title="南开大学2019年人才引进、教职工公开招聘、博士后招收公告" class="newsa1"><font color="red">【置顶】</font>南开大学2019年人才引进、教职工公开招聘、博士后招收公告</a><span style="float:right; margin-right:5px;">[2019-01-18]</span></li><li><a href="/news/content/id/1008.html" target="_blank" class="newsa1"><font color="red">【置顶】</font>山西省2019年定向选调优秀高校毕业生公告</a><span style="float:right; margin-right:5px;">[2019-01-26]</span></li><li><a href="/news/content/id/1009.html" target="_blank" class="newsa1"><font color="red">【置顶】</font>关于举办2018年全国国家级经济技术开发区高校毕业生网络招聘会活动的通知</a><span style="float:right; margin-right:5px;">[2019-02-14]</span></li><li><a href="/news/content/id/1016.html" target="_blank" class="newsa1">南通市崇川区2019年公开招录青年后备人才简章</a><span style="float:right; margin-right:5px;">[2019-03-07]</span></li> 
+			   </ul>
+			   			   <a class="box_more" href="/news/index.html">更多 >></a>
+			   			   			</div><div class='box clearfix' style='display:none;position:relative;'>
+			   			   <img src='/Public/images/sanjiao2.png' style='float:left;margin-left:224px;'>
+			   			   
+			   			   <ul style='clear:both; width:450px;'>
+			   <li><a href="/correcruit/content/id/32593.html" target="_blank" title="【南开大学图书馆】专业技术岗位"><font color="red">【置顶】</font>【南开大学图书馆】专业技术岗位</a></li><li><a href="/correcruit/content/id/33890.html" target="_blank" title="【河北银行股份有限公司】河北银行2019年博士生招聘启事">【河北银行股份有限公司】河北银行2019年博士生招聘启事</a></li><li><a href="/correcruit/content/id/33888.html" target="_blank" title="【国投中煤同煤京唐港口有限公司】企业文化管理">【国投中煤同煤京唐港口有限公司】企业文化管理</a></li><li><a href="/correcruit/content/id/33878.html" target="_blank" title="【启迪商学（广东）教育科技研究有限责任公司】教务员、班主任">【启迪商学（广东）教育科技研究有限责任公司】教务员、班主任</a></li><li><a href="/correcruit/content/id/33877.html" target="_blank" title="【北京赛瑞斯国际工程咨询有限公司】信息化中心部门秘书">【北京赛瑞斯国际工程咨询有限公司】信息化中心部门秘书</a></li> 
+			   </ul>
+			   <ul style='border-right:0px;margin-right:0px; width:450px;'>
+			   <li><a href="/correcruit/content/id/33874.html" target="_blank" title="【烽火通信】烽火通信2019春季校园招聘" >【烽火通信】烽火通信2019春季校园招聘</a></li><li><a href="/correcruit/content/id/33870.html" target="_blank" title="【天津市前嗅网络科技有限公司】商务经理" >【天津市前嗅网络科技有限公司】商务经理</a></li><li><a href="/correcruit/content/id/33867.html" target="_blank" title="【上海郡码智能科技有限公司】Android开发工程师" >【上海郡码智能科技有限公司】Android开发工程师</a></li><li><a href="/correcruit/content/id/33858.html" target="_blank" title="【北京络捷斯特科技发展股份有限公司】课程开发专员" >【北京络捷斯特科技发展股份有限公司】课程开发专员</a></li><li><a href="/correcruit/content/id/33855.html" target="_blank" title="【北京市华远置业有限公司】华远地产2019届春季校园招聘简章" >【北京市华远置业有限公司】华远地产2019届春季校园招聘简章</a></li> 
+			   </ul>
+			   <a class="box_more" href="/correcruit/index.html">更多 >></a>
+			   			</div><div class='box clearfix' style='display:none;position:relative;'>
+			   			   <img src='/Public/images/sanjiao3.png' style='float:left;margin-left:379px;'>
+			   			   
+			   			   <ul style='clear:both; width:450px;'>
+			   <li><a href="/recruitment/content/type/1/id/110.html" target="_blank" title="南开大学2019届毕业生第五场大型双选会用人单位邀请函"><font color="red">【置顶】</font>南开大学2019届毕业生第五场大型双选会用人单位邀请函</a></li><li><a href="/recruitment/content/type/1/id/109.html" target="_blank" title="南开大学2019届毕业生“环境类”校园双选会邀请函"><font color="red">【置顶】</font>南开大学2019届毕业生“环境类”校园双选会邀请函</a></li><li><a href="/recruitment/content/type/2/id/2757.html" target="_blank" title="潮州三环集团招聘会">潮州三环集团招聘会</a></li><li><a href="/recruitment/content/type/2/id/2787.html" target="_blank" title="国家信息中心经济咨询中心招聘宣讲会">国家信息中心经济咨询中心招聘宣讲会</a></li><li><a href="/recruitment/content/type/2/id/2753.html" target="_blank" title="敏华控股2019年春季校园招聘">敏华控股2019年春季校园招聘</a></li> 
+			   </ul>
+			   <ul style='border-right:0px;margin-right:0px; width:450px;'>
+			   <li><a href="/recruitment/content/type/2/id/2771.html" target="_blank" title="好未来集团学而思天津分校19年春季校园宣讲会（津南校区）">好未来集团学而思天津分校19年春季校园宣讲会（津南校区）</a></li><li><a href="/recruitment/content/type/2/id/2791.html" target="_blank" title="广州晓晓教育科技有限公司2019校园招聘">广州晓晓教育科技有限公司2019校园招聘</a></li><li><a href="/recruitment/content/type/2/id/2767.html" target="_blank" title="软通动力信息技术（集团）有限公司2019届春季校园招聘">软通动力信息技术（集团）有限公司2019届春季校园招聘</a></li><li><a href="/recruitment/content/type/2/id/2765.html" target="_blank" title="汉得信息 2019春季校园招聘（津南校区）">汉得信息 2019春季校园招聘（津南校区）</a></li><li><a href="/recruitment/content/type/2/id/2814.html" target="_blank" title="华为公司2019年实习生&amp;大赛宣讲会（津南校区）">华为公司2019年实习生&amp;大赛宣讲会（津南校区）</a></li> 
+			   </ul>
+			   <a class="box_more" href="/recruitment/index.html">更多 >></a>
+			   			</div><div class='box clearfix' style='display:none;position:relative;'>
+			   			   <img src='/Public/images/sanjiao4.png' style='float:left;margin-left:534px;'>
+			   			   
+			   			   <ul style='clear:both; width:450px;'>
+			    <li><a href="/correcruit/content/id/33839.html" target="_blank" title="【重庆鈊渝金融租赁股份有限公司】重庆鈊渝金融租赁股份有限公司 实习生计划">【重庆鈊渝金融租赁股份有限公司】重庆鈊渝金融租赁股份有限公司 实习生计划</a></li><li><a href="/correcruit/content/id/33696.html" target="_blank" title="【中信建投期货有限公司-北京机房】系统运维实习生">【中信建投期货有限公司-北京机房】系统运维实习生</a></li><li><a href="/correcruit/content/id/33685.html" target="_blank" title="【大众汽车自动变速器（天津）有限公司】Construction Intern 工程建造实习生">【大众汽车自动变速器（天津）有限公司】Construction Intern 工程建造实习生</a></li><li><a href="/correcruit/content/id/33671.html" target="_blank" title="【中国市政工程中南设计研究总院有限公司】中国市政工程中南设计研究总院有限公司2020届暑期实习生">【中国市政工程中南设计研究总院有限公司】中国市政工程中南设计研究总院有限公司2020届暑期实习生</a></li><li><a href="/correcruit/content/id/33574.html" target="_blank" title="【格林基金管理有限公司】投资经理助理">【格林基金管理有限公司】投资经理助理</a></li> 
+			   </ul>
+			   <ul style='border-right:0px;margin-right:0px; width:450px;'>
+			    <li><a href="/correcruit/content/id/33570.html" target="_blank" title="【明亚保险经纪有限公司】管理培训生">【明亚保险经纪有限公司】管理培训生</a></li><li><a href="/correcruit/content/id/33537.html" target="_blank" title="【童趣出版有限公司】编辑实习生">【童趣出版有限公司】编辑实习生</a></li><li><a href="/correcruit/content/id/33432.html" target="_blank" title="【中国电子科技集团公司第五十三研究所】硬件工程师">【中国电子科技集团公司第五十三研究所】硬件工程师</a></li><li><a href="/correcruit/content/id/33211.html" target="_blank" title="【阿里巴巴（中国）有限公司】阿里大文娱2020届春季校园招聘 技术沙龙">【阿里巴巴（中国）有限公司】阿里大文娱2020届春季校园招聘 技术沙龙</a></li><li><a href="/correcruit/content/id/33200.html" target="_blank" title="【河北润农节水科技股份有限公司】技术员">【河北润农节水科技股份有限公司】技术员</a></li> 
+			   </ul>
+			   <a class="box_more" href="/practice/index.html">更多 >></a>
+			   			</div><div class='box clearfix' style='display:none;position:relative;'>
+			   			   <img src='/Public/images/sanjiao5.png' style='float:left;margin-left:689px;'>
+			   			   
+			   			   <ul style='clear:both; width:450px;'>
+			    <li><a href="/correcruit/content/id/33887.html" target="_blank" title="【北京海天创高网络技术有限公司】内蒙古民族大学2019年高层次人才需求计划" >【北京海天创高网络技术有限公司】内蒙古民族大学2019年高层次人才需求计划</a></li><li><a href="/correcruit/content/id/33886.html" target="_blank" title="【北京海天创高网络技术有限公司】巴中职业技术学院2019年人才招聘启事" >【北京海天创高网络技术有限公司】巴中职业技术学院2019年人才招聘启事</a></li><li><a href="/correcruit/content/id/33885.html" target="_blank" title="【北京海天创高网络技术有限公司】浙江工业大学之江学院2019年公开招聘公告" >【北京海天创高网络技术有限公司】浙江工业大学之江学院2019年公开招聘公告</a></li><li><a href="/correcruit/content/id/33883.html" target="_blank" title="【北京海天创高网络技术有限公司】无锡职业技术学院2019年诚聘天下英才" >【北京海天创高网络技术有限公司】无锡职业技术学院2019年诚聘天下英才</a></li><li><a href="/correcruit/content/id/33882.html" target="_blank" title="【农业部沼气科学研究所】科研人员" >【农业部沼气科学研究所】科研人员</a></li> 
+			   </ul>
+			   <ul style='border-right:0px;margin-right:0px; width:450px;'>
+			    <li><a href="/correcruit/content/id/33868.html" target="_blank" title="【山西大学】教师、辅导员、管理岗" >【山西大学】教师、辅导员、管理岗</a></li><li><a href="/correcruit/content/id/33863.html" target="_blank" title="【海南口腔医院有限公司】放射技师" >【海南口腔医院有限公司】放射技师</a></li><li><a href="/correcruit/content/id/33862.html" target="_blank" title="【海南口腔医院有限公司】检验师" >【海南口腔医院有限公司】检验师</a></li><li><a href="/correcruit/content/id/33861.html" target="_blank" title="【海南口腔医院有限公司】麻醉师" >【海南口腔医院有限公司】麻醉师</a></li><li><a href="/correcruit/content/id/33860.html" target="_blank" title="【中国科学院烟台海岸带研究所】自然科学研究" >【中国科学院烟台海岸带研究所】自然科学研究</a></li> 
+			   </ul>
+			   <a class="box_more" href="/basicrecruit/index.html">更多 >></a>
+			   			</div><div class='box clearfix' style='display:none;position:relative;'>
+			   			   <img src='/Public/images/sanjiao6.png' style='float:left;margin-left:846px;'>
+			   			   
+			   			   <ul style='clear:both; width:450px;'>
+			    <li><a href="/correcruit/content/id/33026.html" target="_blank" title="【联合国开发计划署-和平发展基金会】联合国开发计划署-和平发展基金会 Internship Programme" ><font color="red">【置顶】</font>【联合国开发计划署-和平发展基金会】联合国开发计划署-和平发展基金会 Internship Programme</a></li><li><a href="/correcruit/content/id/30756.html" target="_blank" title="【United Nations Population Fund】联合国人口基金实习招募" ><font color="red">【置顶】</font>【United Nations Population Fund】联合国人口基金实习招募</a></li><li><a href="/correcruit/content/id/14292.html" target="_blank" title="【国际组织介绍】国际组织概况" ><font color="red">【置顶】</font>【国际组织介绍】国际组织概况</a></li><li><a href="/correcruit/content/id/33775.html" target="_blank" title="【联合国开发计划署】2019年联合国开发计划署选派办法" >【联合国开发计划署】2019年联合国开发计划署选派办法</a></li><li><a href="/correcruit/content/id/8377.html" target="_blank" title="【 玛丽斯特普国际组织(MSI)】Administration Assistant" >【 玛丽斯特普国际组织(MSI)】Administration Assistant</a></li> 
+			   </ul>
+			   <ul style='border-right:0px;margin-right:0px; width:450px;'>
+			    <li><a href="/correcruit/content/id/8376.html" target="_blank" title="【国际自然及自然资源保护联盟(IUCN)】North Africa Programme Intern" >【国际自然及自然资源保护联盟(IUCN)】North Africa Programme Intern</a></li><li><a href="/correcruit/content/id/8374.html" target="_blank" title="【国际米制公约组织(BIPM)】Director of the Time Department" >【国际米制公约组织(BIPM)】Director of the Time Department</a></li><li><a href="/correcruit/content/id/8373.html" target="_blank" title="【国际刑事警察组织(ICPO)】Assistant Director of Fugitive Investigative Support" >【国际刑事警察组织(ICPO)】Assistant Director of Fugitive Investigative Support</a></li><li><a href="/correcruit/content/id/8370.html" target="_blank" title="【联合国(UN)】INTERN - AUDIT" >【联合国(UN)】INTERN - AUDIT</a></li><li><a href="/correcruit/content/id/8369.html" target="_blank" title="【联合国教科文组织(UNESCO)】PROGRAMME ASSISTANT" >【联合国教科文组织(UNESCO)】PROGRAMME ASSISTANT</a></li> 
+			   </ul>
+			   <a class="box_more" href="/correcruit/index/type/1.html">更多 >></a>
+			   			</div>		</div>
+		<div class='kuaisutongdao'>
+		   <div class='kstd kstd1'> <a href="/news/employpolicy.html"><p>就业政策</p></a> </div>
+		   <div class='kstd kstd3'> <a href="/download/index.html"><p>文件下载</p></a> </div>
+		   <div class='kstd kstd4'> <a href="/careerquiz/index.html"><p>职业测评</p></a> </div>
+		   <div class='kstd kstd5'> <a href = "http://careers.nankai.edu.cn" target="_blank"><p>生涯咨询</p></a> </div>
+		   <div class='kstd kstd2'> <a href="http://tjbys.ncss.org.cn/" target="_blank"><p>一站式信息</p></a> </div>
+		   <div class='kstd kstd6'> <a href="/feedback/index.html"><p>意见反馈</p></a> </div>
+		   <div class='kstd kstd7' style='margin-right:0px;'> <a href="/contact/index.html#contact"><p>联系我们</p></a> </div>
+		</div>
+    </div>
+</div>
+
+<!--广告位-->
+<div class="wrap">
+	<div class="scrollbox cl">
+		<div id="scrollDiv">
+			<ul>
+			    <li><a href="/index/click/type/2/id/19.html" target="_blank" rel="nofollow"><img src="/Uploads/2017-04-14/58f01aa28786f.jpg" ></a></li><li><a href="/index/click/type/2/id/18.html" target="_blank" rel="nofollow"><img src="/Uploads/2017-03-20/58cf781897fbc.png" ></a></li><li><a href="/index/click/type/2/id/15.html" target="_blank" rel="nofollow"><img src="/Uploads/2017-03-07/58be5a5c07c37.png" ></a></li><li><a href="/index/click/type/2/id/14.html" target="_blank" rel="nofollow"><img src="/Uploads/2017-01-04/586c58b4208be.png" ></a></li><li><a href="/index/click/type/2/id/21.html" target="_blank" rel="nofollow"><img src="/Uploads/2017-06-16/5943a3c91e8ba.jpg" ></a></li><li><a href="/index/click/type/2/id/9.html" target="_blank" rel="nofollow"><img src="/Uploads/2017-01-04/586c50a03ba02.jpg" ></a></li><li><a href="/index/click/type/2/id/8.html" target="_blank" rel="nofollow"><img src="/Uploads/2017-01-04/586c4fc765cb1.jpg" ></a></li>			</ul>
+		</div>
+	</div>
+</div>
+<!--广告位-->
+
+<script type="text/javascript" src="/Public/js/lbnews.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#scrollDiv").Scroll({line:3,speed:600,timer:5000,up:"but_up",down:"but_down"});
+});
+</script>
+
+<div id='friend-link' >
+    <p>友情链接：</p>
+	<ul>
+	<a href='http://www.mohrss.gov.cn/SYrlzyhshbzb/rdzt/gjzzrcfw/gwkqxx/' target="_blank">人社部国际组织人才就业实习网</a><a href='http://gj.ncss.org.cn/' target="_blank">高校毕业生到国际组织实习任职信息服务平台</a><a href='http://www.tjbys.com.cn/' target="_blank">天津市大学生就业创业信息网</a><a href='http://xj.ncss.org.cn/' target="_blank">新疆籍毕业生就业创业信息平台</a>	</ul>
+</div>
+
+<div class='footer' >
+    <div class='footerin'>
+	   <img src='/Public/images/top.png' id ='totop' >
+	   <ul class='ful'>
+	       <li>办公时间（节假日除外）</li>
+		   <li>上午：8:00-12:00 </li>
+		   <li>下午：14:00-16:00</li>
+	   </ul>
+	   <ul class='sul'>
+	       <li>联系地址</li>
+		   <li>八里台校区：天津市南开区卫津路94号南开大学学生活动中心204室</li>
+		   <li>津南校区：天津市海河教育园区同砚路38号南开大学津南校区大通学生中心E区302</li>
+	   </ul>
+	   <ul class='tul'>
+	       <li>南开大学学生就业指导中心</li>
+		   <li>版权所有</li>
+           <li>power by handynasty<a href="http://www.handynasty.com.cn"></a></li>
+	   </ul>
+       <div class='erweima'>
+	       <p style='margin-right:12px;'><img src='/Uploads/2018-09-12/5b98f3a6ea3c7.jpg' width="72"><span>订阅号</span></p>		   <p><img src='/Uploads/2018-09-12/5b98f3a6ea9e0.jpg' width="72" ><span>服务号</span></p>       </div>	   
+    </div>
+</div>
+
+<script>
+    $(function(){
+		$('#totop').click(function(){
+			$("html,body").stop().animate({scrollTop: 0});
+		});
+	});
+</script>
+<div style="display:none">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?6eb8a37eb57545b46494b26e6136af4a";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</div>
+</body>
+</html>

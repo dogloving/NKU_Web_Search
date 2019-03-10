@@ -1,0 +1,42 @@
+12/13/2017 09:26:	query for 学生 留学	used time: 0.8287 s
+12/13/2017 09:26:	query for 学生*新闻	used time: 0.1619 s
+12/13/2017 09:27:	query for 南开*新闻	used time: 0.4979 s
+12/13/2017 09:27:	query for 南开*新闻	used time: 0.0005 s
+12/13/2017 09:27:	query for 南开 filetype: .pdf	used time: 1.735 s
+12/13/2017 09:27:	query for 南开 filetype: .doc	used time: 1.815 s
+12/13/2017 09:27:	query for 南开 filetype: .doc	used time: 1.6887 s
+12/19/2017 10:09:	query for 南开	used time: 1.1513 s
+12/19/2017 10:10:	query for 南开	used time: 0.001 s
+12/19/2017 10:10:	query for 南开	used time: 0.0 s
+12/19/2017 10:10:	query for 南开	used time: 0.0 s
+12/19/2017 10:11:	query for 南开	used time: 0.0 s
+12/26/2017 13:14:	query for 南开	used time: 1.7357 s
+12/26/2017 13:14:	query for 南开	used time: 0.8163 s
+12/26/2017 13:14:	query for 南开	used time: 0.0 s
+12/26/2017 13:14:	query for 南开	used time: 0.0 s
+12/26/2017 13:14:	query for 南开	used time: 0.0 s
+12/26/2017 13:14:	query for 南开	used time: 0.0009 s
+12/26/2017 13:15:	query for 南开	used time: 0.0 s
+12/28/2017 12:05:	query for 计算机	used time: 0.7703 s
+12/28/2017 12:05:	query for 计算机	used time: 1.9858 s
+12/28/2017 12:05:	query for 计算机	used time: 0.0 s
+12/28/2017 12:06:	query for 计算机	used time: 0.0 s
+12/28/2017 12:06:	query for 计算机	used time: 0.0 s
+12/28/2017 12:06:	query for 南开大学	used time: 0.831 s
+12/28/2017 12:11:	query for 信息检索	used time: 0.1716 s
+12/28/2017 12:54:	query for 南开	used time: 0.9876 s
+12/28/2017 12:54:	query for 南开	used time: 0.0 s
+12/28/2017 12:54:	query for 南开	used time: 0.0 s
+12/28/2017 12:54:	query for 南开	used time: 0.0 s
+12/28/2017 12:54:	query for 南开	used time: 0.0 s
+12/28/2017 13:11:	query for 南开大学	used time: 0.6251 s
+12/28/2017 13:11:	query for 南开大学 filetype: doc	used time: 1.9132 s
+12/28/2017 13:12:	query for 南开*新闻	used time: 0.5535 s
+12/28/2017 13:12:	query for 南开	used time: 0.762 s
+12/28/2017 13:13:	query for 南开*新闻	used time: 0.001 s
+12/28/2017 13:13:	query for 南开大学	used time: 0.0 s
+12/28/2017 13:13:	query for 南开 大学	used time: 0.2973 s
+12/28/2017 13:13:	query for 南开 大学	used time: 0.0 s
+12/28/2017 13:14:	query for 南开	used time: 0.001 s
+12/28/2017 13:14:	query for 南开	used time: 0.0 s
+12/28/2017 13:14:	query for 南开 filetype: doc	used time: 2.0293 s
